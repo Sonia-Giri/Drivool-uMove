@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+      integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/android.css" />
+    <link rel="stylesheet" href="./css/ipad.css" />
+
+    <script
+      src="https://code.jquery.com/jquery-3.1.1.min.js"
+      integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+      crossorigin="anonymous"
+    ></script>  
+  </head>
+  <body>
+      <div id="container-main">
+      <div id="left-pane">
+        <div id="content-left">
+          <div class="header" id="left-header">
+            <div>
+              <i class="fas fa-user-cog icon"></i>
+              <span>
+                Drivool uMove<br />
+                <span style="font-size: 12px"> version 1.14.0</span>
+              </span>
+            </div>
+          </div>
+          <div id="sidebar-window">
+            <div>
+              <i class="fas fa-user icon"></i><span>Change Account</span>
+            </div>
+            <div>
+              <i class="fas fa-cogs icon"></i><span>Manage Accounts</span>
+            </div>
+            <div>
+              <i class="fas fa-desktop icon"></i><span>Manage Devices</span>
+            </div>
+            <div><i class="fas fa-door-open icon"></i><span>Portal</span></div>
+            <hr />
+            <div>
+              <i class="fas fa-mobile-alt icon"></i><span>SIM Recharge</span>
+            </div>
+            <div>
+              <i class="fas fa-map-marker-alt icon"></i
+              ><span>GPS Recharge</span>
+            </div>
+            <div>
+              <i class="fas fa-shopping-cart icon"></i><span>Drivool Shop</span>
+            </div>
+            <hr />
+            <div>
+              <i class="fas fa-question-circle icon"></i><span>Help</span>
+            </div>
+            <div>
+              <i class="fas fa-comments icon"></i><span>Live Chat</span>
+            </div>
+            <div><i class="fas fa-info-circle icon"></i><span>About</span></div>
+          </div>
+        </div>
+      </div>
+      <div id="right-pane">
+        <div id="content-right">
+          <div class="header" id="right-header">
+            <div>
+              Menu
+              <i class="fas fa-bars menu-icon" id="menu-icon"></i>
+            </div>
+          </div>
+          <div id="document-window">
+            <div id="document">
+              <div id="main-containerPDF"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      $(document).ready(function () {
+        $("#menu-icon").click(function () {
+          $("body").toggleClass("hide-sidebar expand-content");
+        });
+      });
+    </script>
+  </body>
+</html>
