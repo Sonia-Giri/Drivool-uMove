@@ -27,23 +27,41 @@
       integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
       crossorigin="anonymous"
     ></script>  
+
+    <style>
+      .menu_item{
+        display: flex;
+        align-items: center;
+        height: 40px; /* Set a fixed height for the container */
+        transition: background-color 0.3s
+      }
+
+      .menu_item:active {
+          transform: scale(0.95);
+       }
+
+      .side_menu_icon {
+        margin-right: 20px;
+      }
+
+    </style>
   </head>
   <body>
       <div id="container-main">
       <div id="left-pane">
         <div id="content-left">
           <div class="header" id="left-header">
-            <div>
-              <i class="fas fa-user-cog icon"></i>
-              <span>
+            <div >
+              <img  src="img/app_icon.png" height="48px" width="auto"></img>
+              <span style="margin:6px">
                 Drivool uMove<br />
                 <span style="font-size: 12px"> version 1.14.0</span>
               </span>
             </div>
           </div>
           <div id="sidebar-window">
-            <div>
-              <i class="fas fa-user icon"></i><span>Change Account</span>
+            <div class = "menu_item">
+              <img class = "invert side_menu_icon" src="img/chnage_gapn.png" height="24px" width="auto"> <span>Change Account</span>
             </div>
             <div>
               <i class="fas fa-cogs icon"></i><span>Manage Accounts</span>
