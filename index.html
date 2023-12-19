@@ -18,102 +18,147 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
     />
 
-    <link rel="stylesheet" href="./css/style.css" />
-    <link rel="stylesheet" href="./css/android.css" />
-    <link rel="stylesheet" href="./css/ipad.css" />
+    <link rel="stylesheet" href="./css/newstyle.css" />
+    <link rel="stylesheet" href="./css/newcontent.css" />
+    <!-- <link rel="stylesheet" href="./css/android.css" />
+  <link rel="stylesheet" href="./css/ipad.css" /> -->
 
     <script
       src="https://code.jquery.com/jquery-3.1.1.min.js"
       integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
       crossorigin="anonymous"
-    ></script>  
-
-    <style>
-      .menu_item{
-        display: flex;
-        align-items: center;
-        height: 40px; /* Set a fixed height for the container */
-        transition: background-color 0.3s
-      }
-
-      .menu_item:active {
-          transform: scale(0.95);
-       }
-
-      .side_menu_icon {
-        margin-right: 20px;
-      }
-
-    </style>
+    ></script>
   </head>
-  <body>
-      <div id="container-main">
-      <div id="left-pane">
-        <div id="content-left">
-          <div class="header" id="left-header">
-            <div >
-              <img  src="img/app_icon.png" height="48px" width="auto"></img>
-              <span style="margin:6px">
-                Drivool uMove<br />
-                <span style="font-size: 12px"> version 1.14.0</span>
-              </span>
-            </div>
+  <body id="main-container">
+    <header id="header">
+      <i class="fas fa-bars invert" id="menu-icon"></i>
+      <img src="img/helpline.png" height="48px" width="auto" />
+    </header>
+    <!-- <div id="sidebar"></div> -->
+    <div id="document-window">
+      <div id="document">
+        <div id="container">
+          <div id="tiles">
+            <table style="width: 100%; height: 100%">
+              <tr>
+                <td>
+                  <img
+                    src="./images/location.png"
+                    ;
+                    width="20%"
+                    ;
+                    alt="tileiconed image"
+                    ;
+                    class="tileicon"
+                    ;
+                  />
+                  <span class="tiletext">Track</span>
+                </td>
+                <td>
+                  <img
+                    src="./images/delivery_truck.png"
+                    ;
+                    width="20%"
+                    ;
+                    alt="tileiconed image"
+                    ;
+                    class="tileicon"
+                    ;
+                  />
+                  <span class="tiletext">Vehicles</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <img
+                    src="./images/quick_share.png"
+                    ;
+                    width="20%"
+                    ;
+                    alt="tileiconed image"
+                    ;
+                    class="tileicon"
+                    ;
+                  />
+                  <span class="tiletext">Quick share</span>
+                </td>
+                <td>
+                  <img
+                    src="./images/history.png"
+                    ;
+                    width="20%"
+                    ;alt="tileiconed image"
+                    ;
+                    class="tileicon"
+                    ;
+                  />
+                  <span class="tiletext">History</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <img
+                    src="./images/analytics.png"
+                    ;
+                    width="20%"
+                    ;
+                    alt="tileiconed image"
+                    ;
+                    class="tileicon"
+                    ;
+                  />
+                  <span class="tiletext">Analytics</span>
+                </td>
+                <td>
+                  <img
+                    src="./images/alerts.png"
+                    ;
+                    width="20%"
+                    ;
+                    alt="tileiconed image"
+                    ;
+                    class="tileicon"
+                    ;
+                  />
+                  <span class="tiletext">Alert</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <img
+                    src="./images/users.png"
+                    ;
+                    width="20%"
+                    ;
+                    alt="tileiconed image"
+                    ;
+                    class="tileicon"
+                    ;
+                  />
+                  <span class="tiletext">Manage Users</span>
+                </td>
+                <td>
+                  <img
+                    src="./images/shoppingcart_inv.png"
+                    ;
+                    width="20%"
+                    ;
+                    alt="tileiconed image"
+                    ;
+                    class="tileicon"
+                    ;
+                  />
+                  <span class="tiletext">Drivool Shop</span>
+                </td>
+              </tr>
+            </table>
           </div>
-          <div id="sidebar-window">
-            <div class = "menu_item">
-              <img class = "invert side_menu_icon" src="img/chnage_gapn.png" height="24px" width="auto"> <span>Change Account</span>
-            </div>
-            <div>
-              <i class="fas fa-cogs icon"></i><span>Manage Accounts</span>
-            </div>
-            <div>
-              <i class="fas fa-desktop icon"></i><span>Manage Devices</span>
-            </div>
-            <div><i class="fas fa-door-open icon"></i><span>Portal</span></div>
-            <hr />
-            <div>
-              <i class="fas fa-mobile-alt icon"></i><span>SIM Recharge</span>
-            </div>
-            <div>
-              <i class="fas fa-map-marker-alt icon"></i
-              ><span>GPS Recharge</span>
-            </div>
-            <div>
-              <i class="fas fa-shopping-cart icon"></i><span>Drivool Shop</span>
-            </div>
-            <hr />
-            <div>
-              <i class="fas fa-question-circle icon"></i><span>Help</span>
-            </div>
-            <div>
-              <i class="fas fa-comments icon"></i><span>Live Chat</span>
-            </div>
-            <div><i class="fas fa-info-circle icon"></i><span>About</span></div>
-          </div>
-        </div>
-      </div>
-      <div id="right-pane">
-        <div id="content-right">
-          <div class="header" id="right-header">
-            <div>
-              Menu
-              <i class="fas fa-bars menu-icon" id="menu-icon"></i>
-            </div>
-          </div>
-          <div id="document-window">
-            <div id="document">
-              <div id="main-containerPDF"></div>
-            </div>
-          </div>
+
+          <div id="acountid">diledasmahant</div>
         </div>
       </div>
     </div>
-    <script>
-      $(document).ready(function () {
-        $("#menu-icon").click(function () {
-          $("body").toggleClass("hide-sidebar expand-content");
-        });
-      });
-    </script>
   </body>
+  <script></script>
 </html>
+
