@@ -14,7 +14,7 @@ body {
   display: flex;
   flex-wrap: nowrap;
   flex-direction: column;
-  height: 150vh;
+  height: 120vh;
 }
 #header {
   color: #fff;
