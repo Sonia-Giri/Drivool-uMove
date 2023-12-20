@@ -3,6 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+      integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
     <link
       rel="stylesheet"
@@ -11,54 +20,50 @@
 
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="stylesheet" href="./css/content.css" />
+    <!-- <link rel="stylesheet" href="./css/android.css" />
+  <link rel="stylesheet" href="./css/ipad.css" /> -->
 
     <script
       src="https://code.jquery.com/jquery-3.1.1.min.js"
       integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
       crossorigin="anonymous"
     ></script>
-
-    <style>
-
-        #tiles_and_account_id_container{
-          position: absolute;
-          width: 100%;
-          height: calc(100vh - 60px);
-        }
-
-        @media only screen and (orientation: landscape) {
-          div#tiles_and_account_id_container {
-            width: 50%;
-            margin-left: 25%;
-          }
-        }
-
-    </style>
-
   </head>
-
- 
-
-        <div id="tiles_and_account_id_container">
+  <body id="main-container">
+    <header id="header">
+      <i class="fas fa-bars invert" id="menu-icon"></i>
+      <img src="img/helpline.png" height="48px" width="auto" />
+    </header>
+    <!-- <div id="sidebar"></div> -->
+    <div id="document-window">
+      <div id="document">
+        <div id="container">
           <div id="tiles">
             <table style="width: 100%; height: 100%">
-          
               <tr>
-                <td width="50%">
+                <td>
                   <img
-                    src="./img/location.png"
+                    src="./images/location.png"
+                    ;
                     width="20%"
+                    ;
                     alt="tileiconed image"
+                    ;
                     class="tileicon"
+                    ;
                   />
                   <span class="tiletext">Track</span>
                 </td>
                 <td>
                   <img
-                    src="./img/delivery_truck.png"
+                    src="./images/delivery_truck.png"
+                    ;
                     width="20%"
+                    ;
                     alt="tileiconed image"
+                    ;
                     class="tileicon"
+                    ;
                   />
                   <span class="tiletext">Vehicles</span>
                 </td>
@@ -66,18 +71,26 @@
               <tr>
                 <td>
                   <img
-                    src="./img/quick_share.png"
+                    src="./images/quick_share.png"
+                    ;
                     width="20%"
+                    ;
                     alt="tileiconed image"
+                    ;
                     class="tileicon"
+                    ;
                   />
                   <span class="tiletext">Quick share</span>
                 </td>
                 <td>
                   <img
-                    src="./img/history.png"
-                    width="20%"alt="tileiconed image"
+                    src="./images/history.png"
+                    ;
+                    width="20%"
+                    ;alt="tileiconed image"
+                    ;
                     class="tileicon"
+                    ;
                   />
                   <span class="tiletext">History</span>
                 </td>
@@ -85,19 +98,27 @@
               <tr>
                 <td>
                   <img
-                    src="./img/analytics.png"
+                    src="./images/analytics.png"
+                    ;
                     width="20%"
+                    ;
                     alt="tileiconed image"
+                    ;
                     class="tileicon"
+                    ;
                   />
                   <span class="tiletext">Analytics</span>
                 </td>
                 <td>
                   <img
-                    src="./img/alerts.png"
+                    src="./images/alerts.png"
+                    ;
                     width="20%"
+                    ;
                     alt="tileiconed image"
+                    ;
                     class="tileicon"
+                    ;
                   />
                   <span class="tiletext">Alert</span>
                 </td>
@@ -105,19 +126,27 @@
               <tr>
                 <td>
                   <img
-                    src="./img/users.png"
+                    src="./images/users.png"
+                    ;
                     width="20%"
+                    ;
                     alt="tileiconed image"
+                    ;
                     class="tileicon"
+                    ;
                   />
                   <span class="tiletext">Manage Users</span>
                 </td>
                 <td>
                   <img
-                    src="./img/shoppingcart_inv.png"
+                    src="./images/shoppingcart_inv.png"
+                    ;
                     width="20%"
+                    ;
                     alt="tileiconed image"
+                    ;
                     class="tileicon"
+                    ;
                   />
                   <span class="tiletext">Drivool Shop</span>
                 </td>
@@ -127,8 +156,9 @@
 
           <div id="acountid">diledasmahant</div>
         </div>
-
-
-
+      </div>
+    </div>
+  </body>
+  <script></script>
 </html>
 

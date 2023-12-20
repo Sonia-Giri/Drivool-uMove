@@ -6,130 +6,35 @@
     <title>Document</title>
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="stylesheet" href="./css/content.css" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+      integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
   </head>
   <body>
-    <div id="mainDiv">
-      <div id="header">Header</div>
-      <div id="main-content">
-        <div id="container">
-          <div id="tiles">
-            <table style="width: 100%; height: 100%">
-              <tr>
-                <td>
-                  <img
-                    src="./images/location.png"
-                    ;
-                    width="20%"
-                    ;
-                    alt="tileiconed image"
-                    ;
-                    class="tileicon"
-                    ;
-                  />
-                  <span class="tiletext">Track</span>
-                </td>
-                <td>
-                  <img
-                    src="./images/delivery_truck.png"
-                    ;
-                    width="20%"
-                    ;
-                    alt="tileiconed image"
-                    ;
-                    class="tileicon"
-                    ;
-                  />
-                  <span class="tiletext">Vehicles</span>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <img
-                    src="./images/quick_share.png"
-                    ;
-                    width="20%"
-                    ;
-                    alt="tileiconed image"
-                    ;
-                    class="tileicon"
-                    ;
-                  />
-                  <span class="tiletext">Quick share</span>
-                </td>
-                <td>
-                  <img
-                    src="./images/history.png"
-                    ;
-                    width="20%"
-                    ;alt="tileiconed image"
-                    ;
-                    class="tileicon"
-                    ;
-                  />
-                  <span class="tiletext">History</span>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <img
-                    src="./images/analytics.png"
-                    ;
-                    width="20%"
-                    ;
-                    alt="tileiconed image"
-                    ;
-                    class="tileicon"
-                    ;
-                  />
-                  <span class="tiletext">Analytics</span>
-                </td>
-                <td>
-                  <img
-                    src="./images/alerts.png"
-                    ;
-                    width="20%"
-                    ;
-                    alt="tileiconed image"
-                    ;
-                    class="tileicon"
-                    ;
-                  />
-                  <span class="tiletext">Alert</span>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <img
-                    src="./images/users.png"
-                    ;
-                    width="20%"
-                    ;
-                    alt="tileiconed image"
-                    ;
-                    class="tileicon"
-                    ;
-                  />
-                  <span class="tiletext">Manage Users</span>
-                </td>
-                <td>
-                  <img
-                    src="./images/shoppingcart_inv.png"
-                    ;
-                    width="20%"
-                    ;
-                    alt="tileiconed image"
-                    ;
-                    class="tileicon"
-                    ;
-                  />
-                  <span class="tiletext">Drivool Shop</span>
-                </td>
-              </tr>
-            </table>
-          </div>
-          <div id="acountid">diledasmahant</div>
+
+    <div id="root">
+
+      <div id="mainDiv">
+        <div id="header">Header</div>
+        <div id="main-content">
+          
         </div>
       </div>
+
+      <div id="sidemenu_bar">
+
+      </div>
+
     </div>
+
+    <script>
+       $('div#main-content').load("main_menu.html")
+
+    </script>
   </body>
+
+ 
 </html>

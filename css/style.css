@@ -12,24 +12,21 @@ body {
 }
 #mainDiv {
   display: flex;
-  flex-wrap: nowrap;
   flex-direction: column;
-  height: 120vh;
+  height: 100%;
 }
+
 #header {
   color: #fff;
   background-color: #333;
   height: 60px;
-  top: 0;
-  left: 0;
-  right: 0;
   padding: 10px;
-  position: fixed;
 }
+
 #main-content {
   background-color: #9597e9c4;
   /* margin-top: 60px; */
-  z-index: -1;
-  height: 100%;
+  height: calc(100vh - 60px)
+  /* height: 100%; */
   /* padding: 10px; */
 }
