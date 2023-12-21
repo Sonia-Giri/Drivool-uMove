@@ -46,11 +46,21 @@ th {
   height: 100%;
 }
 
+#tiles_and_account_id_container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
 @media only screen and (orientation: landscape) {
   div#container {
     width: 60%;
     margin-left: auto;
     margin-right: auto;
+  }
+
+  div#tiles_and_account_id_container {
+    width: 50%;
+    margin-left: 25%;
   }
 }
 
