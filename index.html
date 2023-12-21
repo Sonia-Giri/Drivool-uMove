@@ -4,8 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="stylesheet" href="./css/content.css" />
+    <link rel="stylesheet" href="./css/sidebar.css" />
+
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
       integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
@@ -14,30 +20,40 @@
     ></script>
   </head>
   <body>
-
     <div id="root">
-
       <div id="mainDiv">
-        <div id="header">Header</div>
-        <div id="main-content">
-          
+        <div id="header">
+          <div><i class="fas fa-bars invert" id="menu-icon"></i></div>
+          <div><img src="img/helpline.png" height="48px" width="auto" /></div>
         </div>
+        <div id="main-content"></div>
       </div>
-
-      <div id="sidemenu_bar">
-
-      </div>
-
+      <div id="sidemenu_bar"></div>
     </div>
 
     <script>
+      $("div#main-content").load("main_menu.html");
+      $("div#sidemenu_bar").load("sidemenu_bar.html");
 
+      $(document).ready(function () {
+        $("#menu-icon").click(function () {
+          if ($("#sidemenu_bar").width() === 0) {
+            openDiv();
+          } else {
+            closeDiv();
+          }
+        });
+      });
 
-      $('div#main-content').load("main_menu.html")
-       
+      function openDiv() {
+        $("#sidemenu_bar").css("width", "280px");
+        $("#main-content").css("margin-left", "280px");
+      }
 
+      function closeDiv() {
+        $("#sidemenu_bar").css("width", "0");
+        $("#main-content").css("margin-left", "0");
+      }
     </script>
   </body>
-
- 
 </html>
