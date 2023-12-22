@@ -11,18 +11,7 @@
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="stylesheet" href="./css/content.css" />
     <link rel="stylesheet" href="./css/sidebar.css" />
-
-    <style>
-      .transparentdiv{
-        top:0;
-        left:0;
-        position:absolute;
-        height: 0;
-        width: 100%;
-        background-color: #00000033;
-      }
-    </style>
-
+  
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
       integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
@@ -34,7 +23,13 @@
     <div id="root">
       <div id="mainDiv">
         <div id="header">
-          <div><i class="fas fa-bars invert" id="menu-icon"></i></div>
+         <div id="leftside-header">
+            <i class="fas fa-bars" style="margin-right: 5px" id="menu-icon"></i>
+            <div style="margin: 5px; font-size: 18px">
+              <span> Drivool uMove</span>
+              <span style="font-size: 12.5px"> Version 1.14.0</span>
+            </div>
+          </div>
           <div><img src="img/helpline.png" height="48px" width="auto" /></div>
         </div>
         <div id="main-content"></div>
@@ -59,25 +54,17 @@
 
       function openDiv() {
         $(".sidemenu_bar").css("left", "0");
-
-        $(".transparentdiv").css("height","100%")
-
-      
-        //$("#main-content").css("margin-left", "280px");
+        $(".transparentdiv").css("height","calc(100vh - 60px)")
       }
 
       function closeDiv() {
         $(".sidemenu_bar").css("left", "-280px");
-        
-        $(".transparentdiv").css("height","0%")
-
-        //$("#main-content").css("margin-left", "0");
+        $(".transparentdiv").css("height", "0");
       }
 
       function onClickTransparentDiv(){
-
         $(".sidemenu_bar").css("left", "-280px");
-
+        $(".transparentdiv").css("height", "0");
       }
     </script>
   </body>
