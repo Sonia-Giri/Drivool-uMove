@@ -1,10 +1,15 @@
-#sidemenu_bar {
-  height: 100vh;
-  width: 0;
-  top: -100vh;
+.sidemenu_bar {
+  height: calc(100vh - 60px);
+  top:60px;
+  left: -280px;
+  width: 280px;
   background-color: #324563;
-  position: relative;
+  position: absolute;
   transition: 0.5s;
+
+
+
+  box-shadow: 1px 1px 2px black;
 }
 
 #sidemenu_content {

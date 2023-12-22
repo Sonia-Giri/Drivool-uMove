@@ -28,7 +28,7 @@
         </div>
         <div id="main-content"></div>
       </div>
-      <div id="sidemenu_bar"></div>
+      <div class="sidemenu_bar"></div>
     </div>
 
     <script>
@@ -37,22 +37,22 @@
 
       $(document).ready(function () {
         $("#menu-icon").click(function () {
-          if ($("#sidemenu_bar").width() === 0) {
-            openDiv();
-          } else {
+          if ($(".sidemenu_bar").css("left") === "0px") {
             closeDiv();
+          } else {
+            openDiv();
           }
         });
       });
 
       function openDiv() {
-        $("#sidemenu_bar").css("width", "280px");
-        $("#main-content").css("margin-left", "280px");
+        $(".sidemenu_bar").css("left", "0");
+        //$("#main-content").css("margin-left", "280px");
       }
 
       function closeDiv() {
-        $("#sidemenu_bar").css("width", "0");
-        $("#main-content").css("margin-left", "0");
+        $(".sidemenu_bar").css("left", "-280px");
+        //$("#main-content").css("margin-left", "0");
       }
     </script>
   </body>
