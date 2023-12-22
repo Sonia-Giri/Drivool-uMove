@@ -42,9 +42,21 @@ body {
 #menu-icon {
   font-size: 1.3em;
 }
+#menu-icon:hover {
+  cursor: pointer;
+}
 
 #main-content {
   background-color: #9597e9c4;
   height: calc(100vh - 60px);
   position: relative;
+}
+
+.transparentdiv {
+  top: 60px;
+  left: 0;
+  position: absolute;
+  height: 0;
+  width: 100%;
+  background-color: #00000033;
 }
