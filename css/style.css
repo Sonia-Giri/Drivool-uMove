@@ -29,23 +29,6 @@ body {
   width: 100%;
 }
 
-#header {
-  color: #fff;
-  background-color: #484abb;
-  height: 60px;
-  padding: 10px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-#menu-icon {
-  font-size: 1.3em;
-}
-#menu-icon:hover {
-  cursor: pointer;
-}
-
 #main-content {
   background-color: #9597e9c4;
   height: calc(100vh - 60px);
