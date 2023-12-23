@@ -2,15 +2,14 @@
   <div id="sidebar-header">
     <div>
       <img src="img/app_icon.png" height="48px" width="auto" />
-      <span style="margin: 5px; font-size: 18px" class="invert">
-        Drivool uMove<br />
-        <span style="font-size: 12.5px"> Version 1.14.0</span>
+      <span style="margin: 10px 5px; font-size: 18px" class="invert">
+        sonia0912giri
       </span>
     </div>
-    <i class="fas fa-times invert" id="cross" onclick="closeDiv()"></i>
+    <!-- <i class="fas fa-times invert" id="cross" onclick="closeDiv()"></i> -->
   </div>
   <div id="sidebar-window" class="invert">
-    <div>
+    <div id="ChangeAcc" onclick="onClickChangeAcc()">
       <img
         class="side_menu_icon"
         src="img/account.png"
@@ -19,7 +18,7 @@
       />
       <span>Change Account</span>
     </div>
-    <div class="menu_item">
+    <div id="ManageAcc" onclick="onClickManageAcc()" class="menu_item">
       <img
         class="invert side_menu_icon"
         src="img/chnage_gapn.png"
@@ -27,7 +26,7 @@
         width="auto"
       /><span>Manage Accounts</span>
     </div>
-    <div>
+    <div id="ManageDev" onclick="onClickManageDev()">
       <img
         class="side_menu_icon"
         src="img/default_device.png"
@@ -35,7 +34,7 @@
         width="auto"
       /><span>Manage Devices</span>
     </div>
-    <div>
+    <div id="Portal" onclick="onClickPortal()">
       <img
         class="invert side_menu_icon"
         src="img/portal.png"
@@ -44,7 +43,7 @@
       /><span>Portal</span>
     </div>
     <hr />
-    <div>
+    <div id="SimRecharge" onclick="onClickSimRecharge()">
       <img
         class="side_menu_icon"
         src="img/sim.png"
@@ -52,7 +51,7 @@
         width="auto"
       /><span>SIM Recharge</span>
     </div>
-    <div>
+    <div id="GpsRecharge" onclick="onClickGpsRecharge()">
       <img
         class="side_menu_icon"
         src="img/mt1.png"
@@ -60,7 +59,7 @@
         width="auto"
       /><span>GPS Recharge</span>
     </div>
-    <div>
+    <div id="DrivoolShop" onclick="onClickDrivoolShop()">
       <img
         class="side_menu_icon"
         src="img/shoppingcart.png"
@@ -69,7 +68,7 @@
       /><span>Drivool Shop</span>
     </div>
     <hr />
-    <div>
+    <div id="Help" onclick="onClickHelp()">
       <img
         class="side_menu_icon"
         src="img/help.png"
@@ -77,7 +76,7 @@
         width="auto"
       /><span>Help</span>
     </div>
-    <div>
+    <div id="LiveChat" onclick="onClickLiveChat()">
       <img
         class="side_menu_icon"
         src="img/livechat.png"
@@ -85,7 +84,7 @@
         width="auto"
       /><span>Live Chat</span>
     </div>
-    <div>
+    <div id="About" onclick="onClickAbout()">
       <img
         class="side_menu_icon"
         src="img/drivool_48.png"
