@@ -58,42 +58,15 @@
     </div>
 
     <script>
+      //load Html files
       $("div#main-content").load("main_menu.html");
       $("div.sidemenu_bar").load("sidemenu_bar.html");
-
-      $(document).ready(function () {
-        $("#menu-icon").click(function () {
-          if ($(".sidemenu_bar").css("left") === "0px") {
-            closeDiv();
-          } else {
-            openDiv();
-          }
-        });
-        $("#helpline-icon").hover(function () {
-          slideDown();
-        });
-      });
-
-      function openDiv() {
-        $(".sidemenu_bar").css("left", "0");
-        $(".transparentdiv").css("height", "calc(100vh - 60px)");
-      }
-
-      function closeDiv() {
-        $(".sidemenu_bar").css("left", "-280px");
-        $(".transparentdiv").css("height", "0");
-      }
-
-      function slideDown() {
-        $("#helplineSDmenu").css("display", "flex");
-        $(".transparentdiv").css("height", "calc(100vh - 60px)");
-      }
-
-      function onClickTransparentDiv() {
-        $(".sidemenu_bar").css("left", "-280px");
-        $(".transparentdiv").css("height", "0");
-        $("#helplineSDmenu").css("display", "none");
-      }
+    </script>
+    <script src="./js/header.js">
+      //script related to header
+    </script>
+    <script src="./js/clickHandler.js">
+      //click functions for
     </script>
   </body>
 </html>
