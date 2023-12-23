@@ -1,0 +1,46 @@
+$(document).ready(function () {
+  $("#menu-icon").click(function () {
+    if ($(".sidemenu_bar").css("left") === "0px") {
+      closeDiv();
+    } else {
+      openDiv();
+    }
+  });
+
+  $("#helpline-icon").click(function () {
+    if ($("#helplineSDmenu").css("top") === "54px") {
+      slideDown();
+    } else {
+      slideUp();
+    }
+  });
+});
+
+function openDiv() {
+  $(".sidemenu_bar").css("left", "0");
+  $(".transparentdiv").css("height", "calc(100vh - 60px)");
+}
+
+function closeDiv() {
+  $(".sidemenu_bar").css("left", "-280px");
+  $(".transparentdiv").css("height", "0");
+}
+
+function slideDown() {
+  $("#helplineSDmenu").css("top", "55px");
+  $("#helplineSDmenu").css("z-index", "1");
+  $(".transparentdiv").css("height", "calc(100vh - 60px)");
+}
+
+function slideUp() {
+  $("#helplineSDmenu").css("top", "54px");
+  $("#helplineSDmenu").css("z-index", "-1");
+  $(".transparentdiv").css("height", "0");
+}
+
+function onClickTransparentDiv() {
+  $(".sidemenu_bar").css("left", "-280px");
+  $(".transparentdiv").css("height", "0");
+  $("#helplineSDmenu").css("top", "54px");
+  $("#helplineSDmenu").css("z-index", "-1");
+}
