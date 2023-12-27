@@ -17,7 +17,7 @@ body {
 #root {
   height: 100vh;
   position: relative;
-  background-color: #324563;
+  background-color: white;
 }
 #mainDiv {
   position: absolute;
@@ -30,7 +30,7 @@ body {
 }
 
 #main-content {
-  background-color: #9597e9c4;
+  background-color: white;
   height: calc(100vh - 60px);
   position: relative;
 }

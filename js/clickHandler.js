@@ -12,7 +12,9 @@ function onClickAbout() {}
 
 //tile icons
 function onClickTrack() {}
-function onClickVehicles() {}
+function onClickVehicles() {
+    $("div#main-content").load("vehicles.html");
+}
 function onClickQuickShare() {}
 function onClickHistory() {}
 function onClickAnalytics() {}
