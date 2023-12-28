@@ -28,23 +28,25 @@
 }
 
 #helplineDiv {
-  position: relative;
-  display: inline-block;
+  position: absolute;
+  top: 60px;
+  right: -200px;
+  width: 200px;
+  height: 60px;
+  height: auto;
+  transition: 0.3s;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 }
 
 #helplineSDmenu {
   display: flex;
-  position: absolute;
+  position: fixed;
   align-items: center;
-  min-width: 160px;
-  right: -10px;
-  top: 54px;
+  overflow-x: hidden;
+  color: #fff;
   background-color: #324563;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  z-index: -1;
   padding: 10px;
   border-radius: 5px;
-  transition: 0.3s;
 }
 #helplineDiv:hover {
   cursor: pointer;
