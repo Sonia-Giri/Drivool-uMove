@@ -7,11 +7,11 @@ $(document).ready(function () {
     }
   });
 
-  $("#helpline-icon").click(function () {
-    if ($("#helplineSDmenu").css("top") === "54px") {
-      slideDown();
+ $("#helpline-icon").click(function () {
+    if ($("#helplineDiv").css("right") === "-200px") {
+      slideLeft();
     } else {
-      slideUp();
+      slideRight();
     }
   });
 });
@@ -26,21 +26,18 @@ function closeDiv() {
   $(".transparentdiv").css("height", "0");
 }
 
-function slideDown() {
-  $("#helplineSDmenu").css("top", "55px");
-  $("#helplineSDmenu").css("z-index", "1");
+function slideLeft() {
+  $("#helplineDiv").css("right", "0");
   $(".transparentdiv").css("height", "calc(100vh - 60px)");
 }
 
-function slideUp() {
-  $("#helplineSDmenu").css("top", "54px");
-  $("#helplineSDmenu").css("z-index", "-1");
+function slideRight() {
+  $("#helplineDiv").css("right", "-200px");
   $(".transparentdiv").css("height", "0");
 }
 
 function onClickTransparentDiv() {
   $(".sidemenu_bar").css("left", "-280px");
   $(".transparentdiv").css("height", "0");
-  $("#helplineSDmenu").css("top", "54px");
-  $("#helplineSDmenu").css("z-index", "-1");
+  $("#helplineDiv").css("right", "-200px");
 }
