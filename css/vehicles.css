@@ -1,0 +1,119 @@
+/* @font-face {
+  font-family: NarrowFont;
+  src: url("./fonts/Dense-Regular.otf");
+}
+
+body {
+  margin: 0;
+} */
+/* .div1 {
+  margin-top: 20px;
+} */
+
+div.listitem {
+  box-shadow: 0px 2px 3px gray;
+  margin: 8px;
+  position: relative;
+}
+
+div.activeback {
+  background-color: rgb(56, 229, 108);
+}
+
+div.inactiveback {
+  background-color: #8a8a8a;
+  color: #f9f9f9;
+}
+
+div.undefinedback {
+  background-color: rgb(237, 154, 52);
+}
+
+div.gradient {
+  width: auto;
+  height: auto;
+  background: repeating-radial-gradient(white, rgb(179, 76, 91));
+}
+
+div.gpsiconbox {
+  width: 50px;
+  height: 50px;
+  background: repeating-radial-gradient(white, orange);
+  padding: 4px;
+  border: 1px solid gray;
+  border-radius: 6px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+@media only screen and (orientation: landscape) {
+  div#listcontainer {
+    width: 55%;
+    height: calc(100vh- 60px);
+    margin: auto;
+    font-size: 13px;
+  }
+}
+
+div.header {
+  display: inline-flex;
+  width: 100%;
+  height: 36px;
+  padding: 0 3px;
+}
+
+div.title {
+  font-weight: bold;
+  padding: 10px;
+  width: 100%;
+}
+
+div.menuicon {
+  width: 24px;
+  padding: 8px;
+}
+
+div.listbody {
+  display: inline-flex;
+  background-color: white;
+  font-family: NarrowFont;
+  width: 100%;
+  height: 100px;
+}
+
+div.vehicleinfo {
+  display: inline-flex;
+  background-color: white;
+  width: 50%;
+  margin: 5px;
+}
+
+div.vehiclename {
+  border: 1px solid gray;
+  font-size: large;
+  padding: 4px;
+  height: 50px;
+  margin-top: auto;
+  margin-bottom: auto;
+  width: 100%;
+  border-radius: 6px;
+}
+
+div.gpsinfo {
+  display: inline-flex;
+  background-color: white;
+  width: 50%;
+}
+
+div.gpsid {
+  font-size: large;
+  text-align: center;
+  height: 50px;
+  border: 1px solid gray;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: 4px;
+  margin-right: 4px;
+  width: 100%;
+  border-radius: 6px;
+}
