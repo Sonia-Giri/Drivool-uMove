@@ -1,14 +1,8 @@
-/* @font-face {
+ @font-face {
   font-family: NarrowFont;
   src: url("./fonts/Dense-Regular.otf");
 }
 
-body {
-  margin: 0;
-} */
-/* .div1 {
-  margin-top: 20px;
-} */
 
 div.listitem {
   box-shadow: 0px 2px 3px gray;
