@@ -16,8 +16,12 @@ function onClickVehicles() {
     $("div#main-content").load("vehicles.html");
 }
 function onClickQuickShare() {}
-function onClickHistory() {}
+function onClickHistory() {
+      $("div.sidemenu_bar").load("vehicles_list_sidemenu.html"); //no toggle for now!
+}
 function onClickAnalytics() {}
-function onClickAlert() {}
+function onClickAlert() {
+      $("div.sidemenu_bar").load("vehicles_list_sidemenu.html");
+}
 function onClickManageUsers() {}
 function onClickDrivoolShop() {}
