@@ -86,3 +86,24 @@
 
   <div id="acountid">diledasmahant</div>
 </div>
+<script>
+  $(document).ready(function () {
+    $(".tile").on("click", function (e) {
+      let x = e.clientX - this.offsetLeft;
+      let y = e.clientY - this.offsetTop;
+
+      let ripples = $("<span></span>")
+        .css({
+          left: x + "px",
+          top: y + "px",
+        })
+        .addClass("ripplespan");
+
+      $(this).append(ripples);
+
+      setTimeout(function () {
+        ripples.remove();
+      }, 600);
+    });
+  });
+</script>
