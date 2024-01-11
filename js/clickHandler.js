@@ -15,7 +15,7 @@ function onClickTrack() {}
 function onClickVehicles() {setTimeout(function () {
     $("div#main-content").load("vehicles.html");
     titlebar4vehicles();
-  }, 600);
+  }, 800);
 
  function titlebar4vehicles() {
     $("#leftside-header div").html("Vehicles()").css("font-size", "22px");
