@@ -85,30 +85,35 @@
                 padding: 20px;
                 margin: auto;
             }
+            div.devicelist{
+                height: 70px;
+                border:1px solid black;
+                padding: 20px;
+                margin: auto;
+            }
             div.device{
                 display: inline-flex;
             }
             div.text-with-line {
                 position: relative;
-                padding-top: 50px;
-                
+                padding-top: 20px;
+                font-size: x-large;
                 }
             div.text-with-line::before {
                 content: "";
                 position: absolute;
                 bottom:0px;
-                width: 150px;
+                width: 250px;
                 height: 1px;
                 background-color: #000;
                 
             }
             div.img{
-                margin-left: 40%;
-                display: inline-flex;
-                height: 100px;
-                position: absolute;
-                width: 50px;
-                padding-bottom: 20px;
+              left: 72%; 
+              display: inline-flex;
+              position: absolute;
+              height: 80px;
+              width: 65px;
             }
       
             div.list{
@@ -137,7 +142,7 @@
     <div class="header">
         Add GPS
     </div>
-    <div class="deviceid" style="margin-top: 20px ;">
+    <div class="devicelist" style="margin-top: 20px ;">
      <div class="device">
       <div>
           Device Id
