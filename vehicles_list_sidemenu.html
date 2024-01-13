@@ -8,6 +8,7 @@
     <style>
       #vehicles_sidemenu {
         padding: 15px 10px;
+        /* color: #f9f9f9; */
         position: absolute;
         width: 100%;
         height: 100%;
@@ -15,12 +16,14 @@
       }
       .vehicles_div {
         margin: 3px;
-        padding: 8px;
+        padding: 8px 10px;
         display: flex;
         align-items: center;
+        /* background-color: #324563; */
+        justify-content: space-between;
       }
       .vehicles_div:hover {
-        background-color: #eee;
+        background-color: #101010;
         cursor: pointer;
         border-radius: 10px;
         transition: 0.3s;
@@ -43,6 +46,36 @@
         cursor: pointer;
         background-color: rgb(93, 121, 166);
       }
+      div.hmenu {
+        width: auto;
+        position: absolute;
+        /* background-color: rgb(123 123 244); */
+        background-color: #324563;
+        display: none;
+        height: 46px;
+        padding: 3px;
+        font-size: smaller;
+        right: 10px;
+        top: 20px;
+        box-shadow: 0 1px 0px 1px gray;
+        color: white;
+      }
+
+      div.hmenuicon:hover {
+        box-shadow: 0 0 1px 3px 000000AA;
+        background-color: rgb(110, 110, 244);
+      }
+
+      div.hmenuicon {
+        padding: 4px;
+        width: 42px;
+        height: 42px;
+        text-align: center;
+      }
+      div.text {
+        display: inline-flex;
+        font-size: 10px;
+      }
     </style>
   </head>
   <body>
@@ -54,56 +87,235 @@
         </div>
       </div>
       <div id="vehicles_list">
-        <div class="vehicles_div invert">
-          <img src="img/car_black_32.png" height="22px" width="auto" />
-          <div class="vehicles_info">
-            <span>Vehicle XT</span>
-            <span style="font-size: 13px; color: #333">drivoolapp_v001</span>
+        <div class="vehicles_div">
+          <div style="display: flex">
+            <img
+              src="img/car_black_32.png"
+              style="margin-top: 5px"
+              height="22px"
+              width="auto"
+              class="invert"
+            />
+            <div class="vehicles_info invert">
+              <span>Vehicle XT</span>
+              <span style="font-size: 13px; color: #333">drivoolapp_v001</span>
+            </div>
+          </div>
+          <!-- menu icon for modify & delete -->
+          <div class="menuicon invert" onclick="onMenuIconClicked($(this))">
+            <i class="fas fa-bars" height="22px"></i>
+          </div>
+          <div class="hmenu">
+            <div class="hmenuicon">
+              <img src="./img/edit.png" style="width: 24px" />
+              <div class="text">Modify</div>
+            </div>
+
+            <div class="hmenuicon">
+              <img src="./img/trash.png" style="width: 24px" />
+              <div class="text">Delete</div>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="vehicles_div invert">
-        <img src="img/car_black_32.png" height="22px" width="auto" />
-        <div class="vehicles_info">
-          <span>Vehicle 04</span>
-          <span style="font-size: 13px; color: #333">drivoolapp_v004</span>
+
+        <div class="vehicles_div">
+          <div style="display: flex">
+            <img
+              src="img/car_black_32.png"
+              style="margin-top: 5px"
+              height="22px"
+              width="auto"
+              class="invert"
+            />
+            <div class="vehicles_info invert">
+              <span>Vehicle 04</span>
+              <span style="font-size: 13px; color: #333">drivoolapp_v004</span>
+            </div>
+          </div>
+          <!-- menu icon for modify & delete -->
+          <div class="menuicon invert" onclick="onMenuIconClicked($(this))">
+            <i class="fas fa-bars" height="22px"></i>
+          </div>
+          <div class="hmenu">
+            <div class="hmenuicon">
+              <img src="./img/edit.png" style="width: 24px" />
+              <div class="text">Modify</div>
+            </div>
+
+            <div class="hmenuicon">
+              <img src="./img/trash.png" style="width: 24px" />
+              <div class="text">Delete</div>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="vehicles_div invert">
-        <img src="img/car_black_32.png" height="22px" width="auto" />
-        <div class="vehicles_info">
-          <span>Vehicle 08</span>
-          <span style="font-size: 13px; color: #333">drivoolapp_v008</span>
+
+        <div class="vehicles_div">
+          <div style="display: flex">
+            <img
+              src="img/car_black_32.png"
+              style="margin-top: 5px"
+              height="22px"
+              width="auto"
+              class="invert"
+            />
+            <div class="vehicles_info invert">
+              <span>Vehicle 08</span>
+              <span style="font-size: 13px; color: #333">drivoolapp_v008</span>
+            </div>
+          </div>
+          <!-- menu icon for modify & delete -->
+          <div class="menuicon invert" onclick="onMenuIconClicked($(this))">
+            <i class="fas fa-bars" height="22px"></i>
+          </div>
+          <div class="hmenu">
+            <div class="hmenuicon">
+              <img src="./img/edit.png" style="width: 24px" />
+              <div class="text">Modify</div>
+            </div>
+
+            <div class="hmenuicon">
+              <img src="./img/trash.png" style="width: 24px" />
+              <div class="text">Delete</div>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="vehicles_div invert">
-        <img src="img/car_black_32.png" height="22px" width="auto" />
-        <div class="vehicles_info">
-          <span>Vehicle 03</span>
-          <span style="font-size: 13px; color: #333">drivoolapp_v003</span>
+
+        <div class="vehicles_div">
+          <div style="display: flex">
+            <img
+              src="img/car_black_32.png"
+              style="margin-top: 5px"
+              height="22px"
+              width="auto"
+              class="invert"
+            />
+            <div class="vehicles_info invert">
+              <span>Vehicle 03</span>
+              <span style="font-size: 13px; color: #333">drivoolapp_v003</span>
+            </div>
+          </div>
+          <!-- menu icon for modify & delete -->
+          <div class="menuicon invert" onclick="onMenuIconClicked($(this))">
+            <i class="fas fa-bars" height="22px"></i>
+          </div>
+          <div class="hmenu">
+            <div class="hmenuicon">
+              <img src="./img/edit.png" style="width: 24px" />
+              <div class="text">Modify</div>
+            </div>
+
+            <div class="hmenuicon">
+              <img src="./img/trash.png" style="width: 24px" />
+              <div class="text">Delete</div>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="vehicles_div invert">
-        <img src="img/car_black_32.png" height="22px" width="auto" />
-        <div class="vehicles_info">
-          <span>Vehicle 09</span>
-          <span style="font-size: 13px; color: #333">drivoolapp_v009</span>
+
+        <div class="vehicles_div">
+          <div style="display: flex">
+            <img
+              src="img/car_black_32.png"
+              style="margin-top: 5px"
+              height="22px"
+              width="auto"
+              class="invert"
+            />
+            <div class="vehicles_info invert">
+              <span>Vehicle 09</span>
+              <span style="font-size: 13px; color: #333">drivoolapp_v009</span>
+            </div>
+          </div>
+          <!-- menu icon for modify & delete -->
+          <div class="menuicon invert" onclick="onMenuIconClicked($(this))">
+            <i class="fas fa-bars" height="22px"></i>
+          </div>
+          <div class="hmenu">
+            <div class="hmenuicon">
+              <img src="./img/edit.png" style="width: 24px" />
+              <div class="text">Modify</div>
+            </div>
+
+            <div class="hmenuicon">
+              <img src="./img/trash.png" style="width: 24px" />
+              <div class="text">Delete</div>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="vehicles_div invert">
-        <img src="img/car_black_32.png" height="22px" width="auto" />
-        <div class="vehicles_info">
-          <span>Vehicle 02</span>
-          <span style="font-size: 13px; color: #333">drivoolapp_v002</span>
+        <div class="vehicles_div">
+          <div style="display: flex">
+            <img
+              src="img/car_black_32.png"
+              style="margin-top: 5px"
+              height="22px"
+              width="auto"
+              class="invert"
+            />
+            <div class="vehicles_info invert">
+              <span>Vehicle 02</span>
+              <span style="font-size: 13px; color: #333">drivoolapp_v002</span>
+            </div>
+          </div>
+          <!-- menu icon for modify & delete -->
+          <div class="menuicon invert" onclick="onMenuIconClicked($(this))">
+            <i class="fas fa-bars" height="22px"></i>
+          </div>
+          <div class="hmenu">
+            <div class="hmenuicon">
+              <img src="./img/edit.png" style="width: 24px" />
+              <div class="text">Modify</div>
+            </div>
+
+            <div class="hmenuicon">
+              <img src="./img/trash.png" style="width: 24px" />
+              <div class="text">Delete</div>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="vehicles_div invert">
-        <img src="img/car_black_32.png" height="22px" width="auto" />
-        <div class="vehicles_info">
-          <span>Vehicle 06</span>
-          <span style="font-size: 13px; color: #333">drivoolapp_v006</span>
+        <div class="vehicles_div">
+          <div style="display: flex">
+            <img
+              src="img/car_black_32.png"
+              style="margin-top: 5px"
+              height="22px"
+              width="auto"
+              class="invert"
+            />
+            <div class="vehicles_info invert">
+              <span>Vehicle 06</span>
+              <span style="font-size: 13px; color: #333">drivoolapp_v006</span>
+            </div>
+          </div>
+          <!-- menu icon for modify & delete -->
+          <div class="menuicon invert" onclick="onMenuIconClicked($(this))">
+            <i class="fas fa-bars" height="22px"></i>
+          </div>
+          <div class="hmenu">
+            <div class="hmenuicon">
+              <img src="./img/edit.png" style="width: 24px" />
+              <div class="text">Modify</div>
+            </div>
+
+            <div class="hmenuicon">
+              <img src="./img/trash.png" style="width: 24px" />
+              <div class="text">Delete</div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </body>
+  <script>
+    function onMenuIconClicked(clickedItem) {
+      //console.log(clickedItem)
+
+      let divMenu = clickedItem.parent().find("div.hmenu");
+
+      if (divMenu.is(":hidden")) {
+        $("div.hmenu").hide();
+        divMenu.css("display", "inline-flex");
+      } else {
+        $("div.hmenu").hide();
+      }
+    }
+  </script>
 </html>
