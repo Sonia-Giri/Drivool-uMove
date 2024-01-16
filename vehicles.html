@@ -18,8 +18,21 @@
         box-shadow: 0 1px 0px 1px gray;
         color: white;
         border-radius: 3px;
+        animation: hmenuanimate 0.5s;
       }
 
+      @keyframes hmenuanimate {
+        from {
+          width: 0;
+          height: 0;
+        }
+        to {
+          width: auto;
+          height: 60px;
+        }
+      }
+
+      
       div.hmenuicon:hover {
         box-shadow: 0 0 1px 3px 000000AA;
         background-color: rgba(130, 130, 248, 0.801);
@@ -32,6 +45,7 @@
         height: 54px;
         text-align: center;
         border-radius: 3px;
+        visibility: hidden;
       }
 
       div.text {
@@ -183,8 +197,13 @@
         if (divMenu.is(":hidden")) {
           $("div.hmenu").hide();
           divMenu.css("display", "inline-flex");
+          setTimeout(function () {
+            $("div.hmenuicon").css("visibility", "visible");
+          }, 500);
+          $("div.hmenuicon").css("visibility", "hidden");
         } else {
           $("div.hmenu").hide();
+          $("div.hmenuicon").css("visibility", "hidden");
         }
       }
     </script>
