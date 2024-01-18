@@ -1,154 +1,152 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <style>
-            div.header{
-                font-size: xx-large;
-                font-weight: bolder;
-            }
-            div.text-with-line {
-                position: relative;
-                padding-top: 20px;
-                font-size: x-large;
-                }
-            div.text-with-line::before {
-                content: "";
-                position: absolute;
-                bottom:0px;
-                width: 100%;
-                height: 3px;
-                background-color: gray;
-            }
-            div.text-with-inline {
-                position: relative;
-                padding-top: 10px;
-                font-size: x-large;
-                }
-            div.text-with-inline::before {
-                content: "";
-                position: absolute;
-                bottom:0px;
-                width: 150px;
-                height: 1px;
-                left: 42%;
-            } 
-            div.text{
-                font-size: x-large;
-                font-weight: bold;
-                padding-top: 50px;
-                text-align: center;
-            }
-            div.textid{
-                color: red;
-                text-align: center;
-            }
-            div.textid1{
-                color: red;
-                margin-left:30% ;
-                display: flex;
-            }
-            div.text-with-outline {
-                position: relative;
-                padding-top: 30px;
-                font-size: x-large;
-                }
-            div.text-with-outline::before {
-                content: "";
-                position: absolute;
-                bottom:0px;
-                width: 220px;
-                height: 1px;
-                background-color:red;
-                display: inline-flex;
-            
-            }
-            div.bottom{
-                padding:20px;
-                display: inline-flex;
-                
-            }
-            
-            div.list{
-                background-color:#4e4ed4;
-                border-radius: 5px;
-                color: white;
-                height: 30px;
-                padding-top: 10px;
-                margin: auto;
-                width: 200px;
-                margin-left: 20%;
-                display: inline-flex;
-                
-            }
-            div.img{
-                width: 32px;
-                height: 32px;
-                margin-left: 20px;
-            }
-            div.list1{
-                background-color:#4e4ed4;
-                border-radius: 5px;
-                color: white;
-                height: 30px;
-                padding-top: 10px;
-                margin-left: 250px;
-                width: 200px;
-                display: inline-flex;
-            }
-            div.footer{
-                color: red;
-                margin-left:70% ;
-                font-size: x-large;
-            }
-            @media only screen and (orientation: landscape) {
+  <head>
+    <style>
+      /* BELOW CSS ABT THE CONTENT OF #ABOUTDIV */
+      div#aboutlistcontainer {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        position: absolute;
+        background: radial-gradient(#fff, #c5cae7);
+        padding-bottom: 0;
+        width: 500px;
+        height: auto;
+        border-radius: 5px;
+      }
+      div.header {
+        font-size: 32px;
+        font-weight: bold;
+        padding: 10px;
+      }
+      div.text-with-line {
+        position: relative;
+        padding-top: 20px;
+        font-size: x-large;
+      }
+      div.text-with-line::before {
+        content: "";
+        position: absolute;
+        bottom: 0px;
+        width: 100%;
+        height: 3px;
+        background-color: gray;
+      }
+      
+      div.text {
+        font-size: 30px;
+        font-weight: bold;
+        padding-top: 30px;
+        text-align: center;
+      }
+      div.textid {
+        color: rgb(215, 31, 21);
+        text-align: center;
+        padding-top: 10px;
+        font-size: x-large;
+      }
+      div.textid1 {
+        display: flex;
+        justify-content: center;
+      }
+      a.text-with-outline {
+        color: blueviolet;
+        font-size: 18px;
+        text-align: center;
+        text-decoration: none;
+      }
 
-                div#listcontainer{
-                width: 60%;
-                margin:auto ;
-                }
+      div.bottom {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        padding: 20px;
+      }
 
-                }
-        </style>
-    </head>
-    <body>
-        <div id="listcontainer">
-                <div class="header">
-                    About
-                </div>
-                    <div class="text-with-line">
+      div.list {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        background-color: #4e4ed4;
+        border-radius: 5px;
+        color: white;
+        height: 35px;
+        padding: 10px;
+        margin: auto;
+        width: 100px;
+      }
 
-                    </div>
-                        <div class="text">
-                            Drivool uMove V:1.14.0
-                        </div>
-                            <div class="text-with-inline">
-                                <div class="textid">Privacy Policy</div>
-                            </div>
-                        <div class="textid1" >
-                            <div class="text-with-outline">
-                                www.drivool.com   |  
-                            </div>
-                    
-                            <div class="text-with-outline">
-                                enquiry@drivool.com  
-                            </div>
-                        </div>
-                    <div class="text-with-line">
+        div.footer {
+        width: 100%;
+        height: 50px;
+        font-size: 30px;
+        font-weight: 500;
+        color: rgba(0, 0, 0, 0.67);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(to right, #9198e5, #03f993);
+        border-top: 2px solid #eee;
+        border-bottom: 2px solid #eee;
+      }
+      div.footer:hover {
+        cursor: pointer;
+        background: linear-gradient(to left, #9198e5, #03f993);
+        font-size: 32px;
+      }
 
-                    </div>
-                <div class="bottom">
-                    <div class="list">
-                        <div class="img"><img src="pop_menu.png"> </div>
-                            RATE
-                    </div>
-                    <div class="list1">
-                        <div class="img"><img src="quick_share.png"></div>
-                            SHARE
-                        </div>
-                </div>
-           <div class="footer">
-            OK
-            </div>
+      @media only screen and (orientation: landscape) {
+        div#aboutlistcontainer {
+          width: 50%;
+          margin: auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="aboutlistcontainer">
+      <div class="header">About</div>
+      <div class="text-with-line"></div>
+      <div class="text">Drivool uMove V:1.14.0</div>
+      <div class="text-with-inline">
+        <div class="textid">Privacy Policy</div>
+      </div>
+      <div class="textid1">
+        <a
+          class="text-with-outline"
+          target="_blank"
+          href="https://drivool.com/"
+        >
+          www.drivool.com
+        </a>
+        &nbsp;|&nbsp;
+        <a
+          class="text-with-outline"
+          style="color: #4e4ed4"
+          href="mailto:enquiry@drivool.com"
+          >enquiry@drivool.com</a
+        >
+      </div>
+      <div class="text-with-line"></div>
+      <div class="bottom">
+        <div class="list">
+          <i class="fas fa-bars img" style="margin-right: 5px"></i>
+          <span>RATE</span>
         </div>
-    </body>
+        <div class="list">
+          <img class="img" src="img/quick_share.png" width="20px" />
+          <span>SHARE</span>
+        </div>
+      </div>
+      <div onclick="onclickOK()" class="footer">OK</div>
+    </div>
+    <script>
+      function onclickOK() {
+        $(".sidemenu_bar").css("left", "-280px");
+        $(".transparentdiv").css("height", "0");
+        $("div#aboutdiv").html("");
+        $("div#main-content").load("main_menu.html");
+      }
+    </script>
+  </body>
 </html>
