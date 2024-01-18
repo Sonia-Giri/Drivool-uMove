@@ -8,7 +8,10 @@ function onClickGpsRecharge() {}
 function onClickDrivoolShop() {}
 function onClickHelp() {}
 function onClickLiveChat() {}
-function onClickAbout() {}
+function onClickAbout() {
+  $("div#aboutdiv").load("about.html");
+  $("div#main-content").html("");
+}
 
 //tile icons
 function onClickTrack() {}
