@@ -40,4 +40,6 @@ function onClickTransparentDiv() {
   $(".sidemenu_bar").css("left", "-280px");
   $(".transparentdiv").css("height", "0");
   $("#helplineDiv").css("right", "-200px");
+  $("div#main-content").load("main_menu.html");
+  $("div#aboutdiv").html("");
 }
