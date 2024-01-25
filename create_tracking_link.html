@@ -9,8 +9,7 @@
         <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
         <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
         <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
-        
-        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-ui-timepicker-addon/1.6.3/jquery-ui-timepicker-addon.min.js"></script>
         <style>
              body {
                 margin:0;
@@ -118,7 +117,8 @@
                                 <img id="datepicker">
                             </div>
                                 <div class="img1"> 
-                                    <img width="25px" height="25px" src="./img/clock.png">                           
+                                    <input type="hidden" class="timepicker">
+                                    <img class="timepicker" >                           
                                 </div>
                         </div>
                      </div>
@@ -132,7 +132,8 @@
                                     <img id="datepicker1">
                                 </div>
                                 <div class="img1"> 
-                                    <img width="25px" height="25px" src="./img/clock.png" >                           
+                                    <input type="hidden" class="timepicker">
+                                    <img class="timepicker" >                           
                                 </div>
                             </div>
                         </div>
@@ -200,6 +201,16 @@
                   showOn:'both'
                 });
             } );
+            $(document).ready(function() {
+            $('.timepicker').timepicker({buttonImage:'./img/clock.png',
+                timeFormat: 'HH:mm:ss',
+                interval: 60,
+                defaultTime: '10',
+                showOn: 'both',
+                buttonImageOnly: true,
+
+              });
+            });
     </script>
     </body>
 </html>
