@@ -9,11 +9,8 @@
         <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
         <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
         <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
-        <script>
-                $( function() {
-                    $( "#datepicker" ).datepicker();
-                } );
-        </script>
+        
+        
         <style>
              body {
                 margin:0;
@@ -116,8 +113,9 @@
                     <div class="checkbox">Valid from :</div>
                      <div class="text1"> 16 Jan 7:40 AM 
                         <div class="img">
-                            <div class="iconbutton"> 
-                                <img width="25px" height="25px" src="./img/calendar.png">
+                            <div class="iconbutton">
+                                <input type="hidden" id="datepicker"> 
+                                <img id="datepicker">
                             </div>
                                 <div class="img1"> 
                                     <img width="25px" height="25px" src="./img/clock.png">                           
@@ -130,11 +128,11 @@
                         <div class="text1"> 23 Jan 7:40 AM 
                             <div class="img">
                                 <div class="iconbutton"> 
-                                    <!-- <input type="text" id="datepicker"> -->
-                                    <img width="25px" height="25px" src="./img/calendar.png" id="datepicker">
+                                    <input type="hidden" id="datepicker1">
+                                    <img id="datepicker1">
                                 </div>
                                 <div class="img1"> 
-                                    <img width="25px" height="25px" src="./img/clock.png">                           
+                                    <img width="25px" height="25px" src="./img/clock.png" >                           
                                 </div>
                             </div>
                         </div>
@@ -184,5 +182,24 @@
             <div class="textbutton">CREATE TRACKING LINK</div>
           
         </div>
+        <script>
+            $( function() {
+                $( "#datepicker" ).datepicker({ buttonImage:'./img/calendar.png',
+                 buttonImageOnly: true, 
+                 changeMonth: true,
+                  changeYear: true,
+                  showOn:'both'
+                });
+            } );
+
+            $( function() {
+                $( "#datepicker1" ).datepicker({ buttonImage:'./img/calendar.png',
+                 buttonImageOnly: true, 
+                 changeMonth: true,
+                  changeYear: true,
+                  showOn:'both'
+                });
+            } );
+    </script>
     </body>
 </html>
