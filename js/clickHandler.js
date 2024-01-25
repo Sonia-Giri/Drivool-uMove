@@ -9,8 +9,8 @@ function onClickDrivoolShop() {}
 function onClickHelp() {}
 function onClickLiveChat() {}
 function onClickAbout() {
-  $("div#aboutdiv").load("about.html");
-  $("div#main-content").html("");
+  $("div#dialogdiv").load("about.html");
+  $(".sidemenu_bar").css("left", "-280px");
 }
 
 //tile icons
@@ -32,6 +32,7 @@ function onClickVehicles() {setTimeout(function () {
   <img
     src="img/add_gps.png"
     id="addGPS-icon"
+    onclick="onClickAddGps()"
     height="36px"
     width="auto"
     style="margin-left: 20px"
@@ -57,3 +58,10 @@ function onClickAlert() {
 }
 function onClickManageUsers() {}
 function onClickDrivoolShop() {}
+
+//Elements When Clicked on Vehicles Icon
+function onClickAddGps() {
+  $(".transparentdiv").css("height", "calc(100vh - 60px)");
+  $("div#dialogdiv").load("add_gps.html");
+  console.log("Is it clicking?");
+}
