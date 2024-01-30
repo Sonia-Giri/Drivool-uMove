@@ -9,7 +9,9 @@
         <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
         <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
         <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-ui-timepicker-addon/1.6.3/jquery-ui-timepicker-addon.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.js"></script>
+        <link rel="stylesheet" href="./css/mdtimepicker.min.css" >
+        <script src="mdtimepicker.js"></script>
         <style>
              body {
                 margin:0;
@@ -86,9 +88,7 @@
                 }
 
                 }
-
-
-        </style>
+              </style>
     </head>
     <body>
 
@@ -117,8 +117,8 @@
                                 <img id="datepicker">
                             </div>
                                 <div class="img1"> 
-                                    <input type="hidden" class="timepicker">
-                                    <img class="timepicker" >                           
+                                    <input type="text" id="timepicker">
+                                    <img id="timepicker">                           
                                 </div>
                         </div>
                      </div>
@@ -129,11 +129,11 @@
                             <div class="img">
                                 <div class="iconbutton"> 
                                     <input type="hidden" id="datepicker1">
-                                    <img id="datepicker1">
+                                    <img id="datepicker1" >
                                 </div>
                                 <div class="img1"> 
-                                    <input type="hidden" class="timepicker">
-                                    <img class="timepicker" >                           
+                                    <input type="text" id="timepicker1">
+                                    <img id="timepicker1" >                         
                                 </div>
                             </div>
                         </div>
@@ -201,15 +201,13 @@
                   showOn:'both'
                 });
             } );
-            $(document).ready(function() {
-            $('.timepicker').timepicker({buttonImage:'./img/clock.png',
-                timeFormat: 'HH:mm:ss',
-                interval: 60,
-                defaultTime: '10',
-                showOn: 'both',
-                buttonImageOnly: true,
 
-              });
+            $(document).ready(function(){
+                $('#timepicker').mdtimepicker(); //Initializes the time picker
+                });
+
+            $(document).ready(function(){
+            $('#timepicker1').mdtimepicker();
             });
     </script>
     </body>

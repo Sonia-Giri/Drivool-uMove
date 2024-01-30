@@ -14,6 +14,7 @@ div.img1{
     border-radius: 5px;
     height: 25px;
     padding: 6px;
+    cursor: pointer;
 }
 div.iconbutton:hover {
     background-color: rgb(72, 157, 185)
