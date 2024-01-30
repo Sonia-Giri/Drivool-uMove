@@ -10,8 +10,9 @@
         <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
         <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.js"></script>
-        <link rel="stylesheet" href="./css/mdtimepicker.min.css" >
-        <script src="mdtimepicker.js"></script>
+        <link rel="stylesheet" href="./css/mdtimepicker.css" >
+        <script src="./mdtimepicker.js"></script>
+
         <style>
              body {
                 margin:0;
@@ -116,10 +117,10 @@
                                 <input type="hidden" id="datepicker"> 
                                 <img id="datepicker">
                             </div>
-                                <div class="img1"> 
-                                    <input type="text" id="timepicker">
-                                    <img id="timepicker">                           
-                                </div>
+                            <div class="iconbutton"> 
+                                <!-- <input type="text" id="timepicker" > -->
+                                <img id="timepicker" src="./img/clock.png" onclick="showTimePickerFrom()" >                              
+                            </div>
                         </div>
                      </div>
                 </div>
@@ -131,9 +132,9 @@
                                     <input type="hidden" id="datepicker1">
                                     <img id="datepicker1" >
                                 </div>
-                                <div class="img1"> 
-                                    <input type="text" id="timepicker1">
-                                    <img id="timepicker1" >                         
+                                <div class="iconbutton"> 
+                                    <!-- <input type="text" id="timepicker1"> -->
+                                    <img id="timepicker1" src="./img/clock.png" onclick="showTimePickerTo()" >                         
                                 </div>
                             </div>
                         </div>
@@ -202,13 +203,22 @@
                 });
             } );
 
-            $(document).ready(function(){
-                $('#timepicker').mdtimepicker(); //Initializes the time picker
-                });
+                $('#timepicker').mdtimepicker(
 
-            $(document).ready(function(){
-            $('#timepicker1').mdtimepicker();
-            });
+                ); //Initializes the time picker
+
+                $('#timepicker1').mdtimepicker();
+
+                function showTimePickerFrom(){
+                    $('#timepicker').show()
+
+                }
+       
+                function showTimePickerTo(){
+                    $('#timepicker1').show()
+                    
+                }
+
     </script>
     </body>
 </html>
