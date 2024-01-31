@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    .custom-select {
+      position: relative;
+      display: inline-block;
+    }
+
+    .select-box {
+      width: 250px; /* Set your desired width for the select box */
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .icon {
+      width: 36px; /* Set your desired width for the icon */
+      height: 36px; /* Set your desired height for the icon */
+      margin-right: 10px;
+    }
+
+    .option-down-arror {
+      font-size: xxx-large;
+      color: darkslategrey;
+      margin: auto;
+      margin-top: -20px;
+    }
+    .options-container {
+      display: none;
+      position: absolute;
+      width: 100%;
+      max-height: 200px; /* Set your desired max height for the dropdown */
+      overflow-y: auto;
+      border: 1px solid #ccc;
+      border-top: none;
+      border-radius: 0 0 4px 4px;
+      box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+    }
+
+    .option {
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .option:hover {
+      background-color: #f0f0f0; /* Optional: Highlight on hover */
+    }
+
+    .option .title {
+      font-weight: bold;
+    }
+
+    .option .description {
+      color: #666;
+      font-size: 14px;
+    }
+
+    .custom-select.active .options-container {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div class="custom-select">
+    <div class="select-box">
+        <div class="option">
+            <img class="icon" src="https://firebasestorage.googleapis.com/v0/b/moverstrack.appspot.com/o/DeviceIcons%2Fst901.png?alt=media&token=df4debe1-296c-4083-92b2-3e1d0342eb74" alt="Icon 1">
+            <div>
+              <div class="title">Drivool 890-IN</div>
+              <div class="description">Description for Item 1</div>
+            </div>
+            <i class ="fa fa-sort-down option-down-arror">
+
+            </i> 
+
+        </div>
+    </div>
+    <div class="options-container">
+      <div class="option">
+        <img class="icon" src="https://firebasestorage.googleapis.com/v0/b/moverstrack.appspot.com/o/DeviceIcons%2Fst901.png?alt=media&token=df4debe1-296c-4083-92b2-3e1d0342eb74" alt="Icon 1">
+        <div>
+          <div class="title">Drivool 890-IN</div>
+          <div class="description">GPS Tracker with ACC wire</div>
+        </div>
+      </div>
+      <div class="option">
+        <img class="icon" src="https://firebasestorage.googleapis.com/v0/b/moverstrack.appspot.com/o/DeviceIcons%2Fst902.png?alt=media&token=0341f425-0f9d-4340-b6f9-230ede72e429" alt="Icon 2">
+        <div>
+          <div class="title">Drivool 891-IN</div>
+          <div class="description">GPS with OBD Connector</div>
+        </div>
+      </div>
+      <!-- Add more options as needed -->
+    </div>
+  </div>
+
+  <script>
+    // JavaScript to toggle the active state
+    document.querySelector('.custom-select').addEventListener('click', function() {
+      this.classList.toggle('active');
+    });
+  </script>
+</body>
+</html>

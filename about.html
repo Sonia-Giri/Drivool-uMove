@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      /* BELOW CSS ABT THE CONTENT OF #ABOUTDIV */
+      div#aboutlistcontainer {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        position: absolute;
+        background: radial-gradient(#fff, #ddd);
+        padding-bottom: 5px;
+        width: 500px;
+        height: auto;
+        border-radius: 5px;       
+        box-shadow: 2px 2px 3px #222;
+      }
+      div.header {
+        font-size: 32px;
+        font-weight: bold;
+        padding: 10px;       
+        padding-top: 20px;
+      }
+      div.text-with-line {
+        position: relative;
+        padding-top: 20px;
+        font-size: x-large;
+      }
+      div.text-with-line::before {
+        content: "";
+        position: absolute;
+        bottom: 0px;
+        width: 100%;
+        height: 3px;
+        background-color: gray;
+      }
+      
+      div.text {
+        font-size: 30px;
+        font-weight: bold;
+        padding-top: 30px;
+        text-align: center;
+      }
+      div.textid {
+        color: rgb(215, 31, 21);
+        text-align: center;
+        padding-top: 10px;
+        font-size: x-large;
+      }
+      div.textid1 {
+        display: flex;
+        justify-content: center;
+      }
+      a.text-with-outline {
+        color: blueviolet;
+        font-size: 18px;
+        text-align: center;
+        text-decoration: none;
+      }
+
+      div.bottom {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        padding: 20px;
+      }
+
+      div.list {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        background-color: #4e4ed4;
+        border-radius: 5px;
+        color: white;
+        height: 35px;
+        padding: 10px;
+        margin: auto;
+        width: 100px;
+      }
+
+        div.cross {
+        float: right;
+        width: 50px;
+        height: 50px;
+        font-size: 30px;
+        font-weight: 500;
+        color: rgba(0, 0, 0, 0.67);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(to right, #9198e5, #03f993);
+        border-top: 2px solid #eee;
+        border-bottom: 2px solid #eee;
+        border-radius: 50%;
+        top: -20px;
+        right: -10px;
+        position: absolute;
+      }
+      div.cross:hover {
+        cursor: pointer;
+        background: linear-gradient(to left, #9198e5, #03f993);
+      }
+
+      @media only screen and (orientation: landscape) {
+        div#aboutlistcontainer {
+          width: 50%;
+          margin: auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="aboutlistcontainer">
+      <div class="header">
+        <span>About</span>
+        <div onclick="onclickCross()" class="cross">
+          <i class="fas fa-times"></i>
+        </div>
+      </div>
+      <div class="text-with-line"></div>
+      <div class="text">Drivool uMove V:1.14.0</div>
+      <div class="text-with-inline">
+        <div class="textid">Privacy Policy</div>
+      </div>
+      <div class="textid1">
+        <a
+          class="text-with-outline"
+          target="_blank"
+          href="https://drivool.com/"
+        >
+          www.drivool.com
+        </a>
+        &nbsp;|&nbsp;
+        <a
+          class="text-with-outline"
+          style="color: #4e4ed4"
+          href="mailto:enquiry@drivool.com"
+          >enquiry@drivool.com</a
+        >
+      </div>
+      <div class="text-with-line"></div>
+      <div class="bottom">
+        <div class="list">
+          <i class="fas fa-bars img" style="margin-right: 5px"></i>
+          <span>RATE</span>
+        </div>
+        <div class="list">
+          <img class="img" src="img/quick_share.png" width="20px" />
+          <span>SHARE</span>
+        </div>
+      </div>
+    </div>
+    <script>
+      function onclickCross() {
+        $(".transparentdiv").css("height", "0");
+        $("div#dialogdiv").html("");
+      }
+    </script>
+  </body>
+</html>

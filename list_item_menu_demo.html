@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+        <style>
+
+            body {
+                margin:8px;
+                }
+
+                div.menu{
+                  width: 60%;
+                  margin-left:20%;
+                }
+
+                div.listitem{
+                  position: relative;
+                  background-color:rgb(252, 252, 252);
+                  
+                  width:100%;
+                  display: inline-flex;
+                  height:100px;
+                  box-shadow: 0px 2px 3px gray;
+                }
+
+                div.companynameinfo{
+                  font-size: x-large;
+                  margin-left: 20px;
+                  padding: 20px;
+                  width:100%;
+                } 
+               
+               div.menuicon {
+                  width: 24px;
+                  padding: 20px;
+                } 
+
+                div.companyback{
+                color:rgb(117, 174, 59);
+                }
+                
+                div.drivoolinput{
+                color:gray;
+                }
+
+                div.hmenu{
+                  width: auto;
+                  position: absolute;
+                  background-color: rgb(123 123 244);
+                  display: none;
+                  height: 48px;
+                  padding: 6px;
+                  font-size: small;
+                  right: 50px;
+                  top: 20px;
+                  box-shadow: 0 1px 0px 1px gray;
+                  color: white;
+
+                }
+
+                div.hmenuicon:hover{
+                  box-shadow: 0 0 1px 3px 000000AA;
+                  background-color: rgb(110, 110, 244);
+                }
+
+                div.hmenuicon{
+                  padding: 4px;
+                  width: 42px;
+                  height: 42px;
+                  text-align: center;
+
+                }
+
+               div.text{
+                display:inline-flex;
+               }
+
+
+                @media only screen and (orientation: landscape) {
+
+                  div#listcontainer{
+                     width: 60%;
+                     margin: auto;
+                  }
+                  
+                }
+
+               
+        </style>
+    </head>
+    <body>
+
+        <div id="listcontainer">
+            
+
+        </div>
+        <script>
+            function createlistitemHtml(joCompanynameInfo){
+
+
+            return`
+            <div class="listitem">
+             
+                  <div class="companynameinfo">${joCompanynameInfo.companyname}
+                      <div style="color:lightgray; font-size:large;" >${joCompanynameInfo.companydetail}</div>
+                  </div>
+
+                  <div class="menuicon" onclick="onMenuIconClicked($(this))">
+                      <img width="24px" height="auto" src="./img/pop_menu.png" >
+                  </div>
+                  
+                
+                  <div class="hmenu" >
+                          <div class="hmenuicon">
+                              <img src="./img/edit.png"  style="width: 24px;">
+                              <br>
+                              <span>Modify</span>
+                          </div>
+
+                          <div class="hmenuicon">
+                              <img src="./img/trash.png"  style="width: 24px;">
+                            <div class="text">
+                              Deelte
+                            </div>
+                          </div>
+                                               
+            
+                 </div>
+
+            </div>`
+    }
+    let arrCompanyListData = [
+
+            {
+              companyname: "drivoolapps",
+              companydetail: "Master admin"
+            },
+
+            {
+              companyname: "drivoolinput",
+              companydetail: "view only access"
+            },
+            
+            {
+              companyname: "huricanejoo",
+              companydetail:"Master admin"
+            },
+            
+            {
+              companyname: "drivoolapp",
+              companydetail: "Master admin"
+            }
+            ]
+            console.log("Array Length " + arrCompanyListData.length )
+
+      let strlistitemHtml = ""
+      
+      for(let i=0; i<arrCompanyListData.length; i++){
+        let joCompanyData = arrCompanyListData[i]
+        strlistitemHtml +=  createlistitemHtml(joCompanyData)
+      }
+
+
+      $('div#listcontainer').html(strlistitemHtml)
+
+      function onMenuIconClicked(clickedItem){
+        //console.log(clickedItem)
+
+        let divMenu = clickedItem.parent().find('div.hmenu')
+
+
+        if(divMenu.is(":hidden")){
+            $('div.hmenu').hide()
+            divMenu.css("display" , "inline-flex")
+        }else{
+            $('div.hmenu').hide()
+        }
+      }
+
+
+
+    </script>
+      <div id="listcontainer">
+
+          <!-- <div class="listitem">
+           
+              <div class="companynameinfo">DRIVOOL APP
+                  <div style="color:lightgray; font-size:large;" >MasterAdmin</div>
+              </div>
+              <div  class="menuicon" onclick="onMenuIconClicked()">
+                      <div>
+                        <img width="24px" height="auto" src="./img/pop_menu.png" >
+                      </div>
+              </div>    
+
+ 
+
+          </div> -->
+      </div>
+</body>
+</html>

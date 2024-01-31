@@ -1,0 +1,110 @@
+<div id="tiles_and_account_id_container">
+  <div id="tiles">
+    <table style="width: 100%; height: 100%">
+      <tr>
+        <td width="50%" id="Track" class="ripple" onclick="onClickTrack()">
+          <img
+            src="./img/location.png"
+            width="20%"
+            alt="tileiconed image"
+            class="tileicon"
+          />
+          <span class="tiletext">Track</span>
+        </td>
+        <td id="Vehicles" class="ripple" onclick="onClickVehicles()">
+          <img
+            src="./img/delivery_truck.png"
+            width="20%"
+            alt="tileiconed image"
+            class="tileicon"
+          />
+          <span class="tiletext">Vehicles</span>
+        </td>
+      </tr>
+      <tr>
+        <td id="QuickShare" class="ripple" onclick="onClickQuickShare()">
+          <img
+            src="./img/quick_share.png"
+            width="20%"
+            alt="tileiconed image"
+            class="tileicon"
+          />
+          <span class="tiletext">Quick Share</span>
+        </td>
+        <td id="History" class="ripple" onclick="onClickHistory()">
+          <img
+            src="./img/history.png"
+            width="20%"
+            alt="tileiconed image"
+            class="tileicon"
+          />
+          <span class="tiletext">History</span>
+        </td>
+      </tr>
+      <tr>
+        <td id="Analytics" class="ripple" onclick="onClickAnalytics()">
+          <img
+            src="./img/analytics.png"
+            width="20%"
+            alt="tileiconed image"
+            class="tileicon"
+          />
+          <span class="tiletext">Analytics</span>
+        </td>
+        <td id="Alert" class="ripple" onclick="onClickAlert()">
+          <img
+            src="./img/alerts.png"
+            width="20%"
+            alt="tileiconed image"
+            class="tileicon"
+          />
+          <span class="tiletext">Alert</span>
+        </td>
+      </tr>
+      <tr>
+        <td id="ManageUsers" class="ripple" onclick="onClickManageUsers()">
+          <img
+            src="./img/users.png"
+            width="20%"
+            alt="tileiconed image"
+            class="tileicon"
+          />
+          <span class="tiletext">Manage Users</span>
+        </td>
+        <td id="DrivoolShop" class="ripple" onclick="onClickDrivoolShop()">
+          <img
+            src="./img/shoppingcart_inv.png"
+            width="20%"
+            alt="tileiconed image"
+            class="tileicon"
+          />
+          <span class="tiletext">Drivool Shop</span>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <div id="acountid">diledasmahant</div>
+</div>
+<!-- <script>
+  $(document).ready(function () {
+    $(".tile").on("click", function (e) {
+      let x = e.clientX - this.offsetLeft;
+      let y = e.clientY - this.offsetTop;
+
+      let ripples = $("<span></span>")
+        .css({
+          left: x + "px",
+          top: y + "px",
+        })
+        .addClass("ripplespan");
+
+      $(this).append(ripples);
+
+      setTimeout(function () {
+        ripples.remove();
+      }, 600);
+    });
+  });
+</script>
+ -->

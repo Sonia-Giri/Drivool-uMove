@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="./css/buttons.css">
+        <link rel="stylesheet" href="./css/icon.css">
+        <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+        <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+        <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.js"></script>
+        <link rel="stylesheet" href="./css/mdtimepicker.css" >
+        <script src="./mdtimepicker.js"></script>
+
+        <style>
+             body {
+                margin:0;
+                }
+            div.header{
+                border: 1px solid gray;
+                width:100%;
+                height:90px; 
+                }
+            div.header1{
+                border: 1px solid gray;
+                width:100%;
+                height:90px;
+                margin-top: 10px; 
+                }
+            div.item{
+                padding: 10px;
+                display: inline-flex;
+            }
+            div.text{
+                font-weight: bold;
+            }
+            div.menu{
+                display: inline-flex;
+                padding-left: 10px;
+            }
+            div.text-with-line {
+                position: relative;
+                left: 10px;
+                font-weight: bold;
+                }
+            div.text-with-line::before {
+                content: "";
+                position: absolute;
+                bottom:-1px;
+                width: 150%;
+                height: 1px;
+                background-color: gray;
+            }
+            div.checkbox{
+                padding:10px;
+                }
+            div.text1{
+                font-weight: bold;
+                margin-left:65px;
+                display: inline-flex;
+            }
+            div.img{
+                display: inline-flex;
+            }
+            
+            div.content{
+                width: 100%;
+                height: 260px;
+                border: 1px solid gray;
+                margin-top: 10px;
+            }
+            div.label{
+                margin-left: 50px;
+            }
+            div.list{
+                padding-top:3px;
+                margin: auto;
+                width: 95%;
+                height: 20px;
+                box-shadow: 0px 2px 3px gray;
+            }
+            
+            @media only screen and (orientation: landscape) {
+
+                div#listcontainer{
+                width: 60%;
+                margin:auto ;
+                }
+
+                }
+              </style>
+    </head>
+    <body>
+
+        <div id="listcontainer">
+            <div class="header">
+                <div class="item">Tag
+                    <div class="text-with-line">DRIVOOLAPP Vehicles</div>
+                </div>
+                <div>
+                    <div class="menu">
+                        Tracking Id : 
+                        <div class="text">drivoolapp1705371031878</div>
+                    </div>
+                </div>
+            </div>
+            <div class="checkbox">
+                <input type="checkbox">
+                    <label>Create permanent link</label>
+            </div>
+                <div class="header">
+                    <div class="checkbox">Valid from :</div>
+                     <div class="text1"> 16 Jan 7:40 AM 
+                        <div class="img">
+                            <div class="iconbutton">
+                                <input type="hidden" id="datepicker"> 
+                                <img id="datepicker">
+                            </div>
+                            <div class="iconbutton"> 
+                                <!-- <input type="text" id="timepicker" > -->
+                                <img id="timepicker" src="./img/clock.png" onclick="showTimePickerFrom()" >                              
+                            </div>
+                        </div>
+                     </div>
+                </div>
+                    <div class="header1">
+                        <div class="checkbox">Valid till :</div>
+                        <div class="text1"> 23 Jan 7:40 AM 
+                            <div class="img">
+                                <div class="iconbutton"> 
+                                    <input type="hidden" id="datepicker1">
+                                    <img id="datepicker1" >
+                                </div>
+                                <div class="iconbutton"> 
+                                    <!-- <input type="text" id="timepicker1"> -->
+                                    <img id="timepicker1" src="./img/clock.png" onclick="showTimePickerTo()" >                         
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <script>
+                        // JavaScript to toggle the active state
+                         document.querySelector('.header').addEventListener('click', function() {
+                          this.classList.toggle('active');
+                           });
+                       </script>
+            <div class="content">
+                        <div class="item"> Select vehicles from below list
+                            <div class="label" ><input type="checkbox">
+                                <label>Select all</label>
+                            </div>
+                        </div>
+                <div class="list">
+                    <input type="checkbox"><label>Vehicle XT</label>
+                </div>
+                    <div class="list">
+                        <input type="checkbox"><label>Vehicle 04</label>
+                    </div>
+                        <div class="list">
+                            <input type="checkbox"><label>Vehicle 08</label>
+                        </div>
+                                    <div class="list">
+                                        <input type="checkbox"><label>Vehicle 03</label>
+                                    </div>
+                                <div class="list">
+                                    <input type="checkbox"><label>Vehicle 06</label>
+                                </div>
+                            <div class="list">
+                                <input type="checkbox"><label>Vehicle 02</label>
+                            </div>
+                        <div class="list">
+                            <input type="checkbox"><label>Vehicle 05</label>
+                        </div>
+                    <div class="list">
+                        <input type="checkbox"><label>Vehicle 07</label>
+                    </div>
+                <div class="list">
+                    <input type="checkbox"><label>Vehicle 09</label>
+                </div>
+            </div>
+
+            
+            <div class="textbutton">CREATE TRACKING LINK</div>
+          
+        </div>
+        <script>
+            $( function() {
+                $( "#datepicker" ).datepicker({ buttonImage:'./img/calendar.png',
+                 buttonImageOnly: true, 
+                 changeMonth: true,
+                  changeYear: true,
+                  showOn:'both'
+                });
+            } );
+
+            $( function() {
+                $( "#datepicker1" ).datepicker({ buttonImage:'./img/calendar.png',
+                 buttonImageOnly: true, 
+                 changeMonth: true,
+                  changeYear: true,
+                  showOn:'both'
+                });
+            } );
+
+                $('#timepicker').mdtimepicker(
+
+                ); //Initializes the time picker
+
+                $('#timepicker1').mdtimepicker();
+
+                function showTimePickerFrom(){
+                    $('#timepicker').show()
+
+                }
+       
+                function showTimePickerTo(){
+                    $('#timepicker1').show()
+                    
+                }
+
+    </script>
+    </body>
+</html>

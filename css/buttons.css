@@ -1,0 +1,12 @@
+div.textbutton {
+    cursor: pointer;
+    background-color: rgb(80, 80, 216);
+    text-align: center;
+    color: white;
+    border-radius: 5px;
+    width: 250px;
+    height: 30px;
+    padding-top: 10px;
+    margin:auto;
+    margin-top: 20px;
+  }

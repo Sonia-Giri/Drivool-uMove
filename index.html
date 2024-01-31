@@ -4,47 +4,22 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/header.css" />
+    <link rel="stylesheet" href="./css/content.css" />
+    <link rel="stylesheet" href="./css/sidebar.css" /> 
+    <link rel="stylesheet" href="./css/vehicles.css" />
+
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
       integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
-    <script src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-    />
-
-    <link rel="stylesheet" href="./css/style.css" />
-    <link rel="stylesheet" href="./css/android.css" />
-    <link rel="stylesheet" href="./css/ipad.css" />
-
-    <script
-      src="https://code.jquery.com/jquery-3.1.1.min.js"
-      integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-      crossorigin="anonymous"
-    ></script>  
-
-    <style>
-      .menu_item{
-        display: flex;
-        align-items: center;
-        height: 40px; /* Set a fixed height for the container */
-        transition: background-color 0.3s
-      }
-
-      .menu_item:active {
-          transform: scale(0.95);
-       }
-
-      .side_menu_icon {
-        margin-right: 20px;
-      }
-
-    </style>
   </head>
   <body>
       <div id="container-main">
@@ -110,6 +85,8 @@
             </div>
           </div>
         </div>
+        
+        <div id="main-content"></div>
       </div>
       <div id="right-pane">
         <div id="content-right">
@@ -125,13 +102,20 @@
           </div>
         </div>
       </div>
+      
+      <div id="dialogdiv"></div>
     </div>
+
     <script>
-      $(document).ready(function () {
-        $("#menu-icon").click(function () {
-          $("body").toggleClass("hide-sidebar expand-content");
-        });
-      });
+      //load Html files
+      $("div#main-content").load("main_menu.html");
+      $("div.sidemenu_bar").load("sidemenu_bar.html");
+    </script>
+    <script src="./js/header.js">
+      //script related to header
+    </script>
+    <script src="./js/clickHandler.js">
+      //click functions for
     </script>
   </body>
 </html>

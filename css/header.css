@@ -1,0 +1,53 @@
+#header {
+  color: #fff;
+  background-color: #484abb;
+  height: 60px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#leftside-header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: #f2f2f2;
+}
+
+#leftside-header div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+#menu-icon {
+  font-size: 1.3em;
+}
+#menu-icon:hover {
+  cursor: pointer;
+}
+
+#helplineDiv {
+  position: absolute;
+  top: 60px;
+  right: -200px;
+  width: 200px;
+  height: 60px;
+  height: auto;
+  transition: 0.5s;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+
+#helplineSDmenu {
+  display: flex;
+  position: fixed;
+  align-items: center;
+  overflow-x: hidden;
+  color: #fff;
+  background-color: #324563;
+  padding: 10px;
+  border-radius: 5px;
+}
+#helplineDiv:hover {
+  cursor: pointer;
+}

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+
+    body {
+      margin:1%;
+    }
+    div.listitem {
+          border:1px solid black;
+          width:100%
+        }
+    div.header{
+          display: inline-flex;
+          background-color:rgb(137, 131, 131);
+          width:100%;
+          height:55px;
+        }
+    div.title {
+          font-weight: bold;
+          font-size: x-large;
+          padding: 10px;
+          width: 100%;
+        }  
+    div.box {
+    font-weight: bold;
+    padding: 15px;
+    width: 15%%;
+    height: auto;
+    background-color: rgb(37, 37, 153);
+    border-radius: 10px;
+    margin: 5px;
+    color: white;
+    }
+    div.listbody{
+      background-color:white;
+      width:100%;
+      height: 80px;
+      border: 1px solid black;
+      padding-top: 20px;
+    }
+    div.checkbox{
+      padding:10px;
+      font-weight: bold;
+    }
+    div.checkbox1{
+      font-weight: bold;
+      padding-bottom: 10px;
+      padding-left: 10px;
+    }
+    input[type=checkbox]
+    {
+      accent-color: rgb(184, 44, 44);
+    }
+    div.footer{
+      padding:10px;
+      font-weight: bold;
+      background-color: rgb(37, 37, 153);
+      text-align: center;
+      color: white;
+      border-radius: 10px;
+      margin: 20px;
+    }
+    div#container{
+               
+                width: 100%;
+                height: 100%;
+            }
+            @media only screen and (orientation: landscape) {
+
+              div#container{
+                  width: 50%;
+                  margin-left: 25%;
+              }
+    </style>
+    <body>
+      <div id="container">
+      <div class ="listitem">
+
+        <div class="header">
+            <div class="title">Geofences</div>
+            <div class="box" style="text-align: center; margin-right: 15px;">
+            MANAGE
+            </div>
+        </div>
+        </div>
+
+        <div class="listbody">
+          <div class="checkbox">
+            <input type="checkbox">
+            <label>Alert when vehicle enters geofence</label><br>
+            <input type="checkbox">
+            <label for="checkbox2">Alert when vehicle exits geofence</label>
+          </div>
+          
+        </div>
+
+        <div class ="listitem" style="padding-top: 30px;">
+
+          <div class="header">
+              <div class="title">Alert when:</div>
+          </div>
+          </div>
+  
+          <div class="listbody">
+            <div class="checkbox1">
+              <input type="checkbox" checked>
+              <label>Vehicle overspeeds  <u>80.0</u>  km/h</label><br>
+              <input type="checkbox" checked>
+              <label>Engine starts</label><br>
+              <input type="checkbox" checked>
+              <label>Engine stops</label>
+            </div>
+            
+          </div>
+          <div class ="listitem" style="padding-top: 30px;">
+          <div class="footer">
+          SAVE
+         </div>
+        </div>
+      </div>
+      </div>
+      </body>
+    </html>
