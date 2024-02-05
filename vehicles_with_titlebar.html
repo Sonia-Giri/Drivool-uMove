@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <link rel="stylesheet" href="./css/vehicles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <style>
+      /* CSS FOR THE VEHICLE-DIV */
+
+      #vehicle-div {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        width: 100%;
+        background-color: #9597e9;
+      }
+      #vehicle-header {
+        color: #fff;
+        background-color: #484abb;
+        /* height: 60px; */
+        padding: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+  
+      /* CSS for MENU ICON WITH DISPLAY AND MODIFY OPTIONS */
+
+      div.hmenu {
+        width: 120px;
+        position: absolute;
+        background-color: #f0f0f0;
+        display: none;
+        height: 60px;
+        right: 22px;
+        top: 10px;
+        box-shadow: 0 1px 0px 1px gray;
+        color: white;
+        border-radius: 3px;
+        animation: hmenuanimate 0.5s;
+      }
+
+      @keyframes hmenuanimate {
+        from {
+          width: 0;
+          height: 0;
+        }
+        to {
+          width: 120px;
+          height: 60px;
+        }
+      }
+
+      div.hmenuicon:hover {
+        box-shadow: 0 0 1px 3px 000000AA;
+        background-color: rgba(130, 130, 248, 0.801);
+      }
+
+      div.hmenuicon {
+        margin: 3px;
+        padding: 6px;
+        width: 54px;
+        height: 54px;
+        text-align: center;
+        border-radius: 3px;
+        visibility: hidden;
+      }
+
+      div.text {
+        display: inline-flex;
+        font-size: 11px;
+        color: #222;
+      }
+    </style>
+    <!-- <link rel="stylesheet" href="/resources/demos/style.css" /> -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+  </head>
+  <body>
+    <div id="vehicle-div">
+      <div id="vehicle-header">
+        <div id="vehicle-left-header">
+          <!-- <i class="fas fa-bars" style="margin-right: 5px" id="menu-icon"></i> -->
+          <span style="margin: 5px; font-size: 22px"> Vehicles()</span>
+        </div>
+        <div id="vehicle-right-header">
+          <img
+            src="img/search.png"
+            id="search-icon"
+            height="36px"
+            width="auto"
+          />
+          <img
+            src="img/add_gps.png"
+            id="addGPS-icon"
+            onclick="onClickAddGps()"
+            height="36px"
+            width="auto"
+            style="margin-left: 20px"
+          />
+          <img
+            src="img/add_phone.png"
+            id="addPHN-icon"
+            height="36px"
+            width="auto"
+            style="margin-left: 20px"
+          />
+        </div>
+      </div>
+      <div id="listcontainer"></div>
+      <div id="dialogdiv"></div>
+    </div>
+    <script>
+      function createListItemHtml(joVehicleInfo) {
+        let strHeaderStatusClass = "inactiveback";
+
+        if (joVehicleInfo.status === "Active") {
+          strHeaderStatusClass = "activeback";
+        }
+
+        if (joVehicleInfo.status === "Undefined") {
+          strHeaderStatusClass = "undefinedback";
+        }
+
+        let strVoltageHtml = "";
+
+        if (joVehicleInfo.voltage !== undefined) {
+          strVoltageHtml = `<div style="font-size:smaller;display: -webkit-inline-flex;"><img height="20px" width="auto" src ="./img/car_battery.png">
+                     <span style="margin-top: auto;margin-bottom:auto;margin-right:5px"> ${joVehicleInfo.voltage}</span>`;
+        }
+
+        let strnetworkHtml = "";
+
+        if (joVehicleInfo.network !== undefined) {
+          strnetworkHtml = ` <img height="20px" width="auto" src ="./img/signal_strength.png">
+        <span style="margin-top:auto;margin-bottom:auto;"> ${joVehicleInfo.network}</span>`;
+        }
+
+        return `
+        
+        <div class ="listitem">
+            <div class="Vehiclesheader ${strHeaderStatusClass}">
+                <div class="title">${joVehicleInfo.status}</div>
+                <div class="menuicon" onclick="onMenuIconClicked($(this))"> 
+                  <i class="fas fa-bars" width="auto"></i>
+                </div>
+                <div class="hmenu">
+                  <div class="hmenuicon">
+                   <img src="./img/edit.png" class="invert" style="width: 20px" />
+                   <div class="text">Modify</div>
+                  </div>
+
+                  <div class="hmenuicon">
+                   <img src="./img/trash.png" style="width: 20px" />
+                   <div class="text">Delete</div>
+                  </div>
+                 </div>
+            </div>
+            <div class="listbody">
+              <div class="vehicleinfo">
+                <div  style="padding: 12px;">
+                  <img width="auto" height="48px" src="${joVehicleInfo.vehicleicon}">
+                </div>
+                <div class="vehiclename">
+                    <div style="font-weight: bold;">${joVehicleInfo.name}</div>
+                    <div style="color: gray; font-size:large" >${joVehicleInfo.vehicleid}</div>
+                </div>
+              </div>
+
+              <div class="gpsinfo">
+                <div class="gpsiconbox" >
+                  <img width="auto" height="42px" src="${joVehicleInfo.deviceicon}">
+                </div>
+                <div class="gpsid">
+                    <div>${joVehicleInfo.deviceid}</div>
+                      ${strVoltageHtml}
+                      ${strnetworkHtml}
+                  </div> 
+                </div>  
+              </div>  
+
+
+            </div> 
+          </div> 
+        `;
+      }
+
+      let arrVehicleListData = [
+        {
+          name: "KA02 -EB 705",
+          vehicleid: "drivool_v001",
+          status: "Active",
+          deviceid: "3906060007023",
+          deviceicon:
+            "https://firebasestorage.googleapis.com/v0/b/moverstrack.appspot.com/o/DeviceIcons%2Fst901.png?alt=media&token=df4debe1-296c-4083-92b2-3e1d0342eb74",
+          vehicleicon: "./img/tractor.png",
+          voltage: "12.3V",
+          network: 7,
+        },
+
+        {
+          name: "KA02 -CB 715",
+          vehicleid: "drivool_v002",
+          status: "Inactive",
+          deviceid: "390606230007024",
+          deviceicon:
+            "https://firebasestorage.googleapis.com/v0/b/moverstrack.appspot.com/o/DeviceIcons%2Fst901.png?alt=media&token=df4debe1-296c-4083-92b2-3e1d0342eb74",
+          vehicleicon: "./img/tractor.png",
+        },
+
+        {
+          name: "MH02 -EB 709",
+          vehicleid: "drivool_v003",
+          status: "Undefined",
+          deviceid: "862467620007023",
+          voltage: "12.1V",
+          deviceicon:
+            "https://firebasestorage.googleapis.com/v0/b/moverstrack.appspot.com/o/DeviceIcons%2Fst902.png?alt=media&token=0341f425-0f9d-4340-b6f9-230ede72e429",
+          vehicleicon: "./img/tractor.png",
+          network: 9,
+        },
+
+        {
+          name: "SH02 -EB 705",
+          vehicleid: "drivool_v006",
+          status: "Inactive",
+          deviceid: "390800236070024",
+          voltage: "12.36V",
+          deviceicon:
+            "https://firebasestorage.googleapis.com/v0/b/moverstrack.appspot.com/o/DeviceIcons%2Fst902.png?alt=media&token=0341f425-0f9d-4340-b6f9-230ede72e429",
+          vehicleicon: "./img/tractor.png",
+          network: 12,
+        },
+      ];
+
+      console.log("Array Length " + arrVehicleListData.length);
+
+      let strListItemHtml = "";
+      for (let i = 0; i < arrVehicleListData.length; i++) {
+        let joVehicleData = arrVehicleListData[i];
+        strListItemHtml += createListItemHtml(joVehicleData);
+      }
+
+      $("div#listcontainer").html(strListItemHtml);
+
+      function onMenuIconClicked(clickedItem) {
+        let divMenu = clickedItem.parent().find("div.hmenu");
+
+        if (divMenu.is(":hidden")) {
+          $("div.hmenu").hide();
+          divMenu.css("display", "inline-flex");
+          setTimeout(function () {
+            $("div.hmenuicon").css("visibility", "visible");
+          }, 300);
+          $("div.hmenuicon").css("visibility", "hidden");
+        } else {
+          $("div.hmenu").hide();
+          $("div.hmenuicon").css("visibility", "hidden");
+        }
+      }
+    </script>
+  </body>
+</html>
