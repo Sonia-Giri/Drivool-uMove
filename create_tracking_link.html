@@ -12,213 +12,247 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.js"></script>
         <link rel="stylesheet" href="./css/mdtimepicker.css" >
         <script src="./mdtimepicker.js"></script>
-
         <style>
-             body {
-                margin:0;
-                }
-            div.header{
-                border: 1px solid gray;
-                width:100%;
-                height:90px; 
-                }
-            div.header1{
-                border: 1px solid gray;
-                width:100%;
-                height:90px;
-                margin-top: 10px; 
-                }
-            div.item{
-                padding: 10px;
-                display: inline-flex;
-            }
-            div.text{
-                font-weight: bold;
-            }
-            div.menu{
-                display: inline-flex;
-                padding-left: 10px;
-            }
-            div.text-with-line {
-                position: relative;
-                left: 10px;
-                font-weight: bold;
-                }
-            div.text-with-line::before {
-                content: "";
-                position: absolute;
-                bottom:-1px;
-                width: 150%;
-                height: 1px;
-                background-color: gray;
-            }
-            div.checkbox{
-                padding:10px;
-                }
-            div.text1{
-                font-weight: bold;
-                margin-left:65px;
-                display: inline-flex;
-            }
-            div.img{
-                display: inline-flex;
-            }
-            
-            div.content{
-                width: 100%;
-                height: 260px;
-                border: 1px solid gray;
-                margin-top: 10px;
-            }
-            div.label{
-                margin-left: 50px;
-            }
-            div.list{
-                padding-top:3px;
-                margin: auto;
-                width: 95%;
-                height: 20px;
-                box-shadow: 0px 2px 3px gray;
-            }
-            
-            @media only screen and (orientation: landscape) {
+            body {
+               margin:0;
+               }
+           div.header{
+               border: 1px solid gray;
+               width:100%;
+               height:90px; 
+               }
+           div.headerdiv{
+               border: 1px solid gray;
+               width:100%;
+               height:90px;
+               margin-top: 10px; 
+               }
+           div.item{
+               padding: 10px;
+               display: inline-flex;
+           }
+           div.text{
+               font-weight: bold;
+           }
+           div.menu{
+               display: inline-flex;
+               padding-left: 10px;
+           }
+           div.text-with-line {
+               position: relative;
+               left: 10px;
+               font-weight: bold;
+               }
+           div.text-with-line::before {
+               content: "";
+               position: absolute;
+               bottom:-1px;
+               width: 150%;
+               height: 1px;
+               background-color: gray;
+           }
+           div.checkbox{
+               padding:10px;
+               }
+           div.textdiv{
+               font-weight: bold;
+               margin-left:65px;
+               display: inline-flex;
+           }
+           div.logo-image{
+               display: inline-flex;
+           }
+           
+           div.content{
+               width: 100%;
+               height: 260px;
+               border: 1px solid gray;
+               margin-top: 10px;
+           }
+           div.label{
+               margin-left: 50px;
+           }
+           div.list{
+               padding-top:3px;
+               margin: auto;
+               width: 95%;
+               height: 20px;
+               box-shadow: 0px 2px 3px gray;
+           }
+           
+           @media only screen and (orientation: landscape) {
 
-                div#listcontainer{
-                width: 60%;
-                margin:auto ;
-                }
+               div#listcontainer{
+               width: 60%;
+               margin:auto ;
+               }
 
-                }
-              </style>
-    </head>
-    <body>
+               }
+             </style>
+   </head>
+   <body>
 
-        <div id="listcontainer">
-            <div class="header">
-                <div class="item">Tag
-                    <div class="text-with-line">DRIVOOLAPP Vehicles</div>
-                </div>
-                <div>
-                    <div class="menu">
-                        Tracking Id : 
-                        <div class="text">drivoolapp1705371031878</div>
+       <div id="listcontainer">
+           <div class="header">
+               <div class="item">Tag
+                   <div class="text-with-line">DRIVOOLAPP Vehicles</div>
+               </div>
+               <div>
+                   <div class="menu">
+                       Tracking Id : 
+                       <div class="text">drivoolapp1705371031878</div>
+                   </div>
+               </div>
+           </div>
+           <div class="checkbox">
+               <input type="checkbox">
+                   <label>Create permanent link</label>
+           </div>
+               <div class="header">
+                   <div class="checkbox">Valid from :</div>
+                    <div class="textdiv"> 16 Jan 7:40 AM 
+                       <div class="logo-image">
+                           <div class="iconbutton" style="margin-left: 50px;">
+                               <input type="hidden" id="datepickerfrom">
+                               <img id="datepickerfrom">
+                           </div>
+                               <div class="iconbutton" style="margin-left: 15px;">
+                                   <img id="timepickerfrom" src="./img/clock.png" onclick="showTimePickerFrom()" >                           
+                               </div>
+                       </div>
                     </div>
-                </div>
-            </div>
-            <div class="checkbox">
-                <input type="checkbox">
-                    <label>Create permanent link</label>
-            </div>
-                <div class="header">
-                    <div class="checkbox">Valid from :</div>
-                     <div class="text1"> 16 Jan 7:40 AM 
-                        <div class="img">
-                            <div class="iconbutton">
-                                <input type="hidden" id="datepicker"> 
-                                <img id="datepicker">
-                            </div>
-                            <div class="iconbutton"> 
-                                <!-- <input type="text" id="timepicker" > -->
-                                <img id="timepicker" src="./img/clock.png" onclick="showTimePickerFrom()" >                              
-                            </div>
-                        </div>
-                     </div>
-                </div>
-                    <div class="header1">
-                        <div class="checkbox">Valid till :</div>
-                        <div class="text1"> 23 Jan 7:40 AM 
-                            <div class="img">
-                                <div class="iconbutton"> 
-                                    <input type="hidden" id="datepicker1">
-                                    <img id="datepicker1" >
-                                </div>
-                                <div class="iconbutton"> 
-                                    <!-- <input type="text" id="timepicker1"> -->
-                                    <img id="timepicker1" src="./img/clock.png" onclick="showTimePickerTo()" >                         
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <script>
-                        // JavaScript to toggle the active state
-                         document.querySelector('.header').addEventListener('click', function() {
-                          this.classList.toggle('active');
-                           });
-                       </script>
-            <div class="content">
-                        <div class="item"> Select vehicles from below list
-                            <div class="label" ><input type="checkbox">
-                                <label>Select all</label>
-                            </div>
-                        </div>
-                <div class="list">
-                    <input type="checkbox"><label>Vehicle XT</label>
-                </div>
-                    <div class="list">
-                        <input type="checkbox"><label>Vehicle 04</label>
-                    </div>
+               </div>
+                   <div class="headerdiv">
+                       <div class="checkbox">Valid till :</div>
+                       <div class="textdiv"> 23 Jan 7:40 AM 
+                           <div class="logo-image">
+                               <div class="iconbutton" style="margin-left: 50px;"> 
+                                   <input type="hidden" id="datepickertill">
+                                   <img id="datepickertill" >
+                               </div>
+                               <div class="iconbutton" style="margin-left: 15px;"> 
+                                   <img id="timepickertill" src="./img/clock.png" onclick="showTimePickerFrom()" >    
+                               </div>
+                           </div>
+                       </div>
+                   </div>
+                   <script>
+                       // JavaScript to toggle the active state
+                        document.querySelector('.header').addEventListener('click', function() {
+                         this.classList.toggle('active');
+                          });
+                      </script>
+           <div class="content">
+                       <div class="item"> Select vehicles from below list
+                           <div class="label" ><input type="checkbox">
+                               <label>Select all</label>
+                           </div>
+                       </div>
+                       <div id="scrollContainer" style="width: 100%; height: 200px; overflow: auto;">
+
                         <div class="list">
-                            <input type="checkbox"><label>Vehicle 08</label>
+                            <input type="checkbox"><label>Vehicle XT</label>
                         </div>
+                            <div class="list">
+                                <input type="checkbox"><label>Vehicle 04</label>
+                            </div>
+                                <div class="list">
+                                    <input type="checkbox"><label>Vehicle 08</label>
+                                </div>
+                                            <div class="list">
+                                                <input type="checkbox"><label>Vehicle 03</label>
+                                            </div>
+                                        <div class="list">
+                                            <input type="checkbox"><label>Vehicle 06</label>
+                                        </div>
                                     <div class="list">
-                                        <input type="checkbox"><label>Vehicle 03</label>
+                                        <input type="checkbox"><label>Vehicle 02</label>
                                     </div>
                                 <div class="list">
-                                    <input type="checkbox"><label>Vehicle 06</label>
+                                    <input type="checkbox"><label>Vehicle 05</label>
                                 </div>
                             <div class="list">
-                                <input type="checkbox"><label>Vehicle 02</label>
+                                <input type="checkbox"><label>Vehicle 07</label>
                             </div>
                         <div class="list">
-                            <input type="checkbox"><label>Vehicle 05</label>
+                            <input type="checkbox"><label>Vehicle 09</label>
                         </div>
-                    <div class="list">
-                        <input type="checkbox"><label>Vehicle 07</label>
+                        <div class="list">
+                            <input type="checkbox"><label>Vehicle 10</label>
+                        </div>
+                            <div class="list">
+                                <input type="checkbox"><label>Vehicle 11</label>
+                            </div>
+                                <div class="list">
+                                    <input type="checkbox"><label>Vehicle 12</label>
+                                </div>
+                                            <div class="list">
+                                                <input type="checkbox"><label>Vehicle 13</label>
+                                            </div>
+                                        <div class="list">
+                                            <input type="checkbox"><label>Vehicle 14</label>
+                                        </div>
+                                    <div class="list">
+                                        <input type="checkbox"><label>Vehicle 15</label>
+                                    </div>
+                                <div class="list">
+                                    <input type="checkbox"><label>Vehicle 16</label>
+                                </div>
+                            <div class="list">
+                                <input type="checkbox"><label>Vehicle 17</label>
+                            </div>
+                        <div class="list">
+                            <input type="checkbox"><label>Vehicle 18</label>
+                        </div>
                     </div>
-                <div class="list">
-                    <input type="checkbox"><label>Vehicle 09</label>
-                </div>
-            </div>
+           </div>
 
-            
-            <div class="textbutton">CREATE TRACKING LINK</div>
-          
-        </div>
-        <script>
-            $( function() {
-                $( "#datepicker" ).datepicker({ buttonImage:'./img/calendar.png',
-                 buttonImageOnly: true, 
-                 changeMonth: true,
-                  changeYear: true,
-                  showOn:'both'
-                });
-            } );
+           
+           <div class="textbutton">CREATE TRACKING LINK</div>
+         
+       </div>
+       <script>
+           $( function() {
+               $( "#datepickerfrom" ).datepicker({ buttonImage:'./img/calendar.png',
+                buttonImageOnly: true, 
+                changeMonth: true,
+                 changeYear: true,
+                 showOn:'both'
+               });
+           } );
 
-            $( function() {
-                $( "#datepicker1" ).datepicker({ buttonImage:'./img/calendar.png',
-                 buttonImageOnly: true, 
-                 changeMonth: true,
-                  changeYear: true,
-                  showOn:'both'
-                });
-            } );
+           $( function() {
+               $( "#datepickertill" ).datepicker({ buttonImage:'./img/calendar.png',
+                buttonImageOnly: true, 
+                changeMonth: true,
+                 changeYear: true,
+                 showOn:'both'
+               });
+           } );
 
-                $('#timepicker').mdtimepicker(
+           $('#timepickerfrom').mdtimepicker(); //Initializes the time picker
 
-                ); //Initializes the time picker
+               $('#timepickertill').mdtimepicker();
 
-                $('#timepicker1').mdtimepicker();
+               function showTimePickerFrom(){
+                   $('#timepickerfrom').show()
 
-                function showTimePickerFrom(){
-                    $('#timepicker').show()
-
-                }
+               }
+      
+               function showTimePickerTo(){
+                   $('#timepickertill').show()
+                   
+               }
        
-                function showTimePickerTo(){
-                    $('#timepicker1').show()
-                    
-                }
-
-    </script>
-    </body>
+            $('#timepickerfrom').mdtimepicker().on('timechanged', function(e){
+                   console.log(e.value);
+            });
+            $('#timepickertill').mdtimepicker().on('timechanged', function(e){
+                   console.log(e.value);
+            });
+            $('#scrollContainer').scroll(function() {
+              // Your scroll event handling code goes here
+              });
+   </script>
+   </body>
 </html>
