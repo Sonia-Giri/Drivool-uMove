@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="./css/buttons.css">
+        <link rel="stylesheet" href="./css/icon.css">
+        <!-- <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css"> -->
+        <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+        <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.js"></script>
+        <link rel="stylesheet" href="./css/timepicker.min.css" >
+        <script src="./mdtimepicker.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation-datepicker/1.5.6/css/foundation-datepicker.min.css"></script>
+        <link rel="stylesheet" href="./css/datepicker.css" >
+        <link rel="stylesheet" href="./css/datepicker-theme.css" >
+        <link rel="stylesheet" href="./css/datepicker.min.css" >
+        <script src="./jquery/datepicker.js"></script>
+        <script src="/path/to/cdn/jquery.min.js"></script> 
+        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.min.css" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.full.min.js"></script>
+        <style>
+             body {
+                margin:0;
+                }
+            div.header{
+                border: 1px solid gray;
+                width:100%;
+                height:90px; 
+                }
+            div.headerdiv{
+                border: 1px solid gray;
+                width:100%;
+                height:90px;
+                margin-top: 10px; 
+                }
+            div.item{
+                padding: 10px;
+                display: inline-flex;
+            }
+            div.text{
+                font-weight: bold;
+            }
+            div.menu{
+                display: inline-flex;
+                padding-left: 10px;
+            }
+            div.text-with-line {
+                position: relative;
+                left: 10px;
+                font-weight: bold;
+                }
+            div.text-with-line::before {
+                content: "";
+                position: absolute;
+                bottom:-1px;
+                width: 150%;
+                height: 1px;
+                background-color: gray;
+            }
+            div.checkbox{
+                padding:10px;
+                }
+            div.textdiv{
+                font-weight: bold;
+                margin-left:65px;
+                display: inline-flex;
+            }
+            div.logo-image{
+                display: inline-flex;
+            }
+            
+            div.content{
+                width: 100%;
+                height: 260px;
+                border: 1px solid gray;
+                margin-top: 10px;
+            }
+            div.label{
+                margin-left: 50px;
+            }
+            div.list{
+                padding-top:3px;
+                margin: auto;
+                width: 95%;
+                height: 20px;
+                box-shadow: 0px 2px 3px gray;
+            }
+            
+            @media only screen and (orientation: landscape) {
+
+                div#listcontainer{
+                width: 60%;
+                margin:auto ;
+                }
+
+                }
+              </style>
+    </head>
+    <body>
+
+        <div id="listcontainer">
+            <div class="header">
+                <div class="item">Tag
+                    <div class="text-with-line">DRIVOOLAPP Vehicles</div>
+                </div>
+                <div>
+                    <div class="menu">
+                        Tracking Id : 
+                        <div class="text">drivoolapp1705371031878</div>
+                    </div>
+                </div>
+            </div>
+            <div class="checkbox">
+                <input type="checkbox">
+                    <label>Create permanent link</label>
+            </div>
+                <div class="header">
+                    <div class="checkbox">Valid from :</div>
+                     <div class="textdiv"> 16 Jan 7:40 AM 
+                        <div class="logo-image">
+                            <div class="iconbutton" style="margin-left: 50px;">
+                                <!-- <input type="hidden" id="datepickerfrom"> -->
+                                <input type="text" id="datepickerfrom">
+                                    <img id="datepickerfrom" src="./img/calendar.png">
+                            </div>
+                                <div class="iconbutton" style="margin-left: 15px;">
+                                    <img id="timepickerfrom" src="./img/clock.png" onclick="showTimePickerFrom()" >                           
+                                </div>
+                        </div>
+                     </div>
+                </div>
+                    <div class="headerdiv">
+                        <div class="checkbox">Valid till :</div>
+                        <div class="textdiv"> 23 Jan 7:40 AM 
+                            <div class="logo-image">
+                                <div class="iconbutton" style="margin-left: 50px;"> 
+                                    <input type="text" id="datepickertill">
+                                    <img id="datepickertill" src="./img/calendar.png">
+                                </div>
+                                <div class="iconbutton" style="margin-left: 15px;"> 
+                                    <img id="timepickertill" src="./img/clock.png" onclick="showTimePickerFrom()" >    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <script>
+                        // JavaScript to toggle the active state
+                         document.querySelector('.header').addEventListener('click', function() {
+                          this.classList.toggle('active');
+                           });
+                       </script>
+            <div class="content">
+                        <div class="item"> Select vehicles from below list
+                            <div class="label" ><input type="checkbox">
+                                <label>Select all</label>
+                            </div>
+                        </div>
+                        <div id="scrollContainer" style="width: 100%; height: 200px; overflow: auto;">
+
+                <div class="list">
+                    <input type="checkbox"><label>Vehicle XT</label>
+                </div>
+                    <div class="list">
+                        <input type="checkbox"><label>Vehicle 04</label>
+                    </div>
+                        <div class="list">
+                            <input type="checkbox"><label>Vehicle 08</label>
+                        </div>
+                                    <div class="list">
+                                        <input type="checkbox"><label>Vehicle 03</label>
+                                    </div>
+                                <div class="list">
+                                    <input type="checkbox"><label>Vehicle 06</label>
+                                </div>
+                            <div class="list">
+                                <input type="checkbox"><label>Vehicle 02</label>
+                            </div>
+                        <div class="list">
+                            <input type="checkbox"><label>Vehicle 05</label>
+                        </div>
+                    <div class="list">
+                        <input type="checkbox"><label>Vehicle 07</label>
+                    </div>
+                <div class="list">
+                    <input type="checkbox"><label>Vehicle 09</label>
+                </div>
+                <div class="list">
+                    <input type="checkbox"><label>Vehicle 10</label>
+                </div>
+                    <div class="list">
+                        <input type="checkbox"><label>Vehicle 11</label>
+                    </div>
+                        <div class="list">
+                            <input type="checkbox"><label>Vehicle 12</label>
+                        </div>
+                                    <div class="list">
+                                        <input type="checkbox"><label>Vehicle 13</label>
+                                    </div>
+                                <div class="list">
+                                    <input type="checkbox"><label>Vehicle 14</label>
+                                </div>
+                            <div class="list">
+                                <input type="checkbox"><label>Vehicle 15</label>
+                            </div>
+                        <div class="list">
+                            <input type="checkbox"><label>Vehicle 16</label>
+                        </div>
+                    <div class="list">
+                        <input type="checkbox"><label>Vehicle 17</label>
+                    </div>
+                <div class="list">
+                    <input type="checkbox"><label>Vehicle 18</label>
+                </div>
+            </div>
+        </div>
+            
+            <div class="textbutton">CREATE TRACKING LINK</div>
+          
+        </div>
+        <script>
+        //     $( function() {
+        //         $( "#datepickerfrom" ).datepicker({ buttonImage:'./img/calendar.png',
+        //          buttonImageOnly: true, 
+        //          changeMonth: true,
+        //           changeYear: true,
+        //           showOn:'both'
+        //         });
+        //     } );
+
+        //     $( function() {
+        //         $( "#datepickertill" ).datepicker({ buttonImage:'./img/calendar.png',
+        //          buttonImageOnly: true, 
+        //          changeMonth: true,
+        //           changeYear: true,
+        //           showOn:'both'
+        //         });
+        //    } );
+
+            $('#timepickerfrom').mdtimepicker(); //Initializes the time picker
+
+                $('#timepickertill').mdtimepicker();
+
+                function showTimePickerFrom(){
+                    $('#timepickerfrom').show()
+
+                }
+       
+                function showTimePickerTo(){
+                    $('#timepickertill').show()
+                    
+                }
+        
+             $('#timepickerfrom').mdtimepicker().on('timechanged', function(e){
+                    console.log(e.value);
+             });
+             $('#timepickertill').mdtimepicker().on('timechanged', function(e){
+                    console.log(e.value);
+             });
+            $('#scrollContainer').scroll(function() {
+              // Your scroll event handling code goes here
+              });
+              $(document).ready(function() {
+                $('#datetimepickerfrom').datetimepicker();
+                });
+    
+    </script>
+      <script type="text/javascript">
+		function log (message) {
+			document.querySelector('#loggerTxt').value = message
+		}
+
+		window.onload = function () {
+			document.querySelector('#datepickerfrom').addEventListener('datechanged', function(e) {
+				console.log('New date', e.data, this.value)
+        })
+    }
+			duDatepicker('#datepickerfrom', {
+				format: 'mmmm d, yyyy', range: true, clearBtn: true,
+				// disabledDays: ['Sat', 'Sun'],
+				events: {
+					dateChanged: function (data) {
+						log('From: ' + data.dateFrom + '\nTo: ' + data.dateTo)
+					},
+					onRangeFormat: function (from, to) {
+						var fromFormat = 'mmmm d, yyyy', toFormat = 'mmmm d, yyyy';
+
+						if (from.getMonth() === to.getMonth() && from.getFullYear() === to.getFullYear()) {
+							fromFormat = 'mmmm d'
+							toFormat = 'd, yyyy'
+						} else if (from.getFullYear() === to.getFullYear()) {
+							fromFormat = 'mmmm d'
+							toFormat = 'mmmm d, yyyy'
+						}
+
+						return from.getTime() === to.getTime() ?
+							this.formatDate(from, 'mmmm d, yyyy') :
+							[this.formatDate(from, fromFormat), this.formatDate(to, toFormat)].join('-');
+					}
+                }
+            
+			});
+            function showDatePickerFrom(){
+                    $('#showDatePickerFrom').show()
+
+                }
+            
+</script>
+<script type="text/javascript">
+            function log (message) {
+			document.querySelector('#loggerTxt').value = message
+		}
+
+		window.onload = function () {
+			document.querySelector('#datepickertill').addEventListener('datechanged', function(e) {
+				console.log('New date', e.data, this.value)
+        })
+    }
+			duDatepicker('#datepickertill', {
+				format: 'mmmm d, yyyy', range: true, clearBtn: true,
+				// disabledDays: ['Sat', 'Sun'],
+				events: {
+					dateChanged: function (data) {
+						log('From: ' + data.dateFrom + '\nTo: ' + data.dateTo)
+					},
+					onRangeFormat: function (from, to) {
+						var fromFormat = 'mmmm d, yyyy', toFormat = 'mmmm d, yyyy';
+
+						if (from.getMonth() === to.getMonth() && from.getFullYear() === to.getFullYear()) {
+							fromFormat = 'mmmm d'
+							toFormat = 'd, yyyy'
+						} else if (from.getFullYear() === to.getFullYear()) {
+							fromFormat = 'mmmm d'
+							toFormat = 'mmmm d, yyyy'
+						}
+
+						return from.getTime() === to.getTime() ?
+							this.formatDate(from, 'mmmm d, yyyy') :
+							[this.formatDate(from, fromFormat), this.formatDate(to, toFormat)].join('-');
+					}
+                }
+            
+			});
+        </script>
+    </body>
+    </html>
