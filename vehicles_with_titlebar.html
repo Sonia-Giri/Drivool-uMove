@@ -9,18 +9,6 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
     />
     <style>
-      /* CSS FOR THE VEHICLE-DIV */
-
-      #vehicle-div {
-        position: absolute;
-        top: 0;
-        left: 0;
-        display: flex;
-        flex-direction: column;
-        height: 100%;
-        width: 100%;
-        background-color: #9597e9;
-      }
       #vehicle-header {
         color: #fff;
         background-color: #484abb;
@@ -29,8 +17,28 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        top: 0;
+        left: 0;
+        /* right: 0; */
+        position: fixed;
+        width: 100%;
+        z-index: 1;
       }
-  
+
+      #listcontainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        /* align-items: center; */
+        width: 100%;
+        top: 0;
+        left: 0;
+      }
+      #vehicle-div {
+        background-color: #324563;
+        margin: -8px;
+        /* min-height: 100vh; */
+      }
       /* CSS for MENU ICON WITH DISPLAY AND MODIFY OPTIONS */
 
       div.hmenu {
@@ -79,16 +87,12 @@
         color: #222;
       }
     </style>
-    <!-- <link rel="stylesheet" href="/resources/demos/style.css" /> -->
-    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
   </head>
-  <body>
+  <body style="background-color: #324563">
     <div id="vehicle-div">
       <div id="vehicle-header">
         <div id="vehicle-left-header">
-          <!-- <i class="fas fa-bars" style="margin-right: 5px" id="menu-icon"></i> -->
-          <span style="margin: 5px; font-size: 22px"> Vehicles()</span>
+          <span style="margin: 5px; font-size: 22px"> Vehicles ()</span>
         </div>
         <div id="vehicle-right-header">
           <img
@@ -96,6 +100,7 @@
             id="search-icon"
             height="36px"
             width="auto"
+            style="margin-right: 20px"
           />
           <img
             src="img/add_gps.png"
@@ -103,19 +108,18 @@
             onclick="onClickAddGps()"
             height="36px"
             width="auto"
-            style="margin-left: 20px"
+            style="margin-right: 20px"
           />
           <img
             src="img/add_phone.png"
             id="addPHN-icon"
             height="36px"
             width="auto"
-            style="margin-left: 20px"
+            style="margin-right: 20px"
           />
         </div>
       </div>
-      <div id="listcontainer"></div>
-      <div id="dialogdiv"></div>
+      <div id="listcontainer" style="margin-top: 100px"></div>
     </div>
     <script>
       function createListItemHtml(joVehicleInfo) {
@@ -146,7 +150,7 @@
         return `
         
         <div class ="listitem">
-            <div class="Vehiclesheader ${strHeaderStatusClass}">
+            <div class="vehiclesHeader ${strHeaderStatusClass}">
                 <div class="title">${joVehicleInfo.status}</div>
                 <div class="menuicon" onclick="onMenuIconClicked($(this))"> 
                   <i class="fas fa-bars" width="auto"></i>
@@ -258,7 +262,7 @@
           divMenu.css("display", "inline-flex");
           setTimeout(function () {
             $("div.hmenuicon").css("visibility", "visible");
-          }, 300);
+          }, 500);
           $("div.hmenuicon").css("visibility", "hidden");
         } else {
           $("div.hmenu").hide();
