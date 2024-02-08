@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link rel="stylesheet" href="./css/buttons.css">
+        <link rel="stylesheet" href="./css/icon.css">
+        <link rel="stylesheet" type="text/css" href="../dist/duDatepicker.min.css">
+	      <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+	      <link rel="stylesheet" type="text/css" href="../dist/duDatepicker-theme.css">
+        <style>
+          body {
+                margin: 15px;
+                }
+            div.header{
+                border: 1px solid gray;
+                width:10%;
+                height:90px; 
+                }
+        </style>
+  </head>
+  <body>
+    <div class="header">
+      <div  class="iconbutton" style="margin: 30px;">
+        <input type="text" id="datepickerfrom">
+      <img id="datepickerfrom" src="./img/calendar.png" >
+    </div>
+    </div>
+    <script type="text/javascript" src="../dist/duDatepicker.min.js"></script>
+    <script type="text/javascript">
+      function log (message) {
+        document.querySelector('#loggerTxt').value = message
+      }
+  
+      window.onload = function () {
+        document.querySelector('#datepickerfrom').addEventListener('datechanged', function(e) {
+          console.log('New date', e.data, this.value)
+        })
+          }
+        duDatepicker('#datepickerfrom', {
+          format: 'mmmm d, yyyy', range: true, clearBtn: true,
+          // disabledDays: ['Sat', 'Sun'],
+          events: {
+            dateChanged: function (data) {
+              log('From: ' + data.dateFrom + '\nTo: ' + data.dateTo)
+            },
+            onRangeFormat: function (from, to) {
+              var fromFormat = 'mmmm d, yyyy', toFormat = 'mmmm d, yyyy';
+  
+              if (from.getMonth() === to.getMonth() && from.getFullYear() === to.getFullYear()) {
+                fromFormat = 'mmmm d'
+                toFormat = 'd, yyyy'
+              } else if (from.getFullYear() === to.getFullYear()) {
+                fromFormat = 'mmmm d'
+                toFormat = 'mmmm d, yyyy'
+              }
+  
+              return from.getTime() === to.getTime() ?
+                this.formatDate(from, 'mmmm d, yyyy') :
+                [this.formatDate(from, fromFormat), this.formatDate(to, toFormat)].join('-');
+            }
+          }
+        })
+  </script>
+  </body>
+</html>
