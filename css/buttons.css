@@ -1,12 +1,88 @@
 div.textbutton {
-    cursor: pointer;
-    background-color: rgb(80, 80, 216);
-    text-align: center;
-    color: white;
-    border-radius: 5px;
-    width: 250px;
-    height: 30px;
-    padding-top: 10px;
-    margin:auto;
-    margin-top: 20px;
-  }
+  cursor: pointer;
+  background-color: rgb(80, 80, 216);
+  text-align: center;
+  color: white;
+  border-radius: 5px;
+  width: 250px;
+  height: 30px;
+  padding-top: 10px;
+  margin:auto;
+  margin-top: 20px;
+}
+div.checkbox{
+  padding:10px;
+  font-weight: bold;
+  font-size: large;
+  border-color: 1px solid gray;
+  border-radius: 5px;
+}
+input.largerCheckbox {
+  width: 15px;
+  height: 15px;
+}
+div.menu{
+margin: 10px;
+margin-left: 20px;
+color: gray;
+font-weight: bolder;
+}
+.custom-select {
+position: relative;
+display: inline-block;
+margin-left: 10px;
+}
+
+.select-box {
+width: 200px; /* Set your desired width for the select box */
+padding: 10px;
+font-size: 16px;
+border: 1px solid #ccc;
+border-radius: 4px;
+cursor: pointer;
+}
+
+.option-down-arror {
+font-size: xxx-large;
+color: darkslategrey;
+margin: auto;
+margin-top: -20px;
+}
+.options-container {
+display: none;
+position: absolute;
+width: 100%;
+max-height: 200px; /* Set your desired max height for the dropdown */
+overflow-y: auto;
+border: 1px solid #ccc;
+border-top: none;
+border-radius: 0 0 4px 4px;
+box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+z-index: 1;
+}
+
+.option {
+padding: 10px;
+display: flex;
+align-items: center;
+border-bottom: 1px solid #ccc;
+box-shadow: 0px 1px 2px gray; 
+margin: 5px;
+border-radius: 2px;
+}
+
+.option:hover {
+background-color: #f0f0f0; /* Optional: Highlight on hover */
+}
+
+.option .title {
+font-weight: bold;
+}
+
+.option .description {
+color: #666;
+font-size: 14px;
+}
+.custom-select.active .options-container {
+display: block;
+}

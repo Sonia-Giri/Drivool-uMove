@@ -1,5 +1,4 @@
 div.iconbutton{
-    margin-left: 80px;
     cursor: pointer;
     display: inline-flex;
     background-color: rgb(80, 80, 216);
@@ -8,17 +7,17 @@ div.iconbutton{
     padding: 6px;
     border-radius: 5px;
 }
-div.img1{
+div.logo{
+    cursor: pointer;
     margin-left: 20px;
     background-color: rgb(80, 80, 216);
     border-radius: 5px;
     height: 25px;
     padding: 6px;
-    cursor: pointer;
 }
 div.iconbutton:hover {
     background-color: rgb(72, 157, 185)
 }
-div.img1:hover {
+div.logo:hover {
     background-color:rgb(72, 157, 185)
 }
