@@ -12,6 +12,8 @@
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
   />
   <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <!-- <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script> -->
+
   <style>
     .invert {
       -webkit-filter: invert(1);
@@ -55,6 +57,17 @@
       position: fixed;
       width: 100%;
       z-index: 1;
+    }
+    /* DIALOG BOX */
+    #addGpsDiv {
+      height: 250px;
+      top: -500px;
+      left: 50%;
+      width: 500px;
+      background-color: #324563;
+      position: absolute;
+      transition: 0.5s;
+      box-shadow: 1px 1px 2px black;
     }
   </style>
   <body style="margin: -7px; background-color: #9597e9">
@@ -165,6 +178,7 @@
                 </div>  
               </div>  
 
+
             </div> 
           </div> 
         `;
@@ -242,6 +256,19 @@
           $("div.hmenu").hide();
           $("div.hmenuicon").css("visibility", "hidden");
         }
+      }
+
+      //script for icons
+      function onClickAddGps() {
+        $(".transparentdiv").css("height", "calc(100vh - 60px)");
+        $("div#addGpsDiv").load("add_gps.html");
+        console.log("Is it clicking?");
+        // $("#vehicle-body").css("margin", "8px");
+      }
+
+      function onClickTransparentDiv() {
+        $(".transparentdiv").css("height", "0");
+        //$("div#addGpsDiv").empty(); //this is not working
       }
     </script>
   </body>
