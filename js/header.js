@@ -8,7 +8,7 @@ $(document).ready(function () {
   });
 
  $("#helpline-icon").click(function () {
-    if ($("#helplineDiv").css("right") === "-200px") {
+    if ($("#helplineDiv").css("right") === "-190px") {
       slideLeft();
     } else {
       slideRight();
@@ -32,7 +32,7 @@ function slideLeft() {
 }
 
 function slideRight() {
-  $("#helplineDiv").css("right", "-200px");
+  $("#helplineDiv").css("right", "-190px");
   $(".transparentdiv").css("height", "0");
 }
 
