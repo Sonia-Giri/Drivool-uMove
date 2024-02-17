@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="stylesheet" href="./css/header.css" />
     <link rel="stylesheet" href="./css/content.css" />
-    <link rel="stylesheet" href="./css/sidebar.css" /> 
+    <link rel="stylesheet" href="./css/sidebar.css" />
     <link rel="stylesheet" href="./css/vehicles.css" />
 
     <script
@@ -22,87 +22,44 @@
     ></script>
   </head>
   <body>
-      <div id="container-main">
-      <div id="left-pane">
-        <div id="content-left">
-          <div class="header" id="left-header">
-            <div >
-              <img  src="img/app_icon.png" height="48px" width="auto"></img>
-              <span style="margin:6px">
-                Drivool uMove<br>
-                <span style="font-size: 12px"> version 1.14.0</span>
-              </span>
+    <div id="root">
+      <div id="mainDiv">
+        <div id="header">
+          <div id="leftside-header">
+            <i class="fas fa-bars" style="margin-right: 5px" id="menu-icon"></i>
+            <div style="margin: 5px; font-size: 18px">
+              <span> Drivool uMove</span>
+              <span style="font-size: 12.5px"> Version 1.14.0</span>
             </div>
           </div>
-          <div id="sidebar-window">
-
-            <div class = "menu_item">
-              <img class = "side_menu_icon" src="img/account.png" height="22px" width="auto"> <span>Change Account</span>
-            </div>
-
-            <div class = "menu_item">
-              <img class = "invert side_menu_icon" src="img/chnage_gapn.png" height="24px" width="auto"><span>Manage Accounts</span>
-            </div>
-
-            <div class = "menu_item">
-              <img class = "side_menu_icon" src="img/default_device.png" height="24px" width="auto"></i><span>Manage Devices</span>
-            </div>
-
-
-            <div class = "menu_item">
-              <img class = "invert side_menu_icon" src="img/portal.png" height="24px" width="auto"> <span>Portal</span>
-            </div>
-
-            <hr>
-
-
-            <div class = "menu_item">
-              <img class = "side_menu_icon" src="img/sim.png" height="24px" width="auto"> <span>SIM Recharge</span>
-            </div>
-
-
-            <div class = "menu_item">
-              <img class = "side_menu_icon" src="img/default_device.png" height="24px" width="auto"> <span>GPS Recharge</span>
-            </div>
-
-
-            <div class = "menu_item">
-              <img class = "side_menu_icon" src="img/shoppingcart.png" height="24px" width="auto"> <span>Drivool Shop</span>
-            </div>
-
-            <hr />
-            <div class = "menu_item">
-              <img class = "side_menu_icon" src="img/help.png" height="24px" width="auto"> <span>Help</span>
-            </div>
-
-
-            <div class = "menu_item">
-              <img class = "side_menu_icon" src="img/livechat.png" height="24px" width="auto"> <span>Live Chat</span>
-            </div>
-
-            <div class = "menu_item">
-              <img class = "side_menu_icon" src="img/about.png" height="24px" width="auto"> <span>About</span>
-            </div>
+          <div id="rightside-header">
+            <img
+              src="img/helpline.png"
+              id="helpline-icon"
+              height="48px"
+              width="auto"
+            />
           </div>
         </div>
-        
+
         <div id="main-content"></div>
       </div>
-      <div id="right-pane">
-        <div id="content-right">
-          <div class="header" id="right-header">
-            <div class = "menu_item">
-              <img src="img/helpline.png" height="36px" width="auto"> 
-            </div>
-          </div>
-          <div id="document-window">
-            <div id="document">
-              <div id="main-containerPDF"></div>
-            </div>
-          </div>
+
+      <div class="transparentdiv" onclick="onClickTransparentDiv()"></div>
+      <div class="sidemenu_bar"></div>
+      <div id="helplineDiv">
+        <div id="helplineSDmenu">
+          <!-- helplineMenu -->
+          <img
+            src="img/livechat.png"
+            class="invert"
+            height="32px"
+            width="auto"
+          />
+          <span style="font-size: 25px; margin: 0 5px">Helpline</span>
+          <img src="img/call_white_32.png" height="32px" width="auto" />
         </div>
       </div>
-      
       <div id="dialogdiv"></div>
     </div>
 
@@ -110,6 +67,7 @@
       //load Html files
       $("div#main-content").load("main_menu.html");
       $("div.sidemenu_bar").load("sidemenu_bar.html");
+      // $("div.sidemenu_bar").load("vehicles_list_sidemenu.html");
     </script>
     <script src="./js/header.js">
       //script related to header
