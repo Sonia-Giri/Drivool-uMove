@@ -1,0 +1,153 @@
+{
+  "admin": "mail4satya",
+  "buses": [
+    {
+      "busno": "",
+      "desc": "",
+      "gpstype": 12,
+      "id": "drivoolapp_v001",
+      "latched": "3040426793",
+      "mobile": "",
+      "name": "",
+      "order": 0,
+      "route": "Vehicle XT",
+      "type": 1
+    },
+    {
+      "busno": "",
+      "color": -20423,
+      "desc": "",
+      "gpstype": 15,
+      "id": "drivoolapp_v002",
+      "mobile": "",
+      "name": "",
+      "route": "Vehicle 02",
+      "type": 1
+    },
+    {
+      "busno": "",
+      "color": -5583617,
+      "desc": "",
+      "gpstype": 12,
+      "id": "drivoolapp_v005",
+      "mobile": "",
+      "name": "",
+      "route": "Vehicle 05",
+      "type": 1
+    },
+    {
+      "busno": "",
+      "desc": "",
+      "gpstype": 12,
+      "id": "drivoolapp_v003",
+      "mobile": "",
+      "name": "",
+      "route": "Vehicle 03",
+      "type": 1
+    },
+    {
+      "busno": "",
+      "desc": "",
+      "gpstype": 12,
+      "id": "drivoolapp_v004",
+      "mobile": "",
+      "name": "",
+      "route": "Vehicle 04",
+      "type": 1
+    },
+    {
+      "busno": "",
+      "color": -12991233,
+      "desc": "",
+      "gpstype": 12,
+      "id": "drivoolapp_v008",
+      "mobile": "",
+      "name": "",
+      "route": "Vehicle 08",
+      "type": 1
+    },
+    {
+      "busno": "",
+      "desc": "",
+      "gpstype": 12,
+      "id": "drivoolapp_v009",
+      "mobile": "",
+      "name": "",
+      "route": "Vehicle 09",
+      "type": 1
+    },
+    {
+      "busno": "",
+      "desc": "",
+      "gpstype": 11,
+      "id": "drivoolapp_v006",
+      "mobile": "",
+      "name": "",
+      "route": "Vehicle 06",
+      "type": 1
+    },
+    {
+      "busno": "",
+      "color": -10923,
+      "desc": "",
+      "gpstype": 12,
+      "id": "drivoolapp_v007",
+      "mobile": "",
+      "name": "",
+      "route": "Vehicle 07",
+      "type": 1
+    },
+    {
+      "busno": "",
+      "desc": "",
+      "gpstype": 12,
+      "id": "drivoolapp_v010",
+      "mobile": "",
+      "name": "",
+      "route": "Vehicle 10",
+      "type": 1
+    },
+    {
+      "busno": "",
+      "desc": "",
+      "gpstype": 12,
+      "id": "drivoolapp_v011",
+      "mobile": "",
+      "name": "",
+      "route": "Vehicle 11",
+      "type": 1
+    },
+    {
+      "busno": "",
+      "desc": "",
+      "gpstype": 12,
+      "id": "drivoolapp_v012",
+      "mobile": "",
+      "name": "",
+      "route": "Vehicle 12",
+      "type": 1
+    },
+    {
+      "busno": "",
+      "desc": "",
+      "gpstype": 12,
+      "id": "drivoolapp_v013",
+      "mobile": "",
+      "name": "",
+      "route": "Vehicle 13",
+      "type": 1
+    },
+    {
+      "busno": "",
+      "color": -14820,
+      "desc": "",
+      "gpstype": 12,
+      "id": "drivoolapp_v014",
+      "mobile": "",
+      "name": "",
+      "route": "Vehicle 14",
+      "type": 1
+    }
+  ],
+  "timestamp": 1699086571050
+}
