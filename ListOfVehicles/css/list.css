@@ -1,0 +1,47 @@
+#main-containerPDF {
+  padding: 20px;
+  width: 100%;
+}
+
+#list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+  /* margin: 10px; */
+  background-color: #555;
+}
+
+#main-table {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 14px;
+  border-collapse: collapse;
+}
+#main-table tr {
+  background-color: #f7f7f7;
+}
+#main-table td {
+  padding: 5px;
+  padding-bottom: 15px;
+}
+#main-table th {
+  background-color: #555;
+  color: #fff;
+  padding: 5px;
+  text-align: center;
+}
+#main-table hr {
+  margin: 5px 15px;
+}
+#main-table i {
+  size: 8px;
+}
+#main-table i:hover {
+  cursor: pointer;
+}
+#main-table td {
+  text-align: center;
+}
+#main-table tbody tr:nth-child(odd) {
+  background-color: #eee;
+}
