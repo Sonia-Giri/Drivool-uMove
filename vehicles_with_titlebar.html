@@ -12,8 +12,7 @@
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
   />
   <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-  <!-- <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script> -->
-
+  
   <style>
     .invert {
       -webkit-filter: invert(1);
@@ -33,12 +32,12 @@
 
     #vehicle-mainContent {
       background-color: #9597e9c4;
-      top: 50px;
+      top: 28px;
       position: relative;
     }
 
     .transparentdiv {
-      top: 60px;
+      top: 0;
       left: 0;
       position: absolute;
       height: 0;
@@ -58,16 +57,52 @@
       width: 100%;
       z-index: 1;
     }
+    
     /* DIALOG BOX */
     #addGpsDiv {
-      height: 250px;
-      top: -500px;
+      display: none;
+      position: fixed;
+      top: 50%;
       left: 50%;
-      width: 500px;
+      transform: translate(-50%, -50%);
       background-color: #324563;
+      height: 250px;
+      width: 350px;
+      padding: 20px;
+      z-index: 9999;
+    }
+    
+    #addGpsDialog {
+      background-color: white;
+      padding: 20px;
+      margin-top: 10px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+
+    #close-btn {
       position: absolute;
-      transition: 0.5s;
-      box-shadow: 1px 1px 2px black;
+      top: 10px;
+      right: 10px;
+      cursor: pointer;
+    }
+
+    @keyframes growDialog {
+      from {
+        transform: translate(-50%, -50%) scale(0);
+      }
+      to {
+        transform: translate(-50%, -50%) scale(1);
+      }
+    }
+
+    @keyframes shrinkDialog {
+      from {
+        transform: translate(-50%, -50%) scale(1);
+      }
+      to {
+        transform: translate(-50%, -50%) scale(0);
+      }
     }
   </style>
   <body style="margin: -7px; background-color: #9597e9">
@@ -107,7 +142,12 @@
       </div>
     </div>
     <div class="transparentdiv" onclick="onClickTransparentDiv()"></div>
-    <div id="addGpsDiv"></div>
+    <div id="addGpsDiv">
+      <div id="addGpsDialog">
+        <i id="close-btn" class="fas fa-times invert"></i>
+        <div></div>
+      </div>
+    </div>
 
     <script>
       function createListItemHtml(joVehicleInfo) {
@@ -258,17 +298,45 @@
         }
       }
 
-      //script for icons
+      //script for dialog box
+      $(document).ready(function () {
+        $("#close-btn").click(function (closeAddGpsDiv) {
+          var addGpsDiv = $("#addGpsDiv");
+          addGpsDiv.css("animation", "shrinkDialog 0.3s ease-in-out forwards");
+          setTimeout(function () {
+            addGpsDiv.css("display", "none");
+          }, 300);
+
+          $(".transparentdiv").css("height", "0");
+        });
+      });
+
+      function closeAddGpsDiv() {
+        var addGpsDiv = $("#addGpsDiv");
+        addGpsDiv.css("animation", "shrinkDialog 0.3s ease-in-out forwards");
+        setTimeout(function () {
+          addGpsDiv.css("display", "none");
+        }, 300);
+      }
+     
       function onClickAddGps() {
-        $(".transparentdiv").css("height", "calc(100vh - 60px)");
-        $("div#addGpsDiv").load("add_gps.html");
-        console.log("Is it clicking?");
-        // $("#vehicle-body").css("margin", "8px");
+        $(".transparentdiv").css("height", "100%");
+
+        var addGpsDiv = $("#addGpsDiv");
+        if (
+          addGpsDiv.css("display") === "none" ||
+          addGpsDiv.css("display") === ""
+        ) {
+          addGpsDiv.css("display", "block");
+          addGpsDiv.css("animation", "growDialog 0.3s ease-in-out forwards");
+        } else {
+          closeAddGpsDiv();
+        }
       }
 
       function onClickTransparentDiv() {
         $(".transparentdiv").css("height", "0");
-        //$("div#addGpsDiv").empty(); //this is not working
+        closeAddGpsDiv();
       }
     </script>
   </body>
