@@ -18,7 +18,7 @@ $(document).ready(function () {
 
 function openDiv() {
   $(".sidemenu_bar").css("left", "0");
-  $(".transparentdiv").css("height", "calc(100vh - 60px)");
+  $(".transparentdiv").css("height", "100vh");
 }
 
 function closeDiv() {
@@ -28,7 +28,7 @@ function closeDiv() {
 
 function slideLeft() {
   $("#helplineDiv").css("right", "0");
-  $(".transparentdiv").css("height", "calc(100vh - 60px)");
+  $(".transparentdiv").css("height", "100vh");
 }
 
 function slideRight() {
