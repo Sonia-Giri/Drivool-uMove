@@ -17,7 +17,7 @@ body {
 #root {
   height: 100vh;
   position: relative;
-  background-color: white;
+  background-color: #9597e9;
 }
 #mainDiv {
   position: absolute;
@@ -30,13 +30,13 @@ body {
 }
 
 #main-content {
-  background-color: white;
+  background-color: #9597e9c4;
   height: calc(100vh - 60px);
   position: relative;
 }
 
 .transparentdiv {
-  top: 60px;
+  top: 0;
   left: 0;
   position: absolute;
   height: 0;
