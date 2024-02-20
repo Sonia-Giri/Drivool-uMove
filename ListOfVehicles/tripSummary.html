@@ -1,0 +1,163 @@
+<header id="list-header"></header>
+<!-- <hr /> -->
+<div id="main-div">
+  <table id="main-table" width="100%">
+    <thead>
+      <tr>
+        <th>Ignition</th>
+        <th>Model</th>
+        <th>Speed</th>
+        <th>Saved Time</th>
+        <th>Recieved Time</th>
+        <th>Trip Duration</th>
+        <th>Latitude</th>
+        <th>Longitude</th>
+        <th>Altitude</th>
+      </tr>
+    </thead>
+    <tbody id="tripSummaryDetails"></tbody>
+  </table>
+</div>
+<script>
+  // epochTime
+  function getDateTimeString(date) {
+    // if (!isValidDate(date)) {
+    //   return "";
+    // }
+
+    var dd = date.getDate();
+    var mon = date.getMonth() + 1; //January is 0!
+    var yyyy = date.getFullYear();
+
+    var hh = date.getHours();
+
+    var mm = date.getMinutes();
+
+    var ss = date.getSeconds();
+    var ms = date.getMilliseconds();
+
+    if (dd < 10) {
+      dd = "0" + dd;
+    }
+
+    if (mon < 10) {
+      mon = "0" + mon;
+    }
+
+    if (mm < 10) {
+      mm = "0" + mm;
+    }
+
+    if (ss < 10) {
+      ss = "0" + ss;
+    }
+
+    if (ms < 10) {
+      ms = "0" + ms;
+    }
+
+    let ampm = "AM";
+
+    if (hh >= 12) {
+      ampm = "PM";
+      if (hh > 12) {
+        hh -= 12;
+      }
+    }
+
+    if (hh < 10) {
+      hh = "0" + hh;
+    }
+
+    // return `${dd}/${mon}/${yyyy} ${hh}:${mm}:${ss}:${ms} ${ampm}`;
+    return `${dd}/${mon}/${yyyy} ${hh}:${mm} ${ampm}`;
+  }
+
+  $.ajax({
+    url: "https://us-central1-drivoolapis.cloudfunctions.net/getTripSummary/?gapn=diledasmahant&key=-NMsOlBokV78RZ32c3js&date=11242023",
+    dataType: "json",
+    type: "GET",
+
+    success: function (summary) {
+      var t = JSON.stringify(summary);
+      tripSummary(summary);
+      // console.log(t);
+    },
+    error: function (error) {
+      console.log(`Error ${error}`);
+    },
+  });
+
+  function tripSummary(summaryDetails) {
+    console.log("let's see");
+    var strTripData = "";
+    let dataOnList = summaryDetails.diledasmahant_v002;
+    // console.log(JSON.stringify(dataOnList)); //this is working fine
+
+    for (var savedTime in dataOnList) {
+      var objAcc = dataOnList[savedTime];
+      // console.log("AccData :" + JSON.stringify(objAcc)); //this is working fine
+      // console.log("savedtime :" + savedTime);
+      // console.log("recievedtime :" + JSON.stringify(objAcc.t));
+      // console.log("Ignition :" + JSON.stringify(objAcc.acc));
+
+      var strSavedTime = getDateTimeString(new Date(Number(savedTime)));
+      // console.log("savedtime :" + strSavedTime);
+      var strReceivedTime = getDateTimeString(new Date(objAcc.t));
+      /*
+        const timeDurationInSeconds = timeDuration / 1000;
+        const timeDurationInMinutes = timeDurationInSeconds / 60;
+        const timeDurationInHours = timeDurationInMinutes / 60;
+        const timeDurationInDays = timeDurationInHours / 24;
+        console.log("duration :" + timeDurationInSeconds + " seconds");
+        console.log("duration :" + timeDurationInMinutes + " minutes");
+        console.log("duration :" + timeDurationInHours + " hrs");
+        console.log("duration :" + timeDurationInDays + " days");
+        */
+      var ignition = objAcc.acc;
+      let dataAbtTrip = objAcc.data;
+      // console.log("ignition :" + ignition);
+      if (ignition == false) {
+        var tripDuration = "No Trip";
+      }
+      if (ignition == true) {
+        var tripDuration = dataAbtTrip.dur;
+      }
+      // console.log(JSON.stringify(dataAbtTrip)); //this is working fine
+      // console.log("Longitude :" + JSON.stringify(dataAbtTrip.loc.o));
+      // console.log("Latitude :" + JSON.stringify(dataAbtTrip.loc.a));
+      // console.log("Altitude :" + JSON.stringify(dataAbtTrip.loc.l));
+      // console.log("Speed :" + JSON.stringify(dataAbtTrip.loc.s));
+      // console.log("gpsModel :" + JSON.stringify(dataAbtTrip.model));
+
+      var strHTMLTripDetails = `<tr>
+    <td>${objAcc.acc}</td>
+    <td>${dataAbtTrip.model}</td>
+    <td>${dataAbtTrip.loc.s}&nbsp;m/s</td>
+    <td>${strSavedTime}</td>
+    <td>${strReceivedTime}</td>
+    <td>${tripDuration}</td>
+    <td>${dataAbtTrip.loc.a}&deg; N</td>
+    <td>${dataAbtTrip.loc.o}&deg; E</td>
+    <td>${dataAbtTrip.loc.l}</td>
+    </tr>`;
+
+      strTripData += strHTMLTripDetails;
+
+      /*  for (var i in savedTime) {
+        var ignitionData = savedTime[i];
+        console.log(i + ":" + ignitionData); //this is working fine
+
+        let dataAbtTrip = ignitionData.data;
+        // console.log(ignitionData.data);
+
+        for (var l in dataAbtTrip) {
+          // if (dataAbtTrip.hasOwnProperty(k)) {
+          //console.log(l + ":" + dataAbtTrip[l]);}
+        }
+      }*/
+      console.log("\n");
+    }
+    $("tbody#tripSummaryDetails").html(strTripData);
+  }
+</script>
