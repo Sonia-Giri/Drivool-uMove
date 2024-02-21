@@ -42,7 +42,8 @@
       position: absolute;
       height: 0;
       width: 100%;
-      background-color: #00000033;
+      background-color: #00000033; 
+      z-index: 2;
     }
 
     #vehicle-header {
@@ -65,16 +66,14 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      background-color: #324563;
-      height: 250px;
-      width: 350px;
+      background-color: #324563;   
       padding: 20px;
       z-index: 9999;
     }
     
     #addGpsDialog {
       background-color: white;
-      padding: 20px;
+      padding: 15px;
       margin-top: 10px;
       border-radius: 10px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
@@ -145,7 +144,7 @@
     <div id="addGpsDiv">
       <div id="addGpsDialog">
         <i id="close-btn" class="fas fa-times invert"></i>
-        <div></div>
+        <div id="addGpsDialog"></div>
       </div>
     </div>
 
@@ -319,7 +318,8 @@
         }, 300);
       }
      
-      function onClickAddGps() {
+      function onClickAddGps() {                
+        $("#addGpsDialog").load("add_gps.html");
         $(".transparentdiv").css("height", "100%");
 
         var addGpsDiv = $("#addGpsDiv");
