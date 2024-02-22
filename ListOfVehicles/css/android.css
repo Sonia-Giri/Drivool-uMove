@@ -1,0 +1,146 @@
+@media only screen and (max-width: 700px) {
+  #left-pane {
+    width: 200px;
+    position: fixed;
+    left: -250px;
+  }
+
+  #content-left {
+    max-width: 200px;
+    margin-right: 0;
+  }
+
+  .hide-sidebar #left-pane {
+    width: 200px;
+    left: 0px;
+    /* content-visibility: visible; */
+    animation: slide 0.3s forwards;
+    animation-delay: 2s;
+  }
+  .expand-content #right-pane {
+    margin-left: 0px;
+    padding: 0px;
+  }
+
+  body {
+    font-size: 14px;
+  }
+  #document {
+    margin: 0px;
+    box-shadow: none;
+  }
+  #main-containerPDF {
+    padding: 2px;
+    /* width: 100%; */
+  }
+  #main-table {
+    font-size: 12px;
+  }
+
+  #main-table td,
+  th {
+    padding: 3px;
+  }
+  #document {
+    width: 100%;
+  }
+
+  /* SIDEBAR CSS */
+  #sidebar-window selection {
+    font-size: 13px;
+    line-height: 1.4em;
+  }
+
+  #sidebar-window legend {
+    font-size: 1em;
+  }
+
+  /* LIST CSS */
+  #list-header {
+    height: 30px;
+    background-color: #fff;
+  }
+  #main-table th,
+  td {
+    font-size: 13px;
+  }
+  #main-table {
+    padding: 0 5px;
+  }
+
+  #main-table tr {
+    background-color: #f7f7f7;
+    padding-bottom: 2px;
+  }
+  /* ADDRESS CSS */
+  .tooltip .tooltiptext {
+    width: 110px;
+    left: 20%;
+  }
+  #main-table table,
+  thead,
+  tbody,
+  th,
+  td,
+  tr {
+    display: block;
+  }
+
+  /* Hide table headers (but not display: none;, for accessibility) */
+  #main-table thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+
+  /* tr {
+    border: 1px solid #ccc;
+  } */
+
+  #main-table td {
+    /* Behave  like a "row" */
+    border: none;
+    /* border-bottom: 1px solid #eee; */
+    /* position: relative; */
+    padding-left: 50%;
+  }
+
+  #main-table td:before {
+    /* Now like a table header */
+    /* position: absolute; */
+    /* Top/left values mimic padding */
+    top: 6px;
+    left: 6px;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap;
+  }
+  #main-table td {
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+    padding: 10px 15px;
+  }
+
+  #main-table td:nth-of-type(1):before {
+    content: "TRIP:";
+  }
+  #main-table td:nth-of-type(2):before {
+    content: "VEHICLE:";
+  }
+  #main-table td:nth-of-type(3):before {
+    content: "TIME:";
+  }
+  #main-table td:nth-of-type(4):before {
+    content: "TRAVELLED:";
+  }
+  #main-table td:nth-of-type(5):before {
+    content: "FUEL USED:";
+  }
+  #main-table td:nth-of-type(6):before {
+    content: "START ADDRESS:";
+  }
+  #main-table td:nth-of-type(7):before {
+    content: "END ADDRESS:";
+  }
+}

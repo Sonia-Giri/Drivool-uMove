@@ -1,0 +1,25 @@
+#listOfVehicles {
+  margin: 4px;
+}
+#listOfVehicles div {
+  box-shadow: 1px 2px 2px #777;
+  padding: 8px;
+  margin-bottom: 5px;
+  border-radius: 8px;
+}
+#listOfVehicles div h3 {
+  color: #333;
+  font-family: "Times New Roman", Times, serif;
+}
+#listOfVehicles div p {
+  font-size: 13px;
+}
+.lov-flex {
+  display: flex;
+  /* justify-content: space-around; */
+  /* align-items: center; */
+}
+.lov-flex i {
+  font-size: 1em;
+  margin-top: 2px;
+}

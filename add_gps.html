@@ -8,259 +8,6 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
     <style>
-      #addGPSlistcontainer {
-        /* top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        position: absolute; */
-        /* z-index: 1000; */
-        background: #fff;
-        width: auto;
-        height: auto;
-        padding: 5px;
-        border: none;
-      }
-
-      .custom-select {
-        position: relative;
-        display: inline-block;
-      }
-      .select-box {
-        width: 220px; /* Set your desired width for the select box */
-        padding: 10px;
-        font-size: 16px;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        cursor: pointer;
-        margin-top: 1px;
-      }
-
-      .icon {
-        width: 36px; /* Set your desired width for the icon */
-        height: 36px; /* Set your desired height for the icon */
-        margin-right: 10px;
-      }
-
-      .option-down-arror {
-        font-size: x-large;
-        color: darkslategrey;
-        margin: auto;
-        margin-top: -10px;
-      }
-      .options-container {
-        display: none;
-        background-color: white;
-        position: absolute;
-        width: 180px;
-        max-height: 200px; /* Set your desired max height for the dropdown */
-        overflow-y: auto;
-        border: 1px solid #ccc;
-        border-top: none;
-        border-radius: 0 0 4px 4px;
-        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-        z-index: 1;
-      }
-
-      .option {
-        padding: 2px;
-        display: flex;
-        align-items: center;
-        /* border-bottom: 1px solid #ccc; */
-      }
-
-      .option:hover {
-        background-color: #f0f0f0; /* Optional: Highlight on hover */
-      }
-
-      .option .title {
-        font-weight: bold;
-      }
-
-      .option .description {
-        color: #666;
-        font-size: 14px;
-      }
-
-      .custom-select.active .options-container {
-        display: block;
-      }
-      body {
-        margin: 4px;
-      }
-
-      div.header {
-        background-color: blue;
-        color: white;
-        height: 50px;
-        padding-left: 40px;
-        font-size: x-large;
-        padding-top: 15px;
-      }
-      div.deviceid {
-        height: auto;
-        border: 1px solid black;
-        padding: 10px;
-        /* margin: 0 2px;*/
-        margin-top: 10px;
-      }
-      div.devicelist {
-        height: auto;
-        border: 1px solid black;
-        padding: 10px;
-        /* margin: 0 10px; */
-      }
-      div.device {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-      div.text-with-line {
-        position: relative;
-        padding-top: 20px;
-        font-size: x-large;
-      }
-      div.text-with-line::before {
-        content: "";
-        position: absolute;
-        bottom: 0px;
-        width: 150px;
-        height: 1px;
-        background-color: #000;
-      }
-      /* div.img {
-        left: 72%;
-        display: inline-flex;
-        position: absolute;
-        height: 80px;
-        width: 65px;
-      } */
-
-      div.list {
-        background-color: rgb(22, 22, 150);
-        border-radius: 5px;
-        text-align: center;
-        color: white;
-        font-weight: 500;
-        height: auto;
-        padding: 10px;
-        margin-left: 70%;
-      }
-
-      @media only screen and (orientation: landscape) {
-        div#addGPSlistcontainer {
-          width: 40%;
-          margin: 0 auto;
-          height: auto;
-        }
-      }
-    </style>
-    <link
-      rel="stylesheet"
-      href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css"
-    />
-<!--     <link rel="stylesheet" href="/resources/demos/style.css" /> -->
-    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
-  </head>
-
-  <body>
-    <div id="addGPSlistcontainer" title="Add GPS">
-      <!-- <div class="header">Add GPS</div> -->
-      <div class="devicelist">
-        <div class="device">
-          <div>
-            Device Id
-            <div class="text-with-line">Enter GPS Id</div>
-          </div>
-          <div class="img">
-            <img width="80px" src="./img/device_with_id.png" />
-          </div>
-        </div>
-      </div>
-      <div class="deviceid">
-        <div>Select GPS model</div>
-        <div class="custom-select">
-          <div class="select-box">
-            <div class="option">
-              <img
-                class="icon"
-                src="https://firebasestorage.googleapis.com/v0/b/moverstrack.appspot.com/o/DeviceIcons%2Fst901.png?alt=media&token=df4debe1-296c-4083-92b2-3e1d0342eb74"
-                alt="Icon 1"
-              />
-              <div>
-                <div class="title">Drivool 890-IN</div>
-                <div class="description">Description for Item 1</div>
-              </div>
-              <i class="fa fa-sort-down option-down-arror"> </i>
-            </div>
-          </div>
-          <div class="options-container">
-            <div class="option">
-              <img
-                class="icon"
-                src="https://firebasestorage.googleapis.com/v0/b/moverstrack.appspot.com/o/DeviceIcons%2Fst901.png?alt=media&token=df4debe1-296c-4083-92b2-3e1d0342eb74"
-                alt="Icon 1"
-              />
-              <div>
-                <div class="title">Drivool 890-IN</div>
-                <div class="description">GPS Tracker with ACC wire</div>
-              </div>
-            </div>
-            <div class="option">
-              <img
-                class="icon"
-                src="https://firebasestorage.googleapis.com/v0/b/moverstrack.appspot.com/o/DeviceIcons%2Fst902.png?alt=media&token=0341f425-0f9d-4340-b6f9-230ede72e429"
-                alt="Icon 2"
-              />
-              <div>
-                <div class="title">Drivool 891-IN</div>
-                <div class="description">GPS with OBD Connector</div>
-              </div>
-            </div>
-            <!-- Add more options as needed -->
-          </div>
-        </div>
-      </div>
-      <div class="list" style="margin-top: 10px">ADD</div>
-    </div>
-
-    <script>
-      // JavaScript to toggle the active state
-      document
-        .querySelector(".custom-select")
-        .addEventListener("click", function () {
-          this.classList.toggle("active");
-        });
-
-      $(function () {
-        $("#addGPSlistcontainer").dialog();
-      });
-    </script>
-  </body>
-</html>
-
-
-
-<!-- <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
-    <style>
-      #addGPSlistcontainer {
-        background: #fff;
-        width: 500px;
-        height: auto;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        position: absolute;
-      }
-
       .custom-select {
         position: relative;
         display: inline-block;
@@ -272,7 +19,6 @@
         border: 1px solid #ccc;
         border-radius: 4px;
         cursor: pointer;
-        margin-top: 1px;
       }
 
       .icon {
@@ -302,7 +48,7 @@
       }
 
       .option {
-        padding: 2px;
+        padding: 10px;
         display: flex;
         align-items: center;
         border-bottom: 1px solid #ccc;
@@ -324,30 +70,31 @@
       .custom-select.active .options-container {
         display: block;
       }
-      body {
+      /* body {
         margin: 4px;
-      }
+      } */
 
-      div.header {
+      div.addGPSheader {
         background-color: blue;
-        color: white;
-        height: 50px;
-        padding-left: 40px;
-        font-size: x-large;
-        padding-top: 15px;
+        color: #eee;
+        height: 30px;
+        padding: 10px;
+        font-size: 23px;
+        font-weight: bold;
+        /* border-radius: 8px 8px 0 0; */
       }
       div.deviceid {
-        height: 120px;
+        height: 100px;
         border: 1px solid black;
         padding: 10px;
-        margin: 0 2px;
-        margin: 10px;
+        margin-top: 10px;
+        /* border-radius: 0 0 8px 8px; */
       }
       div.devicelist {
-        height: auto;
+        height: 70px;
         border: 1px solid black;
         padding: 10px;
-        margin: 0 10px;
+        /* margin: auto; */
       }
       div.device {
         display: flex;
@@ -356,33 +103,39 @@
       }
       div.text-with-line {
         position: relative;
-        padding-top: 20px;
-        font-size: x-large;
+        padding-top: 10px;
+        font-size: 14px;
       }
       div.text-with-line::before {
         content: "";
         position: absolute;
         bottom: 0px;
-        width: 250px;
+        width: 180px;
         height: 1px;
         background-color: #000;
       }
- 
+      div.img {
+        left: 65%;
+        display: inline-flex;
+        position: absolute;
+        height: 80px;
+        width: 65px;
+      }
+
       div.list {
         background-color: blue;
         border-radius: 5px;
         text-align: center;
         color: white;
-        height: 35px;
+        height: 30px;
         padding-top: 10px;
         margin-left: 70%;
       }
 
       @media only screen and (orientation: landscape) {
         div#addGPSlistcontainer {
-          width: 40%;
-          margin: 0 auto;
-          height: auto;
+          width: auto;
+          /* margin: 10px; */
         }
       }
     </style>
@@ -390,11 +143,11 @@
 
   <body>
     <div id="addGPSlistcontainer">
-      <div class="header">Add GPS</div>
+      <div class="addGPSheader"><span>Add GPS</span></div>
       <div class="devicelist" style="margin-top: 20px">
         <div class="device">
           <div>
-            Device Id
+            <span style="font-size: 22px"> Device Id</span>
             <div class="text-with-line">Enter GPS Id</div>
           </div>
           <div class="img">
@@ -442,22 +195,19 @@
                 <div class="description">GPS with OBD Connector</div>
               </div>
             </div>
-            <!-- Add more options as needed -->
           </div>
         </div>
-
         <div class="list" style="margin-top: 20px">ADD</div>
       </div>
-    </div>
 
-    <script>
-      // JavaScript to toggle the active state
-      document
-        .querySelector(".custom-select")
-        .addEventListener("click", function () {
-          this.classList.toggle("active");
-        });
-    </script>
+      <script>
+        // JavaScript to toggle the active state
+        document
+          .querySelector(".custom-select")
+          .addEventListener("click", function () {
+            this.classList.toggle("active");
+          });
+      </script>
+    </div>
   </body>
 </html>
- -->

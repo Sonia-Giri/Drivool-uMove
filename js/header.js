@@ -8,7 +8,7 @@ $(document).ready(function () {
   });
 
  $("#helpline-icon").click(function () {
-    if ($("#helplineDiv").css("right") === "-200px") {
+    if ($("#helplineDiv").css("right") === "-190px") {
       slideLeft();
     } else {
       slideRight();
@@ -18,7 +18,7 @@ $(document).ready(function () {
 
 function openDiv() {
   $(".sidemenu_bar").css("left", "0");
-  $(".transparentdiv").css("height", "calc(100vh - 60px)");
+  $(".transparentdiv").css("height", "100vh");
 }
 
 function closeDiv() {
@@ -28,11 +28,11 @@ function closeDiv() {
 
 function slideLeft() {
   $("#helplineDiv").css("right", "0");
-  $(".transparentdiv").css("height", "calc(100vh - 60px)");
+  $(".transparentdiv").css("height", "100vh");
 }
 
 function slideRight() {
-  $("#helplineDiv").css("right", "-200px");
+  $("#helplineDiv").css("right", "-190px");
   $(".transparentdiv").css("height", "0");
 }
 

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+      integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./css/list.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/sidebar.css" />
+    <link rel="stylesheet" href="./css/address.css" />
+    <link rel="stylesheet" href="./css/android.css" />
+    <link rel="stylesheet" href="./css/ipad.css" />
+
+    <!-- <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"
+      rel="stylesheet"
+    /> -->
+
+    <script
+      src="https://code.jquery.com/jquery-3.1.1.min.js"
+      integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+  </head>
+  <body>
+    <div id="header">
+      <div>
+        <i class="fas fa-bars menu-icon" id="menu-icon"></i>
+      </div>
+    </div>
+    <div id="container-main">
+      <div id="left-pane">
+        <div id="content-left">
+          <div id="sidebar-window">
+            <div id="listOfVehicles">
+              <!-- JSON -->
+            </div>
+            <!-- sidebar-window -->
+          </div>
+        </div>
+      </div>
+      <div id="right-pane">
+        <div id="content-right">
+          <div id="document-window">
+            <div id="document">
+              <div id="main-containerPDF"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      $(document).ready(function () {
+        //LOAD hardware.html
+        $(".menu-icon").click(function () {
+          $("div#main-containerPDF").load("./tripSummary.html", function () {});
+        });
+        $("#menu-icon").click(function () {
+          $("body").toggleClass("hide-sidebar expand-content");
+        });
+      });
+
+      // $(".ui.accordion").accordion();
+
+      //sidebar
+      $.ajax({
+        url: "https://us-central1-drivoolapis.cloudfunctions.net/getVehicles?gapn=drivoolapp&key=-NS_dV4eoH3pWIe2t7c4",
+        dataType: "json",
+        type: "GET",
+        //jo stands for json object
+        success: function (jo) {
+          var k = JSON.stringify(jo);
+          busesInfo(jo);
+          // console.log(k);
+        },
+        error: function (error) {
+          console.log(`Error ${error}`);
+        },
+      });
+
+      function busesInfo(information) {
+        var strBusesDetails = "";
+        var itemOnlist = information.buses;
+        for (var i = 0; i < itemOnlist.length; i++) {
+          var info = itemOnlist[i];
+          var strHTMLinfo = `
+            <div class="lov-flex">
+                 <i class="fas fa-bus"></i>
+                 <span>
+                   <h3>&nbsp;${info.route}</h3>
+                   <p>&nbsp;${info.id}</p>
+                 </span>
+            </div><br/>
+      `;
+          strBusesDetails += strHTMLinfo;
+        }
+        $("div#listOfVehicles").html(strBusesDetails);
+      }
+    </script>
+    <!-- <script src="./js/tripSummary.js"></script> -->
+  </body>
+</html>

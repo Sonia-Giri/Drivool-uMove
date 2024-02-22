@@ -1,152 +1,153 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <link rel="stylesheet" href="./css/vehicles.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-    />
-    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
-    <style>
-      .invert {
-        -webkit-filter: invert(1);
-        filter: invert(1);
-      }
-      #vehicle-header {
-        color: #fff;
-        background-color: #484abb;
-        /* height: 60px; */
-        padding: 10px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        top: 0;
-        left: 0;
-        /* right: 0; */
-        position: fixed;
-        width: 100%;
-        z-index: 1;
-      }
-
-      #listcontainer {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        /* align-items: center; */
-        width: 100%;
-        position: relative;
-      
-      }
-      #vehicle-div {
-        background-color: #9597e9c4;
-        margin: -8px;
-        /* min-height: 100vh; */
-      }
-
-      .transparentdiv {
-        top: 60px;
-        left: 0;
-        position: absolute;
-        height: 0;
-        width: 100%;
-        background-color: #00000033;
-        z-index: 1;
-      }
-
-    
-      /* CSS for MENU ICON WITH DISPLAY AND MODIFY OPTIONS */
-
-      div.hmenu {
-        width: 120px;
-        position: absolute;
-        background-color: #f0f0f0;
-        display: none;
-        height: 60px;
-        right: 30px;
-        top: 10px;
-        box-shadow: 0 1px 0px 1px gray;
-        color: white;
-        border-radius: 3px;
-        animation: hmenuanimate 0.5s;
-      }
-
-      @keyframes hmenuanimate {
-        from {
-          width: 0;
-          height: 0;
-        }
-        to {
-          width: 120px;
-          height: 60px;
-        }
-      }
-
-      div.hmenuicon:hover {
-        box-shadow: 0 0 1px 3px 000000AA;
-        background-color: rgba(130, 130, 248, 0.801);
-      }
-
-      div.hmenuicon {
-        margin: 5px;
-        padding: 6px;
-        width: 54px;
-        height: 40px;
-        text-align: center;
-        border-radius: 3px;
-        visibility: hidden;
-      }
-
-      div.text {
-        display: inline-flex;
-        font-size: 11px;
-        color: #222;
-      }
-    </style>
+    <title>Document</title>
   </head>
-  <body id="vehicle-body" style="background-color: #9597e9">
-    <div id="addGpsDiv"></div>
-    <div id="vehicle-div">
-      <div id="vehicle-header">
-        <div id="vehicle-left-header">
-          <span style="margin: 5px; font-size: 22px"> Vehicles ()</span>
+  <link rel="stylesheet" href="./css/vehicles.css" />
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+  />
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  
+  <style>
+    .invert {
+      -webkit-filter: invert(1);
+      filter: invert(1);
+    }
+
+    #vehicle-mainDiv {
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      width: 100%;
+      background-color: #9597e9;
+    }
+
+    #vehicle-mainContent {
+      background-color: #9597e9c4;
+      top: 28px;
+      position: relative;
+    }
+
+    .transparentdiv {
+      top: 0;
+      left: 0;
+      position: absolute;
+      height: 0;
+      width: 100%;
+      background-color: #00000033; 
+      z-index: 2;
+    }
+
+    #vehicle-header {
+      color: #fff;
+      background-color: #484abb;
+      height: 40px;
+      padding: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: fixed;
+      width: 100%;
+      z-index: 1;
+    }
+    
+    /* DIALOG BOX */
+    #addGpsDiv {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #324563;   
+      padding: 20px;
+      z-index: 9999;
+    }
+    
+    #addGpsDialog {
+      background-color: white;
+      padding: 15px;
+      margin-top: 10px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+
+    #close-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      cursor: pointer;
+    }
+
+    @keyframes growDialog {
+      from {
+        transform: translate(-50%, -50%) scale(0);
+      }
+      to {
+        transform: translate(-50%, -50%) scale(1);
+      }
+    }
+
+    @keyframes shrinkDialog {
+      from {
+        transform: translate(-50%, -50%) scale(1);
+      }
+      to {
+        transform: translate(-50%, -50%) scale(0);
+      }
+    }
+  </style>
+  <body style="margin: -7px; background-color: #9597e9">
+    <div id="vehicle-root">
+      <div id="vehicle-mainDiv">
+        <div id="vehicle-header">
+          <div id="vehicle-left-header">
+            <span style="margin: 5px; font-size: 22px"> Vehicles ()</span>
+          </div>
+          <div id="vehicle-right-header">
+            <img
+              src="img/search.png"
+              id="search-icon"
+              height="36px"
+              width="auto"
+              style="margin-right: 20px"
+            />
+            <img
+              src="img/add_gps.png"
+              id="addGPS-icon"
+              onclick="onClickAddGps()"
+              height="36px"
+              width="auto"
+              style="margin-right: 20px"
+            />
+            <img
+              src="img/add_phone.png"
+              id="addPHN-icon"
+              height="36px"
+              width="auto"
+              style="margin-right: 20px"
+            />
+          </div>
         </div>
-        <div id="vehicle-right-header">
-          <img
-            src="img/search.png"
-            id="search-icon"
-            height="36px"
-            width="auto"
-            style="margin-right: 20px"
-          />
-          <img
-            src="img/add_gps.png"
-            id="addGPS-icon"
-            onclick="onClickAddGps()"
-            height="36px"
-            width="auto"
-            style="margin-right: 20px"
-          />
-          <img
-            src="img/add_phone.png"
-            id="addPHN-icon"
-            height="36px"
-            width="auto"
-            style="margin-right: 20px"
-          />
-        </div>
+
+        <div id="vehicle-mainContent"></div>
       </div>
-      <!-- <div id="mainVehicleContent"> -->
-      <div id="listcontainer" style="margin-top: 60px"></div>
-      <!-- </div> -->
-      <div
-        class="transparentdiv"
-        onclick="onClickTransparentDiv()"
-        style="height: 0"
-      ></div>
     </div>
+    <div class="transparentdiv" onclick="onClickTransparentDiv()"></div>
+    <div id="addGpsDiv">
+      <div id="addGpsDialog">
+        <i id="close-btn" class="fas fa-times invert"></i>
+        <div id="addGpsDialog"></div>
+      </div>
+    </div>
+
     <script>
       function createListItemHtml(joVehicleInfo) {
         let strHeaderStatusClass = "inactiveback";
@@ -278,7 +279,7 @@
         strListItemHtml += createListItemHtml(joVehicleData);
       }
 
-      $("div#listcontainer").html(strListItemHtml);
+      $("div#vehicle-mainContent").html(strListItemHtml);
 
       function onMenuIconClicked(clickedItem) {
         let divMenu = clickedItem.parent().find("div.hmenu");
@@ -296,19 +297,47 @@
         }
       }
 
-      //script for icons
-      function onClickAddGps() {
+      //script for dialog box
+      $(document).ready(function () {
+        $("#close-btn").click(function (closeAddGpsDiv) {
+          var addGpsDiv = $("#addGpsDiv");
+          addGpsDiv.css("animation", "shrinkDialog 0.3s ease-in-out forwards");
+          setTimeout(function () {
+            addGpsDiv.css("display", "none");
+          }, 300);
+
+          $(".transparentdiv").css("height", "0");
+        });
+      });
+
+      function closeAddGpsDiv() {
+        var addGpsDiv = $("#addGpsDiv");
+        addGpsDiv.css("animation", "shrinkDialog 0.3s ease-in-out forwards");
+        setTimeout(function () {
+          addGpsDiv.css("display", "none");
+        }, 300);
+      }
+     
+      function onClickAddGps() {                
+        $("#addGpsDialog").load("add_gps.html");
         $(".transparentdiv").css("height", "100%");
-        $("div#addGpsDiv").load("add_gps.html");
-        console.log("Is it clicking?");
-        $("#vehicle-body").css("margin", "8px");
+
+        var addGpsDiv = $("#addGpsDiv");
+        if (
+          addGpsDiv.css("display") === "none" ||
+          addGpsDiv.css("display") === ""
+        ) {
+          addGpsDiv.css("display", "block");
+          addGpsDiv.css("animation", "growDialog 0.3s ease-in-out forwards");
+        } else {
+          closeAddGpsDiv();
+        }
       }
 
       function onClickTransparentDiv() {
         $(".transparentdiv").css("height", "0");
-        // $("div#addGpsDiv").empty(); //this is not working
+        closeAddGpsDiv();
       }
     </script>
-    <!-- <script src="./js/clickHandler.js"></script> -->
   </body>
 </html>
