@@ -35,11 +35,12 @@ margin-left: 10px;
 
 .select-box {
 width: 200px; /* Set your desired width for the select box */
-padding: 10px;
+padding: 5px;
 font-size: 16px;
 border: 1px solid #ccc;
 border-radius: 4px;
 cursor: pointer;
+margin-top: 10px;
 }
 
 .option-down-arror {
@@ -85,4 +86,82 @@ font-size: 14px;
 }
 .custom-select.active .options-container {
 display: block;
+}
+div.text-with-line {
+position: relative;
+left: 10px;
+color: gray;
+}
+div.text-with-line::before {
+content: "";
+position: absolute;
+bottom:-1px;
+width: 98%;
+height: 1px;
+background-color: gray;
+}
+div.text-with-line_font {
+position: relative;
+left: 10px;
+font-size: larger;
+}
+div.text-with-line_font::before {
+content: "";
+position: absolute;
+bottom:-1px;
+width: 98%;
+height: 1px;
+background-color: gray;
+}
+div.fontid{
+color: gray;
+}
+div.fontid_text{
+color: gray;
+font-size:x-large;
+font-weight: bolder;
+}
+div.vehicletype{
+border: 1px solid gray;
+height:130px;
+width: 100%;
+}
+div.bottom{
+border: 1px solid gray;
+height: 55px;
+width: 50px;
+margin-top: 20px;
+}
+div.device{
+display: inline-flex;
+position: absolute;
+height: 150px;
+width:65px;  
+}
+div.vehicle{
+padding:10px;
+color: rgb(117, 114, 114);
+font-size: larger;
+}
+
+.icon {
+width: 36px; /* Set your desired width for the icon */
+height: 36px; /* Set your desired height for the icon */
+margin-right: 5px;
+}
+div.color{
+padding: 10px;
+margin-left:70%;
+color: rgb(141, 136, 136);
+font-size: larger;
+}
+div.button{
+width: 80px;
+height: 30px;
+background-color: blue;
+color: white;
+text-align: center; 
+padding-top: 10px;
+margin-top: 30px;
+margin-left: 20px;
 }

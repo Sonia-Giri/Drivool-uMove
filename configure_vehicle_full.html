@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="./css/buttons.css">
+        <link rel="stylesheet" href="./css/icon.css">
+        <style>
+            body {
+                margin:0;
+                }
+            div.header{
+                border: 1px solid gray;
+                width:100%;
+                height:30px; 
+                background-color: blue;
+                color: white;
+                font-size: x-large;
+                }
+            div.vehiclediv{
+                border: 1px solid gray;
+                width:100%;
+                height:90px;
+                margin-top: 20px;
+                display: inline-flex; 
+                }
+            div.button_footer{
+                width: 80px;
+                height: 30px;
+                background-color: blue;
+                color: white;
+                text-align: center; 
+                padding-top: 10px;
+                margin-top: 30px;
+                margin-left: 80px;
+            }
+
+            @media only screen and (orientation: landscape) {
+
+                div#listcontainer{
+                width: 60%;
+                margin:auto ;
+                }
+
+                }
+        </style>
+    </head>
+    <body>
+    <div id="listcontainer">
+        <div class="header">Vehicle Detail</div>
+        <div style="padding:10px;">Id(*)</div>
+        <div class="text-with-line">khopoligasco_v004</div>
+        <div class="vehiclediv">
+            <div><img src="./img/default_device.png" style="width: 80px; height: 80px; padding-top: 5px; "></div>
+            <div style="padding: 35px; margin-left:20px;">390606007205</div>
+            <div class="button">CHANGE</div>
+        </div>
+        <div class="fontid" style="margin: 10px;">Display name(*)</div>
+        <div class="text-with-line" style="margin-top: 10px;"> 1558</div>
+        <div class="vehicletype" style="margin-top: 20px;">
+            <div class="device">
+              <div class="vehicle">
+                <div style="margin-left: 20px;">Vehicle Type:</div>
+                <div class="custom-select">
+                    <div class="select-box">
+                        <div class="option"><img class="icon" src="./img/car_blue_32.png">
+                          <div class="title">Car</div>
+                          <i class ="fa fa-sort-down option-down-arror"></i> 
+                        </div>
+                    </div>
+                        <div class="options-container">
+                                <div class="option"><img class="icon" src="./img/car_green_32.png"></div>
+                                <div class="option"><img class="icon" src="./img/car_black_32.png"></div>
+                                <!-- Add more options as needed -->
+                        </div>
+                </div>
+        <script>
+         // JavaScript to toggle the active state
+          document.querySelector('.custom-select').addEventListener('click', function() {
+           this.classList.toggle('active');
+            });
+        </script>
+        </div>
+        </div>
+        <div class="color">Color
+        <div class="bottom"></div>
+        </div>
+        </div>
+        <div class="fontid" style="margin: 10px;">Vehicle registration no</div>
+        <div class="text-with-line_font" style="margin-top: 10px;">Mh46bm1558</div>
+        <div class="text-with-line" style="margin-top: 30px;">Contact name</div>
+        <div class="text-with-line" style="margin-top: 30px;">Contact Number</div>
+        <div class="fontid" style="margin: 10px;">Notes</div>
+        <div class="text-with-line_font">Bharat Benz</div>
+        <div class="vehiclediv"> 
+            <div class="fontid_text" style="margin: 30px;">Picture</div>
+            <div class="button_footer">CHANGE</div>
+        </div>
+    </div>
+    </body>
+</html>
