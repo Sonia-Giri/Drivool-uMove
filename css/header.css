@@ -26,11 +26,14 @@
 #menu-icon:hover {
   cursor: pointer;
 }
+#helpline-icon:hover {
+  cursor: pointer;
+}
 
-#helplineDiv {
+#helplineDiv, #threeDotsDiv {
   position: absolute;
   top: 60px;
- right: -190px;
+ right: -200px;
   width: 190px;
   height: 60px;
   height: auto;
@@ -38,7 +41,8 @@
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 }
 
-#helplineSDmenu {
+#helplineSDmenu,
+#threeDotsSDmenu {
   display: flex;
   position: fixed;
   align-items: center;
@@ -51,3 +55,49 @@
 #helplineDiv:hover {
   cursor: pointer;
 }
+
+/* HEADER CSS FOR TRACK.HTML */
+#threeDots-icon:hover {
+  cursor: pointer;
+}
+
+#threeDotsDiv:hover {
+  cursor: pointer;
+}
+
+#rightside-header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: #f2f2f2;
+}
+
+#threeDotsDiv {
+  top: 0;
+  right: -230px;
+  width: 225px;
+}
+#threeDotsSDmenu {
+  width: 225px;
+  color: #324563;
+  background-color: #fff;
+  border-radius: 3px;
+  flex-direction: column;
+  align-items: flex-start;
+  box-shadow: -5px 10px 5px rgba(0, 0, 0, 0.5);
+  padding: 10px 1px;
+}
+#threeDotsSDmenu div {
+  font-size: larger;
+  padding: 10px;
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+#threeDotsSDmenu div:hover {
+  color: #fff;
+  background-color: #324563;
+  border-radius: 3px;
+  transition: ease-in-out 0.2s;
+}
+
