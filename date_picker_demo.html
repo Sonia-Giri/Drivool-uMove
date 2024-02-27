@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Material Date Picker</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            // Initialize date picker
+            $('.datepicker').datepicker({
+                format: 'yyyy-mm-dd',
+                showClearBtn: true,
+                autoClose: true,
+                container: 'body',
+            });
+
+            // Open date picker on button click
+            $('#openDatePickerBtn').on('click', function() {
+                $('.datepicker').datepicker('open');
+            });
+
+            // Listen to date change event
+            $('.datepicker').on('change', function (e) {
+                console.log('Selected date:', e.target.value);
+                // Add your custom logic for handling the selected date change
+            });
+        });
+    </script>
+</head>
+<body>
+
+<div class="container">
+    <h4>Material Date Picker Example</h4>
+    <div class="row">
+        <div class="input-field col s12">
+            <input type="text" class="datepicker" hidden>
+        </div>
+    </div>
+    <button id="openDatePickerBtn" class="btn">Open Date Picker</button>
+</div>
+
+</body>
+</html>

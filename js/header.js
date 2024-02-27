@@ -8,7 +8,16 @@ $(document).ready(function () {
   });
 
  $("#helpline-icon").click(function () {
-    if ($("#helplineDiv").css("right") === "-190px") {
+    if ($("#helplineDiv").css("right") === "-200px") {
+      slideLeft();
+    } else {
+      slideRight();
+    }
+  });
+
+   // FOR TRACK.HTML
+  $("#threeDots-icon").click(function () {
+    if ($("#threeDotsDiv").css("right") === "-230px") {
       slideLeft();
     } else {
       slideRight();
@@ -28,17 +37,20 @@ function closeDiv() {
 
 function slideLeft() {
   $("#helplineDiv").css("right", "0");
+  $("#threeDotsDiv").css("right", "0"); // FOR TRACK.HTML
   $(".transparentdiv").css("height", "100vh");
 }
 
 function slideRight() {
-  $("#helplineDiv").css("right", "-190px");
+  $("#helplineDiv").css("right", "-200px");
+  $("#threeDotsDiv").css("right", "-230px"); // FOR TRACK.HTML
   $(".transparentdiv").css("height", "0");
 }
 
 function onClickTransparentDiv() {
   $(".sidemenu_bar").css("left", "-280px");
   $(".transparentdiv").css("height", "0");
-  $("#helplineDiv").css("right", "-190px");
+  $("#helplineDiv").css("right", "-200px");
+  $("#threeDotsDiv").css("right", "-230px"); // FOR TRACK.HTML
   $("div#dialogdiv").html("");
 }

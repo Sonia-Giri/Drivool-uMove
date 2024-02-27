@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/header.css" />    
+    <link rel="stylesheet" href="./css/sidebar.css" />
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+      integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </head>
+  <body>
+    <div id="root">
+      <div id="mainDiv">
+        <div id="header">
+          <div id="leftside-header">
+            <i class="fas fa-bars" style="margin-right: 5px" id="menu-icon"></i>          
+          </div>
+          <div id="rightside-header">
+            <div style="margin-right: 10px">
+              <i
+                style="margin-right: 10px; font-size: 30px"
+                class="fas fa-car"
+              ></i>
+
+              <span
+                style="
+                  text-align: center;
+                  color: #fff;
+                  line-height: 1em;
+                  font-weight: bold;
+                "
+                >0391
+                <p style="font-size: 11px; color: #ddd">
+                  khopoligasco_v001
+                </p></span
+              >
+            </div>
+            <img
+              src="img/my_loc.png"
+              style="margin-right: 10px"
+              id="myloc-icon"
+              height="32px"
+              width="auto"
+            />
+            <img
+              src="img/option_menu.png"
+              id="threeDots-icon"
+              height="32px"
+              width="auto"
+            />
+          </div>
+        </div>
+
+        <div id="main-content"></div>
+      </div>
+
+      <div class="transparentdiv" onclick="onClickTransparentDiv()"></div>
+      <div class="sidemenu_bar"></div>
+      <div id="threeDotsDiv">
+        <div id="threeDotsSDmenu">
+          <div><span>Manage POIs</span></div>
+          <div><span>Preferences</span></div>
+          <div><span>Show all vehicles</span></div>
+          <div><span>Daily trip report</span></div>
+        </div>
+      </div>
+      <!-- <div id="dialogdiv"></div> -->
+    </div>
+    <script src="./js/header.js">//script related to header</script>   
+  </body>
+</html>
