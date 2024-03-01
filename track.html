@@ -45,6 +45,52 @@
         top: calc(100vh - 29px);
         border-radius: 25px 25px 0px 0px;
       }
+
+   /* CSS FOR DIALOG BOX */
+      #trackDialogDiv {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #324563;
+        padding: 20px;
+        z-index: 9999;
+      }
+
+      #preferencesDialog {
+        background-color: white;
+        padding: 15px;
+        margin-top: 10px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        padding-bottom: 5px;
+      }
+
+      #close-btn {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        cursor: pointer;
+      }
+
+      @keyframes growDialog {
+        from {
+          transform: translate(-50%, -50%) scale(0);
+        }
+        to {
+          transform: translate(-50%, -50%) scale(1);
+        }
+      }
+
+      @keyframes shrinkDialog {
+        from {
+          transform: translate(-50%, -50%) scale(1);
+        }
+        to {
+          transform: translate(-50%, -50%) scale(0);
+        }
+      }
     </style>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
@@ -104,12 +150,16 @@
       <div id="threeDotsDiv">
         <div id="threeDotsSDmenu">
           <div><span>Manage POIs</span></div>
-          <div><span>Preferences</span></div>
+          <div onclick="onClickPreferences()"><span>Preferences</span></div>
           <div><span>Show all vehicles</span></div>
           <div><span>Daily trip report</span></div>
         </div>
       </div>
-      <!-- <div id="dialogdiv"></div> -->
+
+      <div id="trackDialogDiv">
+        <i id="close-btn" class="fas fa-times invert"></i>
+        <div id="preferencesDialog">This is track dialog box</div>
+      </div>
 
        <div class="track-details" id="track-date">
         <span>27 Feb, 18:38:11 pm</span>
@@ -127,6 +177,54 @@
         <span>18&deg; 47.680'N 73&deg; 20.606'E</span>
       </div>
     </div>
+    <script>
+      //script for dialog box
+      $(document).ready(function () {
+        $("#close-btn").click(function (closeTrackDialogDiv) {
+          var trackDialogDiv = $("#trackDialogDiv");
+          trackDialogDiv.css(
+            "animation",
+            "shrinkDialog 0.3s ease-in-out forwards"
+          );
+          setTimeout(function () {
+            trackDialogDiv.css("display", "none");
+          }, 300);
+
+          $(".transparentdiv").css("height", "0");
+        });
+      });
+
+      function closeTrackDialogDiv() {
+        var trackDialogDiv = $("#trackDialogDiv");
+        trackDialogDiv.css(
+          "animation",
+          "shrinkDialog 0.3s ease-in-out forwards"
+        );
+        setTimeout(function () {
+          trackDialogDiv.css("display", "none");
+        }, 300);
+      }
+
+      function onClickPreferences() {
+        // $("#preferencesDialog").load("map_settings.html");
+        $(".transparentdiv").css("height", "100%");
+        $("#threeDotsDiv").css("right", "-230px");
+
+        var trackDialogDiv = $("#trackDialogDiv");
+        if (
+          trackDialogDiv.css("display") === "none" ||
+          trackDialogDiv.css("display") === ""
+        ) {
+          trackDialogDiv.css("display", "block");
+          trackDialogDiv.css(
+            "animation",
+            "growDialog 0.3s ease-in-out forwards"
+          );
+        } else {
+          closeTrackDialogDiv();
+        }
+      }
+    </script>
     <script src="./js/header.js">//script related to header</script>   
   </body>
 </html>
