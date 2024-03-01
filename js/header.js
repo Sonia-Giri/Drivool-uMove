@@ -52,5 +52,6 @@ function onClickTransparentDiv() {
   $(".transparentdiv").css("height", "0");
   $("#helplineDiv").css("right", "-200px");
   $("#threeDotsDiv").css("right", "-230px"); // FOR TRACK.HTML
+  closeTrackDialogDiv(); // FOR TRACK.HTML
   $("div#dialogdiv").html("");
 }
