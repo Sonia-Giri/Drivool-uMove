@@ -29,6 +29,11 @@
         box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
         border-radius: 0px 0px 25px 25px;
       }
+      .track-details:hover {
+        cursor: pointer;
+        background-color: #35369c;
+      }
+  
       #track-date {
         left: 0;
       }
@@ -40,9 +45,23 @@
       }
       #track-signal {
         left: 280px;
+        font-size: 13px;
       }
       #track-location {
+        color: rgb(201, 225, 49);
         top: calc(100vh - 29px);
+        border-radius: 25px 25px 0px 0px;
+      }
+      #track-meter {
+        color: rgb(201, 225, 49);
+        top: calc(100vh - 29px);
+        left: 170px;
+        border-radius: 25px 25px 0px 0px;
+      }
+      #track-distance {
+        color: rgb(201, 225, 49);
+        top: calc(100vh - 29px);
+        left: 220px;
         border-radius: 25px 25px 0px 0px;
       }
 
@@ -149,10 +168,14 @@
       <div class="sidemenu_bar"></div>
       <div id="threeDotsDiv">
         <div id="threeDotsSDmenu">
-          <div><span>Manage POIs</span></div>
+          <div onclick="onClickManagePOIs()"><span>Manage POIs</span></div>
           <div onclick="onClickPreferences()"><span>Preferences</span></div>
-          <div><span>Show all vehicles</span></div>
-          <div><span>Daily trip report</span></div>
+          <div onclick="onClickShowAllVehicles()">
+            <span>Show all vehicles</span>
+          </div>
+          <div onclick="onClickDailyTripReport()">
+            <span>Daily trip report</span>
+          </div>
         </div>
       </div>
 
@@ -161,20 +184,41 @@
         <div id="preferencesDialog">This is track dialog box</div>
       </div>
 
-       <div class="track-details" id="track-date">
+      <div class="track-details" id="track-date" onclick="onClickTrackDate()">
         <span>27 Feb, 18:38:11 pm</span>
       </div>
-      <div class="track-details" id="track-speed">
+      <div class="track-details" id="track-speed" onclick="onClickTrackSpeed()">
         <span>0 km/h</span>
       </div>
-      <div class="track-details" id="track-volt">
+      <div class="track-details" id="track-volt" onclick="onClickTrackVolt()">
         <span>12.24V</span>
       </div>
-      <div class="track-details" id="track-signal">
-        <span><i class="fas fa-signal" style="font-size: 10px"></i> &nbsp;9</span>
+      <div
+        class="track-details"
+        id="track-signal"
+        onclick="onClickTrackSignal()"
+      >
+       
+        <span
+          ><i class="fas fa-signal" style="font-size: 10px"></i> &nbsp;9</span
+        >
       </div>
-      <div class="track-details" id="track-location">
+      <div
+        class="track-details"
+        id="track-location"
+        onclick="onClickTrackLocation()"
+      >
         <span>18&deg; 47.680'N 73&deg; 20.606'E</span>
+      </div>
+      <div class="track-details" id="track-meter" onclick="onClickTrackMeter()">
+        <span>1m</span>
+      </div>
+      <div
+        class="track-details"
+        id="track-distance"
+        onclick="onClickTrackDistance()"
+      >
+        <span>801 km</span>
       </div>
     </div>
     <script>
@@ -206,6 +250,7 @@
       }
 
       function onClickPreferences() {
+        console.log("You've clicked on Preferences");
         $("#preferencesDialog").load("map_settings.html");
         $(".transparentdiv").css("height", "100%");
         $("#threeDotsDiv").css("right", "-230px");
@@ -225,6 +270,8 @@
         }
       }
     </script>
-    <script src="./js/header.js">//script related to header</script>   
+    <script src="./js/header.js">//script related to header</script>
+    <script src="./js/track-clickHandler.js">//click functions for</script>
+
   </body>
 </html>
