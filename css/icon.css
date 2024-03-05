@@ -21,3 +21,14 @@ div.iconbutton:hover {
 div.logo:hover {
     background-color:rgb(72, 157, 185)
 }
+div.logo-image{
+    display: inline-flex;
+}
+@media only screen and (orientation: landscape) {
+
+    div#listcontainer{
+    width: 60%;
+    margin:auto ;
+    }
+
+    }

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./css/buttons.css">
+        <link rel="stylesheet" href="./css/icon.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                // Initialize date picker
+                $('.datepicker').datepicker({
+                    format: 'yyyy-mm-dd',
+                    showClearBtn: true,
+                    autoClose: true,
+                    container: 'body',
+                });
+    
+                // Open date picker on button click
+                $('#openDatePickerBtn').on('click', function() {
+                    $('.datepicker').datepicker('open');
+                });
+                
+                 // Open date picker on button click
+                 $('#openDatePickerBtntill').on('click', function() {
+                    $('.datepicker').datepicker('open');
+                });
+
+                // Listen to date change event
+                $('.datepicker').on('change', function (e) {
+                    console.log('Selected date:', e.target.value);
+                    // Add your custom logic for handling the selected date change
+                });
+            });
+
+            $(document).ready(function(){
+            // Initialize time picker
+            $('.timepicker').timepicker({
+                showClearBtn: true,
+                twelveHour: false,
+            });
+
+            // Open time picker on button click
+            $('#openTimePickerBtn').on('click', function() {
+                $('.timepicker').timepicker('open');
+            });
+
+            // Listen to time change event
+            $('.timepicker').on('change', function (e) {
+                console.log('Selected time:', e.target.value);
+                //$('.timepicker').timepicker('value')
+                // Add your custom logic for handling the selected time change
+            });
+        });
+        </script>
+        <style>
+             body {
+                margin:0;
+                }
+            div.header{
+                border: 1px solid gray;
+                width:100%;
+                height:90px; 
+                }
+            div.headerdiv{
+                border: 1px solid gray;
+                width:100%;
+                height:90px;
+                margin-top: 10px; 
+                }
+            div.item{
+                padding: 10px;
+                display: inline-flex;
+            }
+            div.text{
+                font-weight: bold;
+            }
+            div.menu{
+                display: inline-flex;
+                padding-left: 10px;
+            }
+            
+            div.checkbox{
+                padding:10px;
+                }
+            div.textdiv{
+                font-weight: bold;
+                margin-left:65px;
+                display: inline-flex;
+            }
+            
+            div.content{
+                width: 100%;
+                height: 260px;
+                border: 1px solid gray;
+                margin-top: 10px;
+            }
+            div.label{
+                margin-left: 50px;
+            }
+            div.list{
+                padding-top:3px;
+                margin: auto;
+                width: 95%;
+                height: 20px;
+                box-shadow: 0px 2px 3px gray;
+            }
+              </style>
+    </head>
+    <body>
+
+        <div id="listcontainer">
+            <div class="header">
+                <div class="item">Tag
+                    <div class="text-with-line">DRIVOOLAPP Vehicles</div>
+                </div>
+                <div>
+                    <div class="menu">
+                        Tracking Id : 
+                        <div class="text">drivoolapp1705371031878</div>
+                    </div>
+                </div>
+            </div>
+            <div class="checkbox">
+                <input type="checkbox">
+                    <label>Create permanent link</label>
+            </div>
+                <div class="header">
+                    <div class="checkbox">Valid from :</div>
+                     <div class="textdiv"> 16 Jan 7:40 AM 
+                        <div class="logo-image">
+                            <div style="margin-left: 50px;">
+                                    <input type="text" class="datepicker"  hidden>
+                <button id="openDatePickerBtn" class="btn" style="height: 36px; width: 50px;">
+                <img style="height: 36px; width: 36px;" src="./img/calendar.png"></button>
+                                </div>
+                                <div style="margin-left: 15px;">
+                                    <div class="timepicker" >
+                                        <button id="openTimePickerBtn" class="btn">
+                                            <img src="./img/clock.png">  </button>
+                                            </div>                          
+                                </div>
+                        </div>
+                     </div>
+                </div>
+                    <div class="headerdiv">
+                        <div class="checkbox">Valid till :</div>
+                        <div class="textdiv"> 23 Jan 7:40 AM 
+                            <div class="logo-image">
+                                <div style="margin-left: 50px;"> 
+                                    <input type="text" class="datepicker" hidden>
+                            <button id="openDatePickerBtntill" class="btn" style="height: 36px; width: 50px;">
+                                <img style="height: 36px; width: 36px;" src="./img/calendar.png"></button>
+                                </div>
+                                <div style="margin-left: 15px;"> 
+                                    <div class="timepicker" >
+                                        <button id="openTimePickerBtn" class="btn">
+                                            <img src="./img/clock.png">  </button>
+                                            </div>   
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <script>
+                        // JavaScript to toggle the active state
+                         document.querySelector('.header').addEventListener('click', function() {
+                          this.classList.toggle('active');
+                           });
+                       </script> -->
+            <div class="content">
+                        <div class="item"> Select vehicles from below list
+                            <div class="label" ><input type="checkbox">
+                                <label>Select all</label>
+                            </div>
+                        </div>
+                        <div id="scrollContainer" style="width: 100%; height: 200px; overflow: auto;">
+
+                <div class="list">
+                    <input type="checkbox"><label>Vehicle XT</label>
+                </div>
+                    <div class="list">
+                        <input type="checkbox"><label>Vehicle 04</label>
+                    </div>
+                        <div class="list">
+                            <input type="checkbox"><label>Vehicle 08</label>
+                        </div>
+                                    <div class="list">
+                                        <input type="checkbox"><label>Vehicle 03</label>
+                                    </div>
+                                <div class="list">
+                                    <input type="checkbox"><label>Vehicle 06</label>
+                                </div>
+                            <div class="list">
+                                <input type="checkbox"><label>Vehicle 02</label>
+                            </div>
+                        <div class="list">
+                            <input type="checkbox"><label>Vehicle 05</label>
+                        </div>
+                    <div class="list">
+                        <input type="checkbox"><label>Vehicle 07</label>
+                    </div>
+                <div class="list">
+                    <input type="checkbox"><label>Vehicle 09</label>
+                </div>
+                <div class="list">
+                    <input type="checkbox"><label>Vehicle 10</label>
+                </div>
+                    <div class="list">
+                        <input type="checkbox"><label>Vehicle 11</label>
+                    </div>
+                        <div class="list">
+                            <input type="checkbox"><label>Vehicle 12</label>
+                        </div>
+                                    <div class="list">
+                                        <input type="checkbox"><label>Vehicle 13</label>
+                                    </div>
+                                <div class="list">
+                                    <input type="checkbox"><label>Vehicle 14</label>
+                                </div>
+                            <div class="list">
+                                <input type="checkbox"><label>Vehicle 15</label>
+                            </div>
+                        <div class="list">
+                            <input type="checkbox"><label>Vehicle 16</label>
+                        </div>
+                    <div class="list">
+                        <input type="checkbox"><label>Vehicle 17</label>
+                    </div>
+                <div class="list">
+                    <input type="checkbox"><label>Vehicle 18</label>
+                </div>
+            </div>
+        </div>  
+            <div class="textbutton">CREATE TRACKING LINK</div>
+        </div>
+    </body>
+    </html>
