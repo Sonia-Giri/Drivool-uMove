@@ -24,7 +24,7 @@
                 });
                 
                  // Open date picker on button click
-                 $('#openDatePickerBtntill').on('click', function() {
+                $('#openDatePickerBtntill').on('click', function() {
                     $('.datepicker').datepicker('open');
                 });
 
@@ -33,27 +33,30 @@
                     console.log('Selected date:', e.target.value);
                     // Add your custom logic for handling the selected date change
                 });
-            });
 
-            $(document).ready(function(){
-            // Initialize time picker
-            $('.timepicker').timepicker({
-                showClearBtn: true,
-                twelveHour: false,
-            });
 
-            // Open time picker on button click
-            $('#openTimePickerBtn').on('click', function() {
-                $('.timepicker').timepicker('open');
-            });
+                $('.timepicker').timepicker({
+                    showClearBtn: true,
+                    twelveHour: false,
+                });
 
-            // Listen to time change event
-            $('.timepicker').on('change', function (e) {
-                console.log('Selected time:', e.target.value);
-                //$('.timepicker').timepicker('value')
-                // Add your custom logic for handling the selected time change
-            });
-        });
+                // Open time picker on button click
+                $('#openTimePickerBtn').on('click', function() {
+                    $('.timepicker').timepicker('open');
+                });
+
+                // Listen to time change event
+                $('.timepicker').on('change', function (e) {
+                    console.log('Selected time:', e.target.value);
+                    //$('.timepicker').timepicker('value')
+                    // Add your custom logic for handling the selected time change
+                });
+                });
+
+        //     $(document).ready(function(){
+        //     // Initialize time picker
+
+        // });
         </script>
         <style>
              body {
@@ -111,6 +114,7 @@
     </head>
     <body>
 
+        <input type="text" class="datepicker"  hidden>
         <div id="listcontainer">
             <div class="header">
                 <div class="item">Tag
@@ -132,7 +136,7 @@
                      <div class="textdiv"> 16 Jan 7:40 AM 
                         <div class="logo-image">
                             <div style="margin-left: 50px;">
-                                    <input type="text" class="datepicker"  hidden>
+                                   
                 <button id="openDatePickerBtn" class="btn" style="height: 36px; width: 50px;">
                 <img style="height: 36px; width: 36px;" src="./img/calendar.png"></button>
                                 </div>
@@ -140,7 +144,7 @@
                                     <div class="timepicker" >
                                         <button id="openTimePickerBtn" class="btn">
                                             <img src="./img/clock.png">  </button>
-                                            </div>                          
+                                    </div>                          
                                 </div>
                         </div>
                      </div>
@@ -150,7 +154,7 @@
                         <div class="textdiv"> 23 Jan 7:40 AM 
                             <div class="logo-image">
                                 <div style="margin-left: 50px;"> 
-                                    <input type="text" class="datepicker" hidden>
+                                    <!-- <input type="text" class="datepicker" hidden> -->
                             <button id="openDatePickerBtntill" class="btn" style="height: 36px; width: 50px;">
                                 <img style="height: 36px; width: 36px;" src="./img/calendar.png"></button>
                                 </div>
