@@ -66,14 +66,14 @@
       }
 
    /* CSS FOR DIALOG BOX */
-      #trackDialogDiv {
+      #trackDialogDiv, .messageDialog{
         display: none;
         position: fixed;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
         background-color: #324563;
-        padding: 20px;
+        padding: 20px 10px;
         z-index: 9999;
       }
 
@@ -110,6 +110,17 @@
           transform: translate(-50%, -50%) scale(0);
         }
       }
+
+  /* CSS FOR MSG DIALOG BOX */
+      .messageDialog {
+        background-color: #eeeeeea9;
+        color: #333;
+        border-radius: 25px 25px;
+        width: auto;
+        padding: 13px 20px;
+        opacity: 0;
+        transition: opacity 1s ease-in-out;
+      }
     </style>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
@@ -128,7 +139,7 @@
           <div id="rightside-header">
             <div style="margin-right: 10px">
               <i
-                style="margin-right: 10px; font-size: 30px"
+                style="margin-right: 15px; font-size: 30px"
                 class="fas fa-car"
               ></i>
 
@@ -181,7 +192,7 @@
 
       <div id="trackDialogDiv">
         <i id="close-btn" class="fas fa-times invert"></i>
-        <div id="preferencesDialog">This is track dialog box</div>
+        <div id="preferencesDialog"> <!--This is track dialog box--> </div>
       </div>
 
       <div class="track-details" id="track-date" onclick="onClickTrackDate()">
@@ -220,9 +231,13 @@
       >
         <span>801 km</span>
       </div>
+
+      <div class="messageDialog"> <!--This is msg dialog box--> </div>
+      
     </div>
     <script>
-      //script for dialog box
+      //script for transition of option menu dialog box
+      
       $(document).ready(function () {
         $("#close-btn").click(function (closeTrackDialogDiv) {
           var trackDialogDiv = $("#trackDialogDiv");
@@ -248,27 +263,23 @@
           trackDialogDiv.css("display", "none");
         }, 300);
       }
-
-      function onClickPreferences() {
-        console.log("You've clicked on Preferences");
-        $("#preferencesDialog").load("map_settings.html");
-        $(".transparentdiv").css("height", "100%");
-        $("#threeDotsDiv").css("right", "-230px");
-
-        var trackDialogDiv = $("#trackDialogDiv");
-        if (
-          trackDialogDiv.css("display") === "none" ||
-          trackDialogDiv.css("display") === ""
-        ) {
-          trackDialogDiv.css("display", "block");
-          trackDialogDiv.css(
-            "animation",
-            "growDialog 0.3s ease-in-out forwards"
-          );
-        } else {
-          closeTrackDialogDiv();
-        }
+      
+      //script for transition of Message Dialog Box
+      
+      function showBox() {
+        var messageDialog = $(".messageDialog");
+        messageDialog.css("display", "block"); 
+        setTimeout(function () {
+          messageDialog.css("opacity", "1"); 
+        }, 10); 
+        setTimeout(function () {
+          messageDialog.css("opacity", "0");
+          setTimeout(function () {
+            messageDialog.css("display", "none");
+          }, 500); 
+        }, 2000); 
       }
+     
     </script>
     <script src="./js/header.js">//script related to header</script>
     <script src="./js/track-clickHandler.js">//click functions for</script>
