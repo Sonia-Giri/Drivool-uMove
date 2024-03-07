@@ -50,6 +50,8 @@ function onClickTrackSignal() {
 }
 function onClickTrackLocation() {
   console.log("You've clicked on Location");
+  showBox();
+  copyText();
 }
 function onClickTrackAltitude() {
   console.log("You've clicked on Altitude");
