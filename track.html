@@ -279,7 +279,17 @@
           }, 500); 
         }, 2000); 
       }
-     
+
+       // script for copying text
+      function copyText() {
+        var textToCopy = $("#track-location span").text();
+        navigator.clipboard.writeText(textToCopy);
+        
+        // for the track-location label
+        $(".messageDialog").html(
+          "Current Lat long " + textToCopy + " is copied to the Clipboard."
+        );
+      }
     </script>
     <script src="./js/header.js">//script related to header</script>
     <script src="./js/track-clickHandler.js">//click functions for</script>
