@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+0<!DOCTYPE html>
 <html>
     <head>
         <meta charset="UTF-8">
@@ -9,55 +9,51 @@
         <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
         <script>
-            $(document).ready(function(){
-                // Initialize date picker
-                $('.datepicker').datepicker({
-                    format: 'yyyy-mm-dd',
-                    showClearBtn: true,
-                    autoClose: true,
-                    container: 'body',
-                });
-    
-                // Open date picker on button click
-                $('#openDatePickerBtn').on('click', function() {
-                    $('.datepicker').datepicker('open');
-                });
-                
-                 // Open date picker on button click
-                $('#openDatePickerBtntill').on('click', function() {
-                    $('.datepicker').datepicker('open');
-                });
+        $(document).ready(function(){
+            // Initialize date picker
+            $('.datepicker').datepicker({
+                format: 'yyyy-mm-dd',
+                showClearBtn: true,
+                autoClose: true,
+                container: 'body',
+            });
 
-                // Listen to date change event
-                $('.datepicker').on('change', function (e) {
-                    console.log('Selected date:', e.target.value);
-                    // Add your custom logic for handling the selected date change
-                });
+            // Open date picker on button click
+            $('#openDatePickerBtn').on('click', function() {
+                $('.datepicker').datepicker('open');
+            });
 
+             // Open date picker on button click
+             $('#openDatePickerBtntill').on('click', function() {
+                $('.datepicker').datepicker('open');
+            });
 
-                $('.timepicker').timepicker({
-                    showClearBtn: true,
-                    twelveHour: false,
-                });
+            // Listen to date change event
+            $('.datepicker').on('change', function (e) {
+                console.log('Selected date:', e.target.value);
+                // Add your custom logic for handling the selected date change
+            });
+        });
+        $(document).ready(function(){
+            // Initialize time picker
+            $('.timepicker').timepicker({
+                showClearBtn: true,
+                twelveHour: false,
+            });
 
-                // Open time picker on button click
-                $('#openTimePickerBtn').on('click', function() {
-                    $('.timepicker').timepicker('open');
-                });
+            // Open time picker on button click
+            $('#openTimePickerBtn').on('click', function() {
+                $('.timepicker').timepicker('open');
+            });
 
-                // Listen to time change event
-                $('.timepicker').on('change', function (e) {
-                    console.log('Selected time:', e.target.value);
-                    //$('.timepicker').timepicker('value')
-                    // Add your custom logic for handling the selected time change
-                });
-                });
-
-        //     $(document).ready(function(){
-        //     // Initialize time picker
-
-        // });
-        </script>
+            // Listen to time change event
+            $('.timepicker').on('change', function (e) {
+                console.log('Selected time:', e.target.value);
+                //$('.timepicker').timepicker('value')
+                // Add your custom logic for handling the selected time change
+            });
+        });
+       </script>
         <style>
              body {
                 margin:0;
@@ -141,11 +137,11 @@
                 <img style="height: 36px; width: 36px;" src="./img/calendar.png"></button>
                                 </div>
                                 <div style="margin-left: 15px;">
-                                    <div class="timepicker" >
+                                    <!-- <div class="timepicker" > -->
                                         <button id="openTimePickerBtn" class="btn">
                                             <img src="./img/clock.png">  </button>
                                     </div>                          
-                                </div>
+                                <!-- </div> -->
                         </div>
                      </div>
                 </div>
@@ -154,7 +150,6 @@
                         <div class="textdiv"> 23 Jan 7:40 AM 
                             <div class="logo-image">
                                 <div style="margin-left: 50px;"> 
-                                    <!-- <input type="text" class="datepicker" hidden> -->
                             <button id="openDatePickerBtntill" class="btn" style="height: 36px; width: 50px;">
                                 <img style="height: 36px; width: 36px;" src="./img/calendar.png"></button>
                                 </div>
