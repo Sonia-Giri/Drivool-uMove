@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <style>
+             @media only screen and (orientation: landscape) {
+
+                div#listcontainer{
+                width: 60%;
+                margin:auto ;
+                }
+
+                }
+        </style>
+    </head>
+<body>
+    <div id="listcontainer">
+        <a class="waves-effect waves-light btn">button</a>
+        <a class="waves-effect waves-light btn"><i class="material-icons left"><img src="./img/cloud.png" style="height: 30px; width: 30px; background-color: aqua;" ></i>button</a>
+        <a class="waves-effect waves-light btn"><i class="material-icons right"><img src="./img/cloud.png" style="height: 30px; width: 30px; background-color: aqua;" ></i>button</a>
+
+        <div style="margin-top: 50px; margin-left:100px;">
+        <a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons"><img src="./img/add.png" style="height: 30px; width: 30px;"></i></a>
+        </div>
+
+        <div style="margin-top: 50px;">            
+            <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+                <i class="material-icons right"><img src="./img/next.png" style="height: 25px; width: 25px;"></i>
+              </button>
+        </div>
+
+        <div style="margin-top: 50px;">
+            <a class="btn-large disabled">Button</a>
+            <a class="btn disabled">Button</a>
+            <a class="btn-flat disabled">Button</a>
+            <a class="btn-floating disabled"><i class="material-icons">add</i></a>
+        </div>
+    </div>
+</body>
+</html>
