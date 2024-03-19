@@ -7,6 +7,7 @@
   justify-content: space-between;
   align-items: center;
 }
+
 #leftside-header {
   display: flex;
   justify-content: space-around;
@@ -17,6 +18,19 @@
 #leftside-header div {
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
+}
+
+#rightside-header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: #f2f2f2;
+}
+
+#rightside-header div {
+  display: flex;
+  align-items: center;
   justify-content: space-around;
 }
 
@@ -66,18 +80,6 @@
   cursor: pointer;
 }
 
-#rightside-header {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  color: #f2f2f2;
-}
-
-#rightside-header div {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-}
 
 #threeDotsDiv {
   right: -230px;
