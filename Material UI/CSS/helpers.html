@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!--Import Google Icon Font-->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <!--Import materialize.css-->
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="css/materialize.min.css"
+      media="screen,projection"
+    />
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+     
+      .container div {
+        padding: 10px;
+        box-shadow: 1px 1px 2px #333;
+      }
+      p {
+        font-style: italic;
+        text-decoration: underline;
+        margin: 10px;
+        color: blueviolet;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <h3>ALIGNMENT</h3>
+      <h4>Vertical ALIGNMENT</h4>
+      <div class="valign-wrapper" style="height: 200px">
+        <h5>This should be vertically aligned</h5>
+      </div>
+      <h4>Text ALIGN</h4>
+      <div>
+        <h5 class="left-align">This should be left aligned</h5>
+      </div>
+      <br />
+      <div>
+        <h5 class="right-align">This should be right aligned</h5>
+      </div>
+      <br />
+      <div>
+        <h5 class="center-align">This should be center aligned</h5>
+      </div>
+      <h4>Quick Floats</h4>
+      <div class="left">
+        ...
+        <h6>class="left"</h6>
+      </div>
+      <div class="right">
+        ...
+        <h6>class="right"</h6>
+      </div>
+      <br /><br /><br />
+      <h3>Hiding/Showing Content</h3>
+      <p>.hide</p>
+      <div class="hide">Hidden for all Devices</div>
+      <p>.hide-on-small-only</p>
+      <div class="hide-on-small-only">Hidden for Mobile Only</div>
+      <p>.hide-on-med-only</p>
+      <div class="hide-on-med-only">Hidden for Tablet Only</div>
+      <p>.hide-on-med-and-down</p>
+      <div class="hide-on-med-and-down">Hidden for Tablet and Below</div>
+      <p>.hide-on-large-only</p>
+      <div class="hide-on-large-only">Hidden for Desktop Only</div>
+
+      <p>.show-on-small</p>
+      <div class="show-on-small">Show for Mobile Only</div>
+      <p>.show-on-medium</p>
+      <div class="show-on-medium">Show for Tablet Only</div>
+      <p>.show-on-large</p>
+      <div class="show-on-large">Show for Desktop Only</div>
+      <p>.show-on-medium-and-up</p>
+      <div class="show-on-medium-and-up">Show for Tablet and Above</div>
+      <p>.show-on-medium-and-down</p>
+      <div class="show-on-medium-and-down">Show for Tablet and Below</div>
+      <h3>Formatting</h3>
+      <h5>Truncation</h5>
+      <span
+        >To truncate long lines of text in an ellipsis, add the class truncate
+        to the tag which contains the text. See an example below of a header
+        being truncated inside a card.</span
+      >
+      <div style="width: 50%">
+        <h4 class="truncate">
+          This is an extremely long title that will be truncated
+        </h4>
+      </div>
+      <h5>Hover</h5>
+      <span
+        >The hoverable is a hover class that adds an animation for box shadow as
+        seen below. It can be used on most elements, but meant for use on
+        cards.</span
+      >
+
+      <div class="card-panel hoverable">Hoverable Card Panel</div>
+      <br /><br />
+    </div>
+  </body>
+</html>
