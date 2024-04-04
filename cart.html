@@ -5,7 +5,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="./css/buttons.css">
         <link rel="stylesheet" href="./css/icon.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
         <!-- <script>
@@ -36,52 +35,55 @@
         <div id="listcontainer">
             <div class="listbody">
                 <div class="product-container">
-                    <div class="product-image"><img src="./img/food.jpeg" width="50px" height="50px" style="margin: 15px 10px;">
+                    <div class="product-image"><img src="./img/food.jpeg" style="margin: 20px 10px; width: 40px;">
                    <div class="discount-badge">20% OFF</div></div>
                 </div>
                 <div style="margin: 20px 10px;">Aashirvad- atta <div>5kg</div><div>&#8377 300;</div></div>
-                <div class="item" style="margin: 40px 50px;" >
-                     <button>-</button>
-                    <input type="text" value="1" style="background-color: orange; height: 1.9rem;  cursor: pointer;">
-                    <button>+</button>
+                <div class="button-container">
+                    <button class="quantity-button">-</button>
+                    <input type="text" value="1" class="quantity-input">
+                    <button class="quantity-button">+</button>
                 </div>
+
             </div>
             
             <div class="listbody" style="margin-top: 10px;">
                 <div class="product-container">
-                    <div class="product-image"><img src="./img/food.jpeg" width="50px" height="50px" style="margin: 15px 10px;">
+                    <div class="product-image"><img src="./img/food.jpeg"  style="margin: 20px 10px; width: 40px;">
                    <div class="discount-badge">20% OFF</div></div>
                 </div>
                 <div style="margin: 20px 10px;">Aashirvad- atta <div>5kg</div><div>&#8377 300;</div></div>
-                <div class="item" style="margin: 40px 50px;">
-                     <button>-</button>
-                    <input type="text" value="1" style="background-color: orange; height: 1.9rem;  cursor: pointer;">
-                    <button>+</button>
+                <div class="button-container">
+                    <button class="quantity-button">-</button>
+                    <input type="text" value="1" class="quantity-input">
+                    <button class="quantity-button">+</button>
                 </div>
+
             </div>
 
              <div class="listbody" style="margin-top: 10px;">
                 <div class="product-container">
-                    <div class="product-image"><img src="./img/food.jpeg" width="50px" height="50px" style="margin: 15px 10px;">
+                    <div class="product-image"><img src="./img/food.jpeg" style="margin: 20px 10px; width: 40px;">
                    <div class="discount-badge">20% OFF</div></div>
                 </div>
                 <div style="margin: 20px 10px;">Aashirvad- atta <div>5kg</div><div>&#8377 300;</div></div>
-                <div class="item" style="margin: 40px 50px;">
-                     <button>-</button>
-                    <input type="text" value="1" style="background-color: orange; height: 1.9rem;  cursor: pointer;">
-                    <button>+</button>
+                <div class="button-container">
+                    <button class="quantity-button">-</button>
+                    <input type="text" value="1" class="quantity-input">
+                    <button class="quantity-button">+</button>
                 </div>
+
             </div>
             
             <div class="order-summary" style="margin-top: 10px;">
                 <div class="font">Order Summary</div>
                 <div class="order-detail">Sub Total: <div style="margin-left: 60%;">&#8377 300</div></div>
-                <div class="order-detail">Delivery Charge:<img  src="./img/about.png"  width="20px" height="20px" ><div style="margin-left: 50%;">&#8377 0</div></div><hr>
+                <div class="order-detail">Delivery Charge:<img  src="./img/about.png"  width="20px" height="20px" ><div style="margin-left: 45%;">&#8377 0</div></div><hr>
                 <div style="color: black; font-size: 1.2rem;"><div class="order-detail">Total<div style="margin-left: 65%;">&#8377 300</div></div></div>
             </div>
 
             <div class="delivery" style="margin-top: 30px;">
-             <button id="openDatePickerBtn" class="btn" style="height: 36px; width: 50px; margin: 20px;">
+             <button id="openDatePickerBtn"  style="height: 36px; width: 50px; margin: 10px; background-color: blue; border: gray;">
                     <img  src="./img/calendar.png"></button>
                 <div style="margin-top: 10px;">
                     <div>Delivery on</div>
@@ -91,13 +93,14 @@
 
             <div class="delivery" style="margin-top: 30px;">
                 <img  src="./img/about.png" style="height: 20px; width: 20px; margin: 20px 10px;"> 
-                <div style="margin: 10px;">
+                 <div style="margin: 10px;">
                     <div>Delivery Address</div>
                     <div style="color: black; font-size: 1.1rem;">B103 Block B, Floor 1, Sumadhura sawan, Bangalore ,India 
-                    <img  src="./img/arrow_point_up.png" style="height: 20px; width: 20px; background-color: gray; margin-left: 100px;  cursor: pointer; "></div>
+                    <img  src="./img/arrow_point_up.png" style="height: 20px; width: 20px; background-color: gray; margin-left: 100px;  cursor: pointer; vertical-align: middle; "></div>
                 </div>
+                
             </div>
-            <div class="order-detail">
+            <div class="order-detail" style="margin-top: 30px;">
                 <div class="font">Total: &#8377 300<div class="Save-discount-badge">SAVED &#8377 100</div></div>
                 <div class="footer">Place Order</div>
             </div>
