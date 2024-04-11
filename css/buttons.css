@@ -155,13 +155,12 @@ color: rgb(141, 136, 136);
 font-size: larger;
 }
 div.button{
-
 height: 30px;
-background-color: rgb(103, 103, 126);
+/* background-color: rgb(103, 103, 126); */
 color: white;
 text-align: center; 
 padding-top: 10px;
-margin-top: 30px;
+/* margin-top: 30px; */
 margin-left: 20px;
 }
 
@@ -208,18 +207,6 @@ background-color:#ede7f6 ;
 border-radius: 10px;
 box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-div.font{
-padding: 5px 16px;
-color: black;
-font-size: larger;
-width: 50%;
-}
-div.order-detail{
-width: 100%;
-margin: 0px 20px;
-display: inline-flex;
-cursor: pointer;
-}
 
 hr {
 border: none;
@@ -233,26 +220,6 @@ display: inline-flex;
 padding:10px;
 }
 
-div.Save-discount-badge{
-width: 70px;
-background-color: rgb(52, 222, 52); 
-color: white; 
-padding: 3px 6px;
-border-radius: 5px;
-font-size: 12px; 
-cursor: pointer;  
-}
-div.footer{
-/* width: 100px; */
-height: 20px;
-/* margin: 20px 40px 20px 80px; */
-background-color: rgb(195, 28, 28);
-margin: 5px;
-border-radius: 5px;
-padding: 10px;
-color: white;
-
-}
 
 .button-container {
 display: inline-flex; 
@@ -279,10 +246,45 @@ text-align: center;
 cursor: pointer;
 border: gray;
 }
-.container {
-display: grid;
-place-items: center;
-align-items: start;
+.id-detail{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+.container {
+  text-align: center;
+}
+
+div.order-detail{
+width: 100%;
+margin: 0px 20px;
+display: inline-flex;
+cursor: pointer;
+}
+div.Save-discount-badge{
+width: 70px;
+background-color: rgb(52, 222, 52); 
+color: white; 
+padding: 3px 6px;
+border-radius: 5px;
+font-size: 12px; 
+cursor: pointer;  
+}
+div.font{
+  color: black;
+  width: 100px;
+  margin-left: 20px;
+  }
+div.btn{
+width: 100px;
+margin-left: 50px;
+background-color: rgb(195, 28, 28);
+border-radius: 5px;
+}
+div.font_text{
+  color: black;
+  font-size: larger;
+  padding: 10px 17px;
+  }
 
 
