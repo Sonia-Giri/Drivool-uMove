@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./css/buttons.css">
+        <link rel="stylesheet" href="./css/icon.css">
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+        <style>
+          @media only screen and (orientation: landscape) {
+                 div#listcontainer{
+                 width: 60%;
+                 margin:auto;
+                 }
+  
+                 }
+     </style>
+    </head>
+    
+    <body>
+     
+    <div class="delivery" style=" width: 95%; top: 0; background-color: #ffffff;">
+        <div style="margin: 10px 15px;"><img src="./img/ride_seeker.png" alt="Ride Seeker"></div>
+        <div style="margin: 15px 30px;">Order milk and groceries up to <b>10:00 PM </b> for next morning delivery</div>
+    </div>
+    
+        <div id="listcontainer" style="margin-bottom:20px;">
+         
+        </div>
+        <div class="order-summary" style=" width: 100%; bottom:15%;">
+            <div class="font_text"><b>Order Summary</b></div>
+            <div class="order-detail">Sub Total: <div style="margin-left: 60%;">&#8377 300</div></div>
+            <div class="order-detail">Delivery Charge:<img  src="./img/about.png"  width="20px" height="20px" ><div style="margin-left: 45%;">&#8377 0</div></div><hr>
+            <b style="margin-left: 17px; font-size: 1.2rem;">Total</b>
+            <b style="margin-left: 65%;">&#8377 300</b>
+        </div>
+        <div class="delivery" style="margin-top: 30px;">
+            <div style="margin: 13px 20px;"><img src="./img/calendar_black.png"></div>
+            <div style="margin: 10px 20px;">Delivery on <br><b>Sat, Mar 30 2024</b></div>
+    </div>
+    <div class="delivery" style="margin-top: 30px;">
+        <img  src="./img/about.png" style="height: 20px; width: 20px; margin: 20px 10px;"> 
+         <div style="margin: 5px;">Delivery Address<br><b>B103 Block B, Floor 1, Sumadhura sawan, Bangalore ,India</b> 
+            <img  src="./img/arrow_point_up.png" style="height: 20px; width: 20px; background-color:rgb(102 95 95); margin-left: 100px;  cursor: pointer; vertical-align: middle;">
+        </div>
+    </div>
+    <div style="margin-top: 30px; display: flex;">
+        <div class="font"><b>Total: &#8377 300</b><div class="Save-discount-badge">SAVED &#8377 100</div></div>
+        <div class="button btn">Place Order</div>
+    </div>
+      <script>
+    
+          function createListItemHtml(joProductiteminfo) {
+              return `
+           
+                  <div class="listbody" style="margin-top:20px;"> <!-- Adjust margin-top to accommodate delivery section -->
+                      <div class="product-container">
+                          <div class="product-image"><img src="./img/food.jpeg" style="margin: 20px 10px; width: 40px;">
+                              <div class="discount-badge">${joProductiteminfo.discount}</div>
+                          </div>
+                      </div>
+                      <div style="margin: 20px 10px; width:120px">${joProductiteminfo.name} 
+                          <br>${joProductiteminfo.productid}
+                          <br>${joProductiteminfo.price}
+                      </div>
+                      <div class="button-container">
+                          <button class="quantity-button">-</button>
+                          <input type="text" value="1" class="quantity-input">
+                          <button class="quantity-button">+</button>
+                      </div>
+                  </div>
+              `
+          }
+
+    let arrProductListData = [
+            {
+                name: " Dell Inspiron 15",
+                price: "&#8377 100000.00",
+                discount: "25% Off",
+                productid:"123456789"
+            },
+            
+            {
+                name: " iPhone 12 Pro",
+                price: "&#8377 110000.00",
+                discount: "15% Off",
+                productid:"456789123"
+            },
+            
+            {
+                name: "Sony WH-1000XM4e",
+                price: "&#8377 80000.00",
+                discount: " 12% Off",
+                productid:"654321987"
+            },
+        
+            ]
+
+            console.log("Array Length " + arrProductListData.length )
+            let strListItemHtml = ""
+            for(let i=0; i<arrProductListData.length; i++){
+                let joProductData = arrProductListData[i]
+                strListItemHtml +=  createListItemHtml(joProductData)
+            }
+
+
+            $('div#listcontainer').html(strListItemHtml)
+        </script>
+    </body>
+</html>
