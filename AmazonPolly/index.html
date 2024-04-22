@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Amazon Polly Text-to-Speech</title>
+  </head>
+  <body>
+    <h1>Amazon Polly Text-to-Speech</h1>
+
+    <textarea
+      id="inputText"
+      rows="4"
+      cols="50"
+      placeholder="Enter text to convert to speech..."
+    ></textarea
+    ><br />
+
+    <label for="voiceSelect">Select a Voice:</label>
+    <select id="voiceSelect">
+      <option value="Joanna">Joanna</option>
+      <option value="Matthew">Matthew</option>
+      <option value="Sally">Sally</option>
+      <option value="Ivy">Ivy</option>
+      <option value="Kevin">Kevin</option></select
+    ><br />
+
+    <button onclick="synthesizeSpeech()" style="margin-top: 10px">
+      Convert to Speech</button
+    ><br />
+    <audio
+      id="audioPlayer"
+      controls
+      style="display: none; margin-top: 10px"
+    ></audio>
+
+    <script src="https://sdk.amazonaws.com/js/aws-sdk-2.932.0.min.js"></script>
+    <script>
+      // Set up AWS SDK
+      AWS.config.update({
+        accessKeyId: "AKIAZI2LCNNLXGFAYXZ5",
+        secretAccessKey: "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",
+        region: "ap-south-1",
+      });
+
+      // Function to synthesize speech
+      function synthesizeSpeech() {
+        var polly = new AWS.Polly();
+        var inputText = document.getElementById("inputText").value;
+        var voiceSelect = document.getElementById("voiceSelect");
+        var selectedVoice =
+          voiceSelect.options[voiceSelect.selectedIndex].value;
+
+        var params = {
+          OutputFormat: "mp3",
+          Text: inputText,
+          VoiceId: selectedVoice,
+        };
+
+        polly.synthesizeSpeech(params, function (err, data) {
+          if (err) {
+            console.log(err, err.stack);
+          } else {
+            var audioData = new Blob([data.AudioStream], {
+              type: "audio/mpeg",
+            });
+            var audioUrl = URL.createObjectURL(audioData);
+            var audioElement = document.getElementById("audioPlayer");
+            audioElement.src = audioUrl;
+            audioElement.style.display = "block";
+            audioElement.play();
+          }
+        });
+      }
+    </script>
+  </body>
+</html>
