@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Graph for Voltage vs Epoch time</title>
+    <link
+      rel="stylesheet"
+      href="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.css"
+    />
+    <style>
+      /* Customize the line thickness */
+      #vtGraph .ct-series.ct-series-a .ct-line {
+        stroke-width: 0.9px;
+        stroke: blue;
+      }
+      #hourlyGraph .ct-series.ct-series-a .ct-line,
+      #halfHrlyGraph .ct-series.ct-series-a .ct-line {
+        stroke-width: 2px;
+        stroke: blueviolet;
+      }
+      #halfHrlyGraph .ct-point {
+        stroke: blueviolet;
+        fill: blueviolet;
+        stroke-width: 3px;
+      }
+      #hourly2Graph .ct-series.ct-series-a .ct-line {
+        /* stroke-width: 2px; */
+        stroke-width: 30px;
+        stroke: aqua;
+        fill: aqua;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>1. Graph with all the datas included</h3>
+    <div class="ct-chart" id="vtGraph"></div>
+    <h3>2. Graph with hourly datas (with average v values)</h3>
+    <div class="ct-chart" id="hourlyGraph"></div>
+    <h3>
+      3. Graph with hourly datas (with average v values)- Bar Chart
+      representation
+    </h3>
+    <div class="ct-chart" id="hourly2Graph"></div>
+    <!-- <h3>
+      4. Graph with hourly datas (with average v values)- ScatterPlot Chart
+      representation
+    </h3> -->
+    <h3>4. Graph with 30min datas (with average v values)</h3>
+    <div class="ct-chart .ct-point" id="halfHrlyGraph"></div>
+    <h3>
+      5. Graph with 30min datas (with average v values)- Bar Chart
+      representation
+    </h3>
+    <div class="ct-chart" id="halfHrly2Graph"></div>
+
+    <script src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        function fetchData() {
+          var apiUrl =
+            "https://us-central1-drivoolapis.cloudfunctions.net/getTrace?key=-MLihKZTLRD00R0s8Csm&gapn=syednaaz411&route=syednaaz411_v001&date=04302024";
+
+          $.ajax({
+            url: apiUrl,
+            dataType: "json",
+            type: "GET",
+            success: function (data) {
+              console.log("Processed data:", data);
+              processData(data);
+            },
+            error: function (error) {
+              console.error(
+                "There was a problem with the fetch operation:",
+                error
+              );
+            },
+          });
+        }
+
+        fetchData();
+      });
+    </script>
+    <script src="script.js"></script>
+  </body>
+</html>
