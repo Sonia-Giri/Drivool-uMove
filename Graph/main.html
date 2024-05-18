@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Graph for Voltage vs Epoch time</title>
+    <link
+      rel="stylesheet"
+      href="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.css"
+    />
+    <style>
+      /* Customize the line thickness */
+      #vtGraph .ct-series.ct-series-a .ct-line,
+      #stGraph .ct-series.ct-series-a .ct-line,
+      #ltGraph .ct-series.ct-series-a .ct-line,
+      #ntGraph .ct-series.ct-series-a .ct-line,
+      #htGraph .ct-series.ct-series-a .ct-line {
+        stroke-width: 0.9px;
+        stroke: blue;
+      }
+      #vtHourlyGraph .ct-series.ct-series-a .ct-line,
+      #stHourlyGraph .ct-series.ct-series-a .ct-line,
+      #ltHourlyGraph .ct-series.ct-series-a .ct-line,
+      #ntHourlyGraph .ct-series.ct-series-a .ct-line {
+        stroke-width: 2px;
+        stroke: red;
+      }
+      #vtHalfHrlyGraph .ct-series.ct-series-a .ct-line,
+      #stHalfHrlyGraph .ct-series.ct-series-a .ct-line,
+      #ltHalfHrlyGraph .ct-series.ct-series-a .ct-line,
+      #ntHalfHrlyGraph .ct-series.ct-series-a .ct-line {
+        stroke-width: 2px;
+        stroke: blueviolet;
+      }
+
+      /* COLOR CUSTOMSATION FOR COMBINED CHART */
+
+      #hourlyGraph .ct-series-a .ct-line,
+      #halfHourlyGraph .ct-series-a .ct-line {
+        /* VT GRAPH */
+        stroke: blue;
+        stroke-width: 2px;
+      }
+
+      #hourlyGraph .ct-series-b .ct-line,
+      #halfHourlyGraph .ct-series-b .ct-line {
+        /* ST GRAPH */
+        stroke: yellowgreen;
+        stroke-width: 2px;
+      }
+
+      #hourlyGraph .ct-series-c .ct-line,
+      #halfHourlyGraph .ct-series-c .ct-line {
+        /* NT GRAPH */
+        stroke: purple;
+        stroke-width: 2px;
+      }
+
+      .flex {
+        /* margin-right: 100px; */
+        display: flex;
+        justify-content: left;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>1. Graph with all the datas included (v-t Graph)</h3>
+    <div class="ct-chart" id="vtGraph"></div>
+
+    <h3>1. Graph with all the datas included (s-t Graph)</h3>
+    <div class="ct-chart" id="stGraph"></div>
+
+    <h3>1. Graph with all the datas included (l-t Graph)</h3>
+    <div class="ct-chart" id="ltGraph"></div>
+
+    <h3>1. Graph with all the datas included (n-t Graph)</h3>
+    <div class="ct-chart" id="ntGraph"></div>
+
+    <h3>1. Graph with all the datas included (h-t Graph)</h3>
+    <div class="ct-chart" id="htGraph"></div>
+
+    <hr />
+    <h3>2. Hourly VT Graph</h3>
+    <div class="ct-chart" id="vtHourlyGraph"></div>
+
+    <h3>3. Half-Hourly VT Graph</h3>
+    <div id="vtHalfHrlyGraph"></div>
+
+    <hr />
+    <h3>2. Hourly ST Graph</h3>
+    <div class="ct-chart" id="stHourlyGraph"></div>
+
+    <h3>3. Half-Hourly ST Graph</h3>
+    <div id="stHalfHrlyGraph"></div>
+
+    <hr />
+    <h3>2. Hourly LT Graph</h3>
+    <div class="ct-chart" id="ltHourlyGraph"></div>
+
+    <h3>3. Half-Hourly LT Graph</h3>
+    <div id="ltHalfHrlyGraph"></div>
+
+    <hr />
+    <h3>2. Hourly NT Graph</h3>
+    <div class="ct-chart" id="ntHourlyGraph"></div>
+
+    <h3>3. Half-Hourly NT Graph</h3>
+    <div id="ntHalfHrlyGraph"></div>
+
+    <hr />
+    <h3>4. Hourly VT, ST, NT Graph Representation</h3>
+    <div class="flex">
+      <div id="hourlyGraph"></div>
+      <div>
+        <div
+          style="
+            width: 20px;
+            height: 20px;
+            background-color: blue;
+            display: inline-block;
+          "
+        ></div>
+        <span>VT Graph</span><br />
+        <div
+          style="
+            width: 20px;
+            height: 20px;
+            background-color: yellowgreen;
+            display: inline-block;
+          "
+        ></div>
+        <span>ST Graph</span><br />
+        <div
+          style="
+            width: 20px;
+            height: 20px;
+            background-color: purple;
+            display: inline-block;
+          "
+        ></div>
+        <span>NT Graph</span><br />
+      </div>
+    </div>
+    <hr />
+    <h3>5. Half-Hourly VT, ST, NT Graph Representation</h3>
+    <div class="flex">
+      <div id="halfHourlyGraph"></div>
+      <div>
+        <div
+          style="
+            width: 20px;
+            height: 20px;
+            background-color: blue;
+            display: inline-block;
+          "
+        ></div>
+        <span>VT Graph</span><br />
+        <div
+          style="
+            width: 20px;
+            height: 20px;
+            background-color: yellowgreen;
+            display: inline-block;
+          "
+        ></div>
+        <span>ST Graph</span><br />
+        <div
+          style="
+            width: 20px;
+            height: 20px;
+            background-color: purple;
+            display: inline-block;
+          "
+        ></div>
+        <span>NT Graph</span><br />
+      </div>
+    </div>
+
+    <script src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        function fetchData() {
+          var apiUrl =
+            "https://us-central1-drivoolapis.cloudfunctions.net/getTrace?key=-MLihKZTLRD00R0s8Csm&gapn=syednaaz411&route=syednaaz411_v005&date=04302024";
+
+          $.ajax({
+            url: apiUrl,
+            dataType: "json",
+            type: "GET",
+            success: function (data) {
+              console.log("Processed data:", data);
+              processData(data);
+            },
+            error: function (error) {
+              console.error(
+                "There was a problem with the fetch operation:",
+                error
+              );
+            },
+          });
+        }
+
+        fetchData();
+      });
+    </script>
+    <script src="main.js"></script>
+  </body>
+</html>
